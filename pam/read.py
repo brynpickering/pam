@@ -724,6 +724,7 @@ def read_matsim(
                 for r in stage:
                     network_route = r.text
                     if network_route is not None:
+                        # TODO needs updating for V12
                         if 'PT' in network_route:
                             pt_details = network_route.split('===')
                             o_stop = pt_details[1]
@@ -755,6 +756,8 @@ def read_matsim(
                         end_area=None,
                         start_time=departure_dt,
                         end_time=arrival_dt,
+                        distance=stage.get("distance"),
+                        # TODO has this been tested? Not sure we are accessing stuff with stage.get
                         o_stop=o_stop,
                         d_stop=d_stop,
                         service_id=service_id,

@@ -195,3 +195,4 @@ def test_get_linestring_with_s2_cellids():
     ls = utils.get_linestring(from_point, to_point)
     assert isinstance(ls, LineString)
     assert [(round(c[0], 6), round(c[1], 6)) for c in ls.coords] == [(-0.137925, 51.521699), (-0.134456, 51.520027)]
+

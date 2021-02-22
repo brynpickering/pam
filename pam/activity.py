@@ -811,6 +811,10 @@ class PlanComponent:
     def duration(self):
         return self.end_time - self.start_time
 
+    @property
+    def hours(self):
+        return pam.utils.timedelta_to_hours(self.end_time - self.start_time)
+
     def shift_start_time(self, new_start_time):
         """
         Given a new start time, set start time, set end time based on previous duration and
@@ -890,6 +894,7 @@ class Leg(PlanComponent):
             end_loc=None,
             start_time=None,
             end_time=None,
+            distance=None,
             purp=None,
             o_stop=None,
             d_stop=None,
@@ -905,6 +910,7 @@ class Leg(PlanComponent):
         self.end_location = Location(loc=end_loc, link=end_link, area=end_area)
         self.start_time = start_time
         self.end_time = end_time
+        self._distance = distance
         # related to the PT network, relevant for simulated plans
         self.service_id = service_id
         self.route_id = route_id
@@ -924,6 +930,12 @@ class Leg(PlanComponent):
                self.end_location == other.end_location and \
                self.mode == other.mode and \
                self.duration == other.duration
+
+    @property
+    def distance(self):
+        if self._distance is not None:
+            return self._distance
+        return self.euclidean_distance * 1.4
 
     @property
     def euclidean_distance(self):
