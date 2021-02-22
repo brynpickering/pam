@@ -814,6 +814,9 @@ class PlanComponent:
     @property
     def hours(self):
         return pam.utils.timedelta_to_hours(self.end_time - self.start_time)
+    
+    def shift(self, start_time=None, duration=None, end_time=None):
+        raise NotImplementedError
 
     def shift_start_time(self, new_start_time):
         """
@@ -825,6 +828,19 @@ class PlanComponent:
         duration = self.duration
         self.start_time = new_start_time
         self.end_time = new_start_time + duration
+        return self.end_time
+
+    def shift_duration(self, new_duration, new_start_time=None):
+        """
+        Given a new duration and optionally start time, set start time, set end time based on duration and
+        return new end time.
+        :param new_duration: timedelta
+        :param new_start_time: datetime
+        :return: datetime
+        """
+        if new_start_time is not None:
+            self.start_time = new_start_time
+        self.end_time = self.start_time + new_duration
         return self.end_time
 
     def shift_end_time(self, new_end_time):
