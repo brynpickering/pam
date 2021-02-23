@@ -96,7 +96,7 @@ class CharyparNagelPlanScorer:
 
     def activities_wrapper(self, activities):
         non_wrapped = activities[1:-1]
-        if activities[0].act == activities[-1].act:
+        if not activities[0].act == activities[-1].act:
             self.logger.warning(
                 f"Wrapping non-alike activities: {activities[0].act} -> {activities[-1].act}"
                 )

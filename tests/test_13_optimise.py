@@ -1,7 +1,7 @@
 from pam.activity import Plan, Activity, Leg
 from pam.utils import minutes_to_datetime as mtdt
 from pam.variables import END_OF_DAY
-from pam import optimise
+from pam.optimise import random
 
 
 def test_random_mutate_activity_durations():
@@ -15,7 +15,7 @@ def test_random_mutate_activity_durations():
         Leg(mode='car', start_area=3, end_area=1, start_time=mtdt(1020), end_time=mtdt(1140), distance=1000),
         Activity(act='home', area=1, start_time=mtdt(1140), end_time=END_OF_DAY)
     ]
-    new = optimise.random_mutate_activity_durations(plan, copy=True)
+    new = random.random_mutate_activity_durations(plan, copy=True)
     assert new.is_valid
 
 
@@ -30,7 +30,7 @@ def test_random_mutate_activity_durations_overwrite():
         Leg(mode='car', start_area=3, end_area=1, start_time=mtdt(1020), end_time=mtdt(1140), distance=1000),
         Activity(act='home', area=1, start_time=mtdt(1140), end_time=END_OF_DAY)
     ]
-    new = optimise.random_mutate_activity_durations(plan, copy=False)
+    new = random.random_mutate_activity_durations(plan, copy=False)
     assert new.is_valid
     assert new == plan
 
@@ -40,5 +40,5 @@ def test_random_mutate_activity_durations_stay_at_home():
     plan.day = [
         Activity(act='home', area=1, start_time=mtdt(0), end_time=END_OF_DAY),
     ]
-    new = optimise.random_mutate_activity_durations(plan, copy=True)
+    new = random.random_mutate_activity_durations(plan, copy=True)
     assert new.is_valid
