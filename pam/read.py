@@ -667,7 +667,7 @@ def read_matsim(
     elif attributes_path:
         attributes_map = load_attributes_map(attributes_path)
 
-    for person_id, plan in selected_plans(plans_path):
+    for person_id, score, plan in selected_plans(plans_path):
 
         attributes = attributes_map.get(person_id, {})
 
@@ -828,12 +828,12 @@ def load_attributes_map(attributes_path):
 
 def selected_plans(plans_path):
     """
-    Given path to MATSim plans input, yield person id and plan for all selected plans.
+    Given path to MATSim plans input, yield person id, score and plan for all selected plans.
     """
     for person in utils.get_elems(plans_path, "person"):
         for plan in person:
             if plan.get('selected') == 'yes':
-                yield person.get('id'), plan
+                yield person.get('id'), person.get('score'), plan
 
 
 def sample_population(trips_df, sample_perc, attributes_df=None, weight_col='freq'):
