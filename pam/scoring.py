@@ -22,10 +22,12 @@ class CharyparNagelPlanScorer:
             "openingTime": "06:00:00",
             "closingTime": "20:00:00",
             "latestStartTime": "09:30:00",
-            "earliestEndTime": "16:00:00"
+            "earliestEndTime": "16:00:00",
+            "minimalDuration": "01:00:00"
         },
         "home": {
             "typicalDuration": "12:00:00",
+            "minimalDuration": "05:00:00",
         },
         "shop": {
             "typicalDuration": "00:30:00",
@@ -188,7 +190,14 @@ class CharyparNagelPlanScorer:
         return 0.0
 
     def too_short_score(self, activity, cnfg) -> float:
-        raise NotImplementedError
+        if cnfg[activity.act].get("minimalDuration") \
+            and cnfg.get("earlyDeparture"):
+            minimal_duration = utils.matsim_duration_to_hours(
+                cnfg[activity.act]["minimalDuration"]
+                )
+            if activity.hours < minimal_duration:
+                return cnfg['earlyDeparture'] * (minimal_duration - activity.hours) 
+        return 0.0
 
     def mode_constant_score(self, leg, cnfg):
         return cnfg[leg.mode].get("constant", 0.0)

@@ -441,7 +441,7 @@ class Plan:
                 if idx-2 >= 0:
                     queue.append(idx-2)
 
-    def finalise(self):
+    def finalise_activity_end_times(self):
         """
         Add activity end times based on start time of next activity.
         """
@@ -449,6 +449,19 @@ class Plan:
             for seq in range(0, len(self.day)-1, 2):  # activities excluding last one
                 self.day[seq].end_time = self.day[seq+1].start_time
         self.day[-1].end_time = pam.variables.END_OF_DAY
+    
+    def set_leg_purposes(self):
+        """
+        Set leg purposes to destination activity.
+        Skip 'pt interaction' activities.
+        """
+        for seq, component in enumerate(self):
+            if isinstance(component, Leg):
+                for j in range(seq+1, len(self.day)-1, 2):
+                    act = self.day[j].act
+                    if not act == "pt interaction":
+                        self.day[seq].purp = act
+                        break
         
     def autocomplete_matsim(self):
         """
@@ -912,12 +925,12 @@ class Leg(PlanComponent):
             end_time=None,
             distance=None,
             purp=None,
+            freq=None,
             o_stop=None,
             d_stop=None,
             service_id=None,
             route_id=None,
             network_route=None,
-            freq=None,
     ):
         self.seq = seq
         self.purp = purp
@@ -927,14 +940,12 @@ class Leg(PlanComponent):
         self.start_time = start_time
         self.end_time = end_time
         self._distance = distance
-        # related to the PT network, relevant for simulated plans
+        self.freq = freq
         self.service_id = service_id
         self.route_id = route_id
         self.o_stop = o_stop
         self.d_stop = d_stop
-        # list of link ids from network for routed modes
         self.network_route = network_route
-        self.freq = freq
 
     def __str__(self):
         return f"Leg({self.seq} mode:{self.mode}, area:{self.start_location} --> " \
@@ -951,7 +962,7 @@ class Leg(PlanComponent):
     def distance(self):
         if self._distance is not None:
             return self._distance
-        return self.euclidean_distance * 1.4
+        return self.euclidean_distance * 1000
 
     @property
     def euclidean_distance(self):

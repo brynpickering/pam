@@ -21,7 +21,13 @@ def pt_person():
 
 @pytest.fixture()
 def correct_pt_person_geodataframe():
-    return GeoDataFrame({'d_stop': {0: None,
+    return GeoDataFrame({
+                         '_distance': {0: 6412.774690, 1: 1290.851862,
+                                          2: 5952.837241,
+                                          3: 13.313250, 4: 12049.487855,
+                                          5: 0.000000,
+                                          6: 5731.316434, 7: 2606.715618},
+                        'd_stop': {0: None,
                                     1: None,
                                     2: '9100UPMNSP6.link:302438',
                                     3: None,
@@ -58,11 +64,11 @@ def correct_pt_person_geodataframe():
                                   5: 'transit_walk', 6: 'pt', 7: 'transit_walk'},
                          'network_route': {0: None,
                                            1: None,
-                                           2: 'PT1===9100ROMFORD.link:25821===25239===VJ307b99b535bf55bc9d62b5475e5edf0d37176bcf===9100UPMNSP6.link:302438',
+                                           2: None,
                                            3: None,
-                                           4: 'PT1===9100UPMNSTR.link:84556===162===VJd0adc2f9ee1d3687b3a36b84ff2a2e4c7b31f621===9100BARKING.link:15983',
+                                           4: None,
                                            5: None,
-                                           6: 'PT1===9100BARKING.link:15984===723===VJc808d717b38ec29c015695e5d4ff576e79af623f===9100DGNHMDC.link:280957',
+                                           6: None,
                                            7: None
                                            },
                          'o_stop': {0: None,
@@ -73,8 +79,7 @@ def correct_pt_person_geodataframe():
                                     5: None,
                                     6: '9100BARKING.link:15984',
                                     7: None},
-                         'purp': {0: None, 1: None, 2: None, 3: None, 4: None, 5: None, 6: None,
-                                  7: None},
+                         'purp': {0: 'work', 1: None, 2: None, 3: None, 4: None, 5: None, 6: None, 7: None},
                          'route_id': {0: None,
                                       1: None,
                                       2: 'VJ307b99b535bf55bc9d62b5475e5edf0d37176bcf',
@@ -117,7 +122,8 @@ def cyclist():
 @pytest.fixture()
 def correct_cyclist_geodataframe():
     return GeoDataFrame(
-        {'d_stop': {0: None, 1: None},
+        {'_distance': {0: 9647.24116945626, 1: 9647.241169456261},
+        'd_stop': {0: None, 1: None},
          'end_location': {0: (529652.0, 183897.0), 1: (515226.0, 188222.0)},
          'end_time': {0: Timestamp('1900-01-01 08:07:08'), 1: Timestamp('1900-01-01 15:33:08')},
          'freq': {0: None, 1: None},
@@ -125,7 +131,7 @@ def correct_cyclist_geodataframe():
                       1: LineString([(529652.0, 183897.0), (515226.0, 188222.0)])},
          'mode': {0: 'bike', 1: 'bike'},
          'network_route': {0: ['link_1', 'link_2', 'link_3'], 1: ['link_3', 'link_2', 'link_1']},
-         'o_stop': {0: None, 1: None}, 'purp': {0: None, 1: None},
+         'o_stop': {0: None, 1: None}, 'purp': {0: 'work', 1: None},
          'route_id': {0: None, 1: None},
          'seq': {0: 1.0, 1: 2.0},
          'service_id': {0: None, 1: None},

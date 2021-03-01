@@ -26,7 +26,7 @@ testmtdata = [
     ("00:00:00", 0),
     ("01:00:00", 1),
     ("10:30:00", 10.5),
-    ("00:00:01", 1/3600)
+    ("00:00:01", 1/3600),
 ]
 @pytest.mark.parametrize("mt,hours", testmtdata)
 def test_matsim_duration_to_hours(mt, hours):
@@ -43,7 +43,8 @@ activity_cnfg = {
             "openingTime": "06:00:00",
             "closingTime": "20:00:00",
             "latestStartTime": "09:30:00",
-            "earliestEndTime": "16:00:00"
+            "earliestEndTime": "16:00:00",
+            "minimalDuration": "05:00:00"
         },
         "home": {
             "typicalDuration": "12:00:00",
@@ -199,6 +200,23 @@ def test_early_departure_score():
         end_time = datetime(1920,1,1,15,0,0)
     )
     assert scorer.early_departure_score(activity, cnfg=activity_cnfg) == -10
+
+
+def test_too_short_score():
+    activity = Activity(
+        act = "work",
+        start_time = mtdt(6*60),
+        end_time = mtdt(16*60)
+    )
+    scorer = CharyparNagelPlanScorer()
+    assert scorer.too_short_score(activity, cnfg=activity_cnfg) == 0
+
+    activity = Activity(
+        act = "work",
+        start_time = mtdt(7*60),
+        end_time = mtdt(11*60)
+    )
+    assert scorer.too_short_score(activity, cnfg=activity_cnfg) == -10
 
 
 leg_cnfg = {
