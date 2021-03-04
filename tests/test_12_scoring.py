@@ -355,4 +355,4 @@ def test_score_plan():
         Activity(act='home', start_time=mtdt(1140), end_time=END_OF_DAY)
     ]
     scorer = CharyparNagelPlanScorer()
-    assert scorer.score(plan, cnfg=full_config) == 65 
+    assert scorer.score_plan(plan, cnfg=full_config) == 65 

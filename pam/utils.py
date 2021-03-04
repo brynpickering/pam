@@ -230,6 +230,8 @@ def safe_strptime(s):
     safely parse string into datatime, can cope with time strings in format hh:mm:ss
     if hh > 23 then adds a day
     """
+    if s is None:
+        return None
     if int(s.split(':')[0]) > 23:
         days, hours = divmod(int(s.split(':')[0]),24)
         string = f"{days+1}-{hours:02d}" + s[-6:]

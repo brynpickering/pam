@@ -8,6 +8,14 @@ import pam.activity as activity
 import pam.utils as utils
 
 
+def plot_plan(plan, kwargs=None):
+    df = build_plan_df(plan)
+    if kwargs is not None:
+        plot_activities(df, **kwargs)
+    else:
+        plot_activities(df)
+
+
 def plot_person(person, kwargs=None):
     df = build_person_df(person)
     if kwargs is not None:
@@ -32,9 +40,9 @@ def plot_household(household, kwargs=None):
         plot_activities(df)
 
 
-def build_person_df(person):
+def build_plan_df(plan, pid='sample'):
     """
-    Loop through a persons plan, creating a pandas dataframe defining activities for plotting.
+    Loop through a plan, creating a pandas dataframe defining activities for plotting.
     """
     data = {
         "act" : [],
@@ -43,7 +51,7 @@ def build_person_df(person):
         "end_time": [],
         "dur": [],
     }
-    for component in person.plan.day:
+    for component in plan.day:
         data["act"].append(component.act.lower().title())
         if isinstance(component, activity.Leg):
             data["modes"].append(component.mode.lower().title())
@@ -53,9 +61,15 @@ def build_person_df(person):
         data["end_time"].append(component.end_time.hour + component.end_time.minute/60)
         data["dur"].append(component.duration.total_seconds()/3600)
     df = pd.DataFrame(data)
-    df['pid'] = person.pid
+    df['pid'] = pid
 
     return df
+
+def build_person_df(person):
+    """
+    Loop through a persons plan, creating a pandas dataframe defining activities for plotting.
+    """
+    return build_plan_df(person.plan, person.pid)
 
 
 def build_person_travel_geodataframe(person, from_epsg=None, to_epsg=None):
@@ -100,11 +114,13 @@ def build_rgb_travel_cmap(df, colour_by):
 
 def build_cmap(df):
     colors = plt.cm.Set3.colors[::-1]
-    activities_unique = df['act'].unique()
+    activities_unique = set(df['act'])
+    activities_unique -= {'Travel', 'Pt interaction'}
     # repeat colours if unique items > 1
     len_factor = (len(activities_unique) // len(colors)) + 1
     d_color = dict(zip(activities_unique, colors*len_factor))
-    d_color['Travel'] = (.3,.3,.3)
+    d_color['Travel'] = (.4,.4,.4)
+    d_color['Pt interaction'] = (0.,0.,0.)
     return d_color
 
 

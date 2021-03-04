@@ -5,6 +5,7 @@ from copy import copy
 
 import pam.utils
 import pam.variables
+from pam.plot import plans as plot
 from pam import PAMSequenceValidationError, PAMTimesValidationError, PAMValidationLocationsError
 from pam.variables import END_OF_DAY
 
@@ -82,6 +83,9 @@ class Plan:
         if -self.length <= idx < self.length:
             return self.day[idx]
         return default
+
+    def plot(self, kwargs=None):
+        plot.plot_plan(self, kwargs)
 
     def activity_tours(self):
         tours = []
@@ -928,6 +932,7 @@ class Leg(PlanComponent):
             freq=None,
             o_stop=None,
             d_stop=None,
+            boarding_time=None,
             service_id=None,
             route_id=None,
             network_route=None,
@@ -945,6 +950,7 @@ class Leg(PlanComponent):
         self.route_id = route_id
         self.o_stop = o_stop
         self.d_stop = d_stop
+        self.boarding_time = boarding_time
         self.network_route = network_route
 
     def __str__(self):

@@ -16,13 +16,13 @@ def reschedule(
     sensitivity : float = 0.01,
     patience : int = 1000
     ):
-    best_score = plans_scorer.score(plan, config)
+    best_score = plans_scorer.score_plan(plan, config)
     print(f"Initial best score at iteration 0: {best_score}")
     best_scores = {0:best_score}
     stopper = Stopper(horizon=horizon ,sensitivity=sensitivity)
     for n in range(patience):
         proposed_plan = random_mutate_activity_durations(plan, copy=True)
-        score = plans_scorer.score(proposed_plan, config)
+        score = plans_scorer.score_plan(proposed_plan, config)
         if score > best_score:
             print(f"New best score at iteration {n}: {score}")
             best_scores[n] = score

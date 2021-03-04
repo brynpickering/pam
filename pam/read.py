@@ -735,6 +735,8 @@ def read_matsim(
                     arrival_dt = departure_dt  # todo this assumes 0 duration unless already known
                 
                 distance = route.get("distance")
+                if distance == "NaN":
+                    distance = None
                 if distance is not None:
                     distance = float(distance)
 
@@ -751,7 +753,8 @@ def read_matsim(
                         route_id = transit_route.get("transitRouteId"),
                         o_stop = transit_route.get("accessFacilityId"),
                         d_stop = transit_route.get("egressFacilityId"),
-                        network_route=network_route,
+                        boarding_time = utils.safe_strptime(transit_route.get("boardingTime")),
+                        network_route = network_route,
                     )
                 )
 
