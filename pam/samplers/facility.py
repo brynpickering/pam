@@ -14,6 +14,79 @@ import numpy as np
 import pickle
 from types import GeneratorType
 
+class SimpleFacilitySampler:
+
+    def __init__(
+        self,
+        facilities: gp.GeoDataFrame,
+        zones: gp.GeoDataFrame,
+        ):
+        """
+        Sampler object for facilities.
+        :param facilities: facilities Geodataframe
+        :param zones: zones Geodataframe
+        """
+        self.logger = logging.getLogger(__name__)
+
+        # spatial join
+        self.activity_areas = self._spatial_join(facilities, zones)
+
+        # build samplers
+        self._sampler_dictionary = self._build_facilities_sampler()
+        
+        # build random sampler for when there are no viable facilities
+        self.random_sampler = RandomPointSampler(geoms=zones, fail=False)
+
+    def clear(self):
+        self._build_facilities_sampler()
+
+    def sample_point(self, location_idx, activity):
+        """
+        Sample a shapely.Point from the given location and for the given activity.
+        :params str location_idx: the zone to sample from
+        :params str activity: activity purpose
+        """
+
+        if location_idx not in self._sampler_dictionary:  # area is missing
+            self.logger.warning(f"Zone not found: {location_idx}, using random sample")
+            return self.random_sampler.sample(location_idx, activity)
+
+        sampler = self._sampler_dictionary[location_idx][activity]
+        return next(sampler)
+
+    def _spatial_join(self, facilities, zones):
+        """
+        Spatially join facility and zone data
+        """
+        self.logger.warning("Joining facilities data to zones, this may take a while.")
+        return gp.sjoin(facilities, zones, how='inner', op='intersects')
+
+    def _build_facilities_sampler(self):
+        """
+        Build facility location sampler from osmfs input. The sampler returns a tuple of (uid, Point)
+        TODO - I do not like having a sjoin and assuming index names here
+        TODO - look to move to more carefully defined input data format for facilities
+
+        :params str weight_on: a column (name) of the facilities geodataframe to be used as a sampling weight
+        """
+        activity_areas = self.activity_areas
+        sampler_dict = {}
+
+        self.logger.warning("Building sampler, this may take a while.")
+
+        for zone in set(activity_areas.index_right):  # loop through all areas
+            sampler_dict[zone] = {}
+            zone_facs = activity_areas.loc[activity_areas.index_right == zone]
+            
+            for act in set(zone_facs.activity):  # loop through all activity types in that zone
+                self.logger.debug(f"Building sampler for zone:{zone} act:{act}.")
+                facs = zone_facs.loc[zone_facs.activity == act]
+                points = [(i, g) for i, g in facs.geometry.items()]
+                sampler_dict[zone][act] = inf_yielder(points)
+                
+        return sampler_dict
+
+
 class FacilitySampler:
 
     def __init__(
