@@ -26,6 +26,7 @@ def grid_search(
         leg_index=0,
         recorder=recorder
         )
+
     return recorder.best_score, recorder.best_plan
 
 
