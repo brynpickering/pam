@@ -60,13 +60,13 @@ Assuming python ~3.7 and using git:
 ```
 git clone git@github.com:arup-group/pam.git
 cd pam
-python3 -m venv venv #intall into virtual environment
-source venv/bin/activate
+python3 -m venv pam_venv #intall into virtual environment
+source pam_venv/bin/activate
 pip install -e .
 ```
 
 We known that requirements are already available in a up to date Anaconda installation. 
-If you're not using Anaconda, sometimes the above will fail due to spatial library dependencies not being properly installed using pip. If you see any errors relating to fiona or rtree this is likely the case. To fix it, wipe the virtual environment and recreate, `brew install spatialindex` (Mac) then install everything else in the `venv` using `pip install -e .` again. 
+If you're not using Anaconda, sometimes the above will fail due to spatial library dependencies not being properly installed using pip. If you see any errors relating to fiona or rtree this is likely the case. To fix it, wipe the virtual environment and recreate, `brew install spatialindex` (Mac) then install everything else in `pam_venv` using `pip install -e .` again. 
 
 **Windows installation** </br>
 We strongly recommend using a virtual environment.
@@ -78,10 +78,10 @@ If installation fails, we recommend to try the following code **using the Anacon
 git clone git@github.com:arup-group/pam.git
 
 # Create a conda environment
-conda create -n venv python=3.7  
+conda create -n pam_venv python=3.7  
 
 # Check your Python version running python in your terminal
-conda activate venv
+conda activate pam_venv
 conda install geopandas
 # change directory to pam
 cd pam
