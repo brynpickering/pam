@@ -58,8 +58,7 @@ jobs:
       run: mike deploy 0.2
 
     - name: Build docs
-      if: github.ref == 'refs/heads/main'
-      run: mike deploy --push --force 0.2
+      run: mike deploy --push 0.2
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
