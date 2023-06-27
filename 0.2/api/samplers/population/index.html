@@ -1,3 +1,5 @@
+<!--Add download button to all pages built from jupyter notebooks-->
+
 
 <!doctype html>
 <html lang="en" class="no-js">
@@ -9,13 +11,13 @@
       
       
       
-        <link rel="prev" href="../attributes/">
+        <link rel="prev" href="../facility/">
       
       
-        <link rel="next" href="../spatial/">
+        <link rel="next" href="../../plot/plans/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.17">
     
     
       
@@ -317,7 +319,7 @@
   
     <li class="md-nav__item">
       <a href="../../../examples/01_PAM_Getting_Started/" class="md-nav__link">
-        PAM Getting Started
+        PAM - Getting Started
       </a>
     </li>
   
@@ -345,7 +347,7 @@
   
     <li class="md-nav__item">
       <a href="../../../examples/03_Example_Generate_Random_Population/" class="md-nav__link">
-        Example Generate Random Population
+        Generating a random population for West London
       </a>
     </li>
   
@@ -359,7 +361,7 @@
   
     <li class="md-nav__item">
       <a href="../../../examples/04_Example_Ingest_NTS_Diaries/" class="md-nav__link">
-        Example Ingest NTS Diaries
+        Converting the National Travel Survey into a Simple MATSim Format Population
       </a>
     </li>
   
@@ -373,7 +375,7 @@
   
     <li class="md-nav__item">
       <a href="../../../examples/05_PAM_Policies_Walk_Through/" class="md-nav__link">
-        PAM Policies Walk Through
+        Modifying the population using simple policies
       </a>
     </li>
   
@@ -387,7 +389,7 @@
   
     <li class="md-nav__item">
       <a href="../../../examples/06_PAM_Complex_Policies/" class="md-nav__link">
-        PAM Complex Policies
+        Modifying the population using complex policies
       </a>
     </li>
   
@@ -401,7 +403,7 @@
   
     <li class="md-nav__item">
       <a href="../../../examples/07_PAM_Point_Sampling/" class="md-nav__link">
-        PAM Point Sampling
+        Geometry Sampling in PAM
       </a>
     </li>
   
@@ -415,7 +417,7 @@
   
     <li class="md-nav__item">
       <a href="../../../examples/08_PAM_Population_Activity_Plots/" class="md-nav__link">
-        PAM Population Activity Plots
+        Plotting activity times
       </a>
     </li>
   
@@ -429,7 +431,7 @@
   
     <li class="md-nav__item">
       <a href="../../../examples/09_Travel_Plots/" class="md-nav__link">
-        Travel Plots
+        Plot Activity Plan Travel
       </a>
     </li>
   
@@ -443,7 +445,7 @@
   
     <li class="md-nav__item">
       <a href="../../../examples/10_Advanced_Spatial-Sampling_Demo/" class="md-nav__link">
-        Advanced Spatial-Sampling Demo
+        Facility sampling
       </a>
     </li>
   
@@ -457,7 +459,7 @@
   
     <li class="md-nav__item">
       <a href="../../../examples/11_Advanced_Plan_Rescheduling/" class="md-nav__link">
-        Advanced Plan Rescheduling
+        Plan rescheduling
       </a>
     </li>
   
@@ -471,7 +473,7 @@
   
     <li class="md-nav__item">
       <a href="../../../examples/12_Advanced_Adding_Vehicles/" class="md-nav__link">
-        Advanced Adding Vehicles
+        Adding vehicles to the plans
       </a>
     </li>
   
@@ -485,7 +487,7 @@
   
     <li class="md-nav__item">
       <a href="../../../examples/13_Advanced_Freight_Synthesis/" class="md-nav__link">
-        Advanced Freight Synthesis
+        Freight synthesis
       </a>
     </li>
   
@@ -499,7 +501,7 @@
   
     <li class="md-nav__item">
       <a href="../../../examples/14_Advanced_Plan_Cropping/" class="md-nav__link">
-        Advanced Plan Cropping
+        Plan cropping
       </a>
     </li>
   
@@ -513,7 +515,7 @@
   
     <li class="md-nav__item">
       <a href="../../../examples/15_Advanced_Choice/" class="md-nav__link">
-        Advanced Choice
+        Applying a location and mode choice model to populations
       </a>
     </li>
   
@@ -593,22 +595,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scoring/" class="md-nav__link">
-        pam.scoring
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../vehicle/" class="md-nav__link">
-        pam.vehicle
+      <a href="../../core/" class="md-nav__link">
+        pam.core
       </a>
     </li>
   
@@ -635,8 +623,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../core/" class="md-nav__link">
-        pam.core
+      <a href="../../scoring/" class="md-nav__link">
+        pam.scoring
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utils/" class="md-nav__link">
+        pam.utils
       </a>
     </li>
   
@@ -663,8 +665,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../utils/" class="md-nav__link">
-        pam.utils
+      <a href="../../vehicle/" class="md-nav__link">
+        pam.vehicle
       </a>
     </li>
   
@@ -687,14 +689,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_7" id="__nav_9_7_label" tabindex="0">
-          pam.write
+          pam.planner
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_7">
           <span class="md-nav__icon md-icon"></span>
-          pam.write
+          pam.planner
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -704,8 +706,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../write/matrices/" class="md-nav__link">
-        pam.write.matrices
+      <a href="../../planner/od/" class="md-nav__link">
+        pam.planner.od
       </a>
     </li>
   
@@ -718,8 +720,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../write/diary/" class="md-nav__link">
-        pam.write.diary
+      <a href="../../planner/encoder/" class="md-nav__link">
+        pam.planner.encoder
       </a>
     </li>
   
@@ -732,8 +734,50 @@
   
   
     <li class="md-nav__item">
-      <a href="../../write/matsim/" class="md-nav__link">
-        pam.write.matsim
+      <a href="../../planner/choice_location/" class="md-nav__link">
+        pam.planner.choice_location
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planner/clustering/" class="md-nav__link">
+        pam.planner.clustering
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planner/utils_planner/" class="md-nav__link">
+        pam.planner.utils_planner
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planner/zones/" class="md-nav__link">
+        pam.planner.zones
       </a>
     </li>
   
@@ -763,14 +807,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_8" id="__nav_9_8_label" tabindex="0">
-          pam.plot
+          pam.operations
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_8_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_8">
           <span class="md-nav__icon md-icon"></span>
-          pam.plot
+          pam.operations
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -780,8 +824,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plot/stats/" class="md-nav__link">
-        pam.plot.stats
+      <a href="../../operations/combine/" class="md-nav__link">
+        pam.operations.combine
       </a>
     </li>
   
@@ -794,8 +838,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plot/plans/" class="md-nav__link">
-        pam.plot.plans
+      <a href="../../operations/cropping/" class="md-nav__link">
+        pam.operations.cropping
       </a>
     </li>
   
@@ -825,14 +869,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_9" id="__nav_9_9_label" tabindex="0">
-          pam.optimise
+          pam.write
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_9_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_9">
           <span class="md-nav__icon md-icon"></span>
-          pam.optimise
+          pam.write
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -842,8 +886,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../optimise/grid/" class="md-nav__link">
-        pam.optimise.grid
+      <a href="../../write/diary/" class="md-nav__link">
+        pam.write.diary
       </a>
     </li>
   
@@ -856,8 +900,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../optimise/random/" class="md-nav__link">
-        pam.optimise.random
+      <a href="../../write/matsim/" class="md-nav__link">
+        pam.write.matsim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../write/matrices/" class="md-nav__link">
+        pam.write.matrices
       </a>
     </li>
   
@@ -887,14 +945,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_10" id="__nav_9_10_label" tabindex="0">
-          pam.array
+          pam.report
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_10_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_10">
           <span class="md-nav__icon md-icon"></span>
-          pam.array
+          pam.report
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -904,8 +962,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../array/encode/" class="md-nav__link">
-        pam.array.encode
+      <a href="../../report/summary/" class="md-nav__link">
+        pam.report.summary
       </a>
     </li>
   
@@ -918,8 +976,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../array/distance/" class="md-nav__link">
-        pam.array.distance
+      <a href="../../report/benchmarks/" class="md-nav__link">
+        pam.report.benchmarks
       </a>
     </li>
   
@@ -932,8 +990,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../array/decode/" class="md-nav__link">
-        pam.array.decode
+      <a href="../../report/stringify/" class="md-nav__link">
+        pam.report.stringify
       </a>
     </li>
   
@@ -963,14 +1021,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_11" id="__nav_9_11_label" tabindex="0">
-          pam.planner
+          pam.policy
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_11_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_11">
           <span class="md-nav__icon md-icon"></span>
-          pam.planner
+          pam.policy
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -980,8 +1038,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../planner/od/" class="md-nav__link">
-        pam.planner.od
+      <a href="../../policy/filters/" class="md-nav__link">
+        pam.policy.filters
       </a>
     </li>
   
@@ -994,8 +1052,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../planner/clustering/" class="md-nav__link">
-        pam.planner.clustering
+      <a href="../../policy/policies/" class="md-nav__link">
+        pam.policy.policies
       </a>
     </li>
   
@@ -1008,8 +1066,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../planner/encoder/" class="md-nav__link">
-        pam.planner.encoder
+      <a href="../../policy/modifiers/" class="md-nav__link">
+        pam.policy.modifiers
       </a>
     </li>
   
@@ -1022,36 +1080,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../planner/utils_planner/" class="md-nav__link">
-        pam.planner.utils_planner
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../planner/choice_location/" class="md-nav__link">
-        pam.planner.choice_location
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../planner/zones/" class="md-nav__link">
-        pam.planner.zones
+      <a href="../../policy/probability_samplers/" class="md-nav__link">
+        pam.policy.probability_samplers
       </a>
     </li>
   
@@ -1143,14 +1173,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_13" id="__nav_9_13_label" tabindex="0">
-          pam.operations
+          pam.optimise
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_13_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_13">
           <span class="md-nav__icon md-icon"></span>
-          pam.operations
+          pam.optimise
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1160,8 +1190,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../operations/cropping/" class="md-nav__link">
-        pam.operations.cropping
+      <a href="../../optimise/random/" class="md-nav__link">
+        pam.optimise.random
       </a>
     </li>
   
@@ -1174,8 +1204,84 @@
   
   
     <li class="md-nav__item">
-      <a href="../../operations/combine/" class="md-nav__link">
-        pam.operations.combine
+      <a href="../../optimise/grid/" class="md-nav__link">
+        pam.optimise.grid
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_14" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_14" id="__nav_9_14_label" tabindex="0">
+          pam.array
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_14_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9_14">
+          <span class="md-nav__icon md-icon"></span>
+          pam.array
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../array/decode/" class="md-nav__link">
+        pam.array.decode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../array/distance/" class="md-nav__link">
+        pam.array.distance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../array/encode/" class="md-nav__link">
+        pam.array.encode
       </a>
     </li>
   
@@ -1202,21 +1308,63 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_14" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_15" checked>
       
       
       
-        <label class="md-nav__link" for="__nav_9_14" id="__nav_9_14_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_9_15" id="__nav_9_15_label" tabindex="0">
           pam.samplers
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_14_label" aria-expanded="true">
-        <label class="md-nav__title" for="__nav_9_14">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_15_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_9_15">
           <span class="md-nav__icon md-icon"></span>
           pam.samplers
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tour/" class="md-nav__link">
+        pam.samplers.tour
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../attributes/" class="md-nav__link">
+        pam.samplers.attributes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spatial/" class="md-nav__link">
+        pam.samplers.spatial
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -1238,8 +1386,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../attributes/" class="md-nav__link">
-        pam.samplers.attributes
+      <a href="../basic/" class="md-nav__link">
+        pam.samplers.basic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../facility/" class="md-nav__link">
+        pam.samplers.facility
       </a>
     </li>
   
@@ -1304,138 +1466,6 @@
 
             
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../spatial/" class="md-nav__link">
-        pam.samplers.spatial
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../facility/" class="md-nav__link">
-        pam.samplers.facility
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../basic/" class="md-nav__link">
-        pam.samplers.basic
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tour/" class="md-nav__link">
-        pam.samplers.tour
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_15" >
-      
-      
-      
-        <label class="md-nav__link" for="__nav_9_15" id="__nav_9_15_label" tabindex="0">
-          pam.report
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_15_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_9_15">
-          <span class="md-nav__icon md-icon"></span>
-          pam.report
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../report/stringify/" class="md-nav__link">
-        pam.report.stringify
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../report/summary/" class="md-nav__link">
-        pam.report.summary
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../report/benchmarks/" class="md-nav__link">
-        pam.report.benchmarks
-      </a>
-    </li>
-  
-
-            
-          
         </ul>
       </nav>
     </li>
@@ -1459,14 +1489,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_16" id="__nav_9_16_label" tabindex="0">
-          pam.policy
+          pam.plot
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_16_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_16">
           <span class="md-nav__icon md-icon"></span>
-          pam.policy
+          pam.plot
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1476,8 +1506,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../policy/probability_samplers/" class="md-nav__link">
-        pam.policy.probability_samplers
+      <a href="../../plot/plans/" class="md-nav__link">
+        pam.plot.plans
       </a>
     </li>
   
@@ -1490,36 +1520,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../policy/modifiers/" class="md-nav__link">
-        pam.policy.modifiers
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../policy/policies/" class="md-nav__link">
-        pam.policy.policies
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../policy/filters/" class="md-nav__link">
-        pam.policy.filters
+      <a href="../../plot/stats/" class="md-nav__link">
+        pam.plot.stats
       </a>
     </li>
   
@@ -1589,6 +1591,9 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
+
+
+
                   
 
   
@@ -1717,128 +1722,128 @@ and their legs.</p>
 
       <details class="quote">
         <summary>Source code in <code>pam/samplers/population.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span>
-<span class="normal">58</span>
-<span class="normal">59</span>
-<span class="normal">60</span>
-<span class="normal">61</span>
-<span class="normal">62</span>
-<span class="normal">63</span>
-<span class="normal">64</span>
-<span class="normal">65</span>
-<span class="normal">66</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">sample</span><span class="p">(</span>
-    <span class="n">population</span><span class="p">:</span> <span class="n">Population</span><span class="p">,</span>
-    <span class="n">sample</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
-    <span class="n">seed</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">verbose</span><span class="p">:</span> <span class="nb">bool</span><span class="o">=</span><span class="kc">False</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Population</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Sample a new population from the existing using a sample size, eg 0.1 for a 10% sample.</span>
-<span class="sd">    Returns a new pam.core.Population object with households sampled based on input freq.</span>
-<span class="sd">    Freq of returned population is set to 1/sample, eg 0.1 -&gt; 10, such that each household</span>
-<span class="sd">    and person represents 10 people from input population.</span>
-<span class="sd">    Note that in the current implementation frequencies are automatically discovered from the population object households,</span>
-<span class="sd">    person and leg weights, in that order. When gathering frequencies, for</span>
-<span class="sd">    example for a household from multiple person in that houshold, the household</span>
-<span class="sd">    frequency is taken as the average person frequency. Similarly for persons</span>
-<span class="sd">    and their legs.</span>
-<span class="sd">    Args:</span>
-<span class="sd">        population (Population): input population object to sample from using population freq</span>
-<span class="sd">        sample (float): sample size of new population, eg 0.1 for a 10% sample</span>
-<span class="sd">        verbose (bool): verbosity</span>
-<span class="sd">    Returns:</span>
-<span class="sd">        pam.core.Population</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="n">sampled_population</span> <span class="o">=</span> <span class="n">Population</span><span class="p">()</span>
-    <span class="n">sample_freq</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">sample</span><span class="p">)</span>
-    <span class="n">size</span> <span class="o">=</span> <span class="n">population</span><span class="o">.</span><span class="n">size</span> <span class="o">*</span> <span class="n">sample</span>
-    <span class="n">sampled</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">hh</span> <span class="ow">in</span> <span class="n">population</span><span class="p">:</span>
-        <span class="n">sampled_count</span> <span class="o">=</span> <span class="n">freq_sample</span><span class="p">(</span>
-            <span class="n">freq</span> <span class="o">=</span> <span class="n">hh</span><span class="o">.</span><span class="n">freq</span><span class="p">,</span>
-            <span class="n">sample</span> <span class="o">=</span> <span class="n">sample</span><span class="p">,</span>
-            <span class="n">seed</span> <span class="o">=</span> <span class="n">seed</span>
-        <span class="p">)</span>
-
-        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sampled_count</span><span class="p">):</span>  <span class="c1"># add sampled hhs (note we provide new unique hid)</span>
-            <span class="n">sampled_hh</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">hh</span><span class="p">)</span>
-            <span class="n">sampled_hh</span><span class="o">.</span><span class="n">hid</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">hh</span><span class="o">.</span><span class="n">hid</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">&quot;</span>
-            <span class="n">sampled_hh</span><span class="o">.</span><span class="n">people</span> <span class="o">=</span> <span class="p">{}</span>
-            <span class="n">sampled_hh</span><span class="o">.</span><span class="n">hh_freq</span> <span class="o">=</span> <span class="n">sample_freq</span>
-
-            <span class="c1"># add sampled people (note we provide a new unique pid)</span>
-            <span class="k">for</span> <span class="n">pid</span><span class="p">,</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">hh</span><span class="o">.</span><span class="n">people</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-                <span class="n">sampled_person</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
-                <span class="n">sampled_person</span><span class="o">.</span><span class="n">pid</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pid</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">&quot;</span>
-                <span class="n">sampled_person</span><span class="o">.</span><span class="n">person_freq</span> <span class="o">=</span> <span class="n">sample_freq</span>
-                <span class="n">sampled_hh</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">sampled_person</span><span class="p">)</span>
-
-            <span class="n">sampled_population</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">sampled_hh</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
-            <span class="n">sampled</span> <span class="o">+=</span> <span class="n">sampled_count</span>
-            <span class="n">progress</span> <span class="o">=</span> <span class="n">sampled</span> <span class="o">/</span> <span class="n">size</span>
-            <span class="k">if</span> <span class="n">progress</span><span class="o">%</span><span class="mf">0.01</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sampled approx. </span><span class="si">{</span><span class="n">progress</span><span class="o">*</span><span class="mi">100</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Population sampler completed: </span><span class="si">{</span><span class="n">sampled</span><span class="si">}</span><span class="s2"> households from target of </span><span class="si">{</span><span class="n">size</span><span class="si">}</span><span class="s2"> sampled&quot;</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">sampled_population</span>
-</code></pre></div></td></tr></table></div>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#__codelineno-0-29">29</a></span>
+<span class="normal"><a href="#__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#__codelineno-0-31">31</a></span>
+<span class="normal"><a href="#__codelineno-0-32">32</a></span>
+<span class="normal"><a href="#__codelineno-0-33">33</a></span>
+<span class="normal"><a href="#__codelineno-0-34">34</a></span>
+<span class="normal"><a href="#__codelineno-0-35">35</a></span>
+<span class="normal"><a href="#__codelineno-0-36">36</a></span>
+<span class="normal"><a href="#__codelineno-0-37">37</a></span>
+<span class="normal"><a href="#__codelineno-0-38">38</a></span>
+<span class="normal"><a href="#__codelineno-0-39">39</a></span>
+<span class="normal"><a href="#__codelineno-0-40">40</a></span>
+<span class="normal"><a href="#__codelineno-0-41">41</a></span>
+<span class="normal"><a href="#__codelineno-0-42">42</a></span>
+<span class="normal"><a href="#__codelineno-0-43">43</a></span>
+<span class="normal"><a href="#__codelineno-0-44">44</a></span>
+<span class="normal"><a href="#__codelineno-0-45">45</a></span>
+<span class="normal"><a href="#__codelineno-0-46">46</a></span>
+<span class="normal"><a href="#__codelineno-0-47">47</a></span>
+<span class="normal"><a href="#__codelineno-0-48">48</a></span>
+<span class="normal"><a href="#__codelineno-0-49">49</a></span>
+<span class="normal"><a href="#__codelineno-0-50">50</a></span>
+<span class="normal"><a href="#__codelineno-0-51">51</a></span>
+<span class="normal"><a href="#__codelineno-0-52">52</a></span>
+<span class="normal"><a href="#__codelineno-0-53">53</a></span>
+<span class="normal"><a href="#__codelineno-0-54">54</a></span>
+<span class="normal"><a href="#__codelineno-0-55">55</a></span>
+<span class="normal"><a href="#__codelineno-0-56">56</a></span>
+<span class="normal"><a href="#__codelineno-0-57">57</a></span>
+<span class="normal"><a href="#__codelineno-0-58">58</a></span>
+<span class="normal"><a href="#__codelineno-0-59">59</a></span>
+<span class="normal"><a href="#__codelineno-0-60">60</a></span>
+<span class="normal"><a href="#__codelineno-0-61">61</a></span>
+<span class="normal"><a href="#__codelineno-0-62">62</a></span>
+<span class="normal"><a href="#__codelineno-0-63">63</a></span>
+<span class="normal"><a href="#__codelineno-0-64">64</a></span>
+<span class="normal"><a href="#__codelineno-0-65">65</a></span>
+<span class="normal"><a href="#__codelineno-0-66">66</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="k">def</span> <span class="nf">sample</span><span class="p">(</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>    <span class="n">population</span><span class="p">:</span> <span class="n">Population</span><span class="p">,</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>    <span class="n">sample</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>    <span class="n">seed</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>    <span class="n">verbose</span><span class="p">:</span> <span class="nb">bool</span><span class="o">=</span><span class="kc">False</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Population</span><span class="p">:</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="sd">    Sample a new population from the existing using a sample size, eg 0.1 for a 10% sample.</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="sd">    Returns a new pam.core.Population object with households sampled based on input freq.</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="sd">    Freq of returned population is set to 1/sample, eg 0.1 -&gt; 10, such that each household</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="sd">    and person represents 10 people from input population.</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="sd">    Note that in the current implementation frequencies are automatically discovered from the population object households,</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="sd">    person and leg weights, in that order. When gathering frequencies, for</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="sd">    example for a household from multiple person in that houshold, the household</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="sd">    frequency is taken as the average person frequency. Similarly for persons</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="sd">    and their legs.</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="sd">    Args:</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="sd">        population (Population): input population object to sample from using population freq</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="sd">        sample (float): sample size of new population, eg 0.1 for a 10% sample</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="sd">        verbose (bool): verbosity</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="sd">    Returns:</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="sd">        pam.core.Population</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29"></a>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a>    <span class="n">sampled_population</span> <span class="o">=</span> <span class="n">Population</span><span class="p">()</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31"></a>    <span class="n">sample_freq</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">sample</span><span class="p">)</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32"></a>    <span class="n">size</span> <span class="o">=</span> <span class="n">population</span><span class="o">.</span><span class="n">size</span> <span class="o">*</span> <span class="n">sample</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a>    <span class="n">sampled</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35"></a>    <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">hh</span> <span class="ow">in</span> <span class="n">population</span><span class="p">:</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36"></a>        <span class="n">sampled_count</span> <span class="o">=</span> <span class="n">freq_sample</span><span class="p">(</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37"></a>            <span class="n">freq</span> <span class="o">=</span> <span class="n">hh</span><span class="o">.</span><span class="n">freq</span><span class="p">,</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38"></a>            <span class="n">sample</span> <span class="o">=</span> <span class="n">sample</span><span class="p">,</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39"></a>            <span class="n">seed</span> <span class="o">=</span> <span class="n">seed</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40"></a>        <span class="p">)</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41"></a>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42"></a>        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sampled_count</span><span class="p">):</span>  <span class="c1"># add sampled hhs (note we provide new unique hid)</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43"></a>            <span class="n">sampled_hh</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">hh</span><span class="p">)</span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44"></a>            <span class="n">sampled_hh</span><span class="o">.</span><span class="n">hid</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">hh</span><span class="o">.</span><span class="n">hid</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45"></a>            <span class="n">sampled_hh</span><span class="o">.</span><span class="n">people</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46"></a>            <span class="n">sampled_hh</span><span class="o">.</span><span class="n">hh_freq</span> <span class="o">=</span> <span class="n">sample_freq</span>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47"></a>
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48"></a>            <span class="c1"># add sampled people (note we provide a new unique pid)</span>
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49"></a>            <span class="k">for</span> <span class="n">pid</span><span class="p">,</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">hh</span><span class="o">.</span><span class="n">people</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50"></a>                <span class="n">sampled_person</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51"></a>                <span class="n">sampled_person</span><span class="o">.</span><span class="n">pid</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pid</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52"></a>                <span class="n">sampled_person</span><span class="o">.</span><span class="n">person_freq</span> <span class="o">=</span> <span class="n">sample_freq</span>
+</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53"></a>                <span class="n">sampled_hh</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">sampled_person</span><span class="p">)</span>
+</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54"></a>
+</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55"></a>            <span class="n">sampled_population</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">sampled_hh</span><span class="p">)</span>
+</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56"></a>
+</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57"></a>        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+</span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58"></a>            <span class="n">sampled</span> <span class="o">+=</span> <span class="n">sampled_count</span>
+</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59"></a>            <span class="n">progress</span> <span class="o">=</span> <span class="n">sampled</span> <span class="o">/</span> <span class="n">size</span>
+</span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60"></a>            <span class="k">if</span> <span class="n">progress</span><span class="o">%</span><span class="mf">0.01</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-0-61"><a id="__codelineno-0-61" name="__codelineno-0-61"></a>                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sampled approx. </span><span class="si">{</span><span class="n">progress</span><span class="o">*</span><span class="mi">100</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+</span><span id="__span-0-62"><a id="__codelineno-0-62" name="__codelineno-0-62"></a>
+</span><span id="__span-0-63"><a id="__codelineno-0-63" name="__codelineno-0-63"></a>    <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+</span><span id="__span-0-64"><a id="__codelineno-0-64" name="__codelineno-0-64"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Population sampler completed: </span><span class="si">{</span><span class="n">sampled</span><span class="si">}</span><span class="s2"> households from target of </span><span class="si">{</span><span class="n">size</span><span class="si">}</span><span class="s2"> sampled&quot;</span><span class="p">)</span>
+</span><span id="__span-0-65"><a id="__codelineno-0-65" name="__codelineno-0-65"></a>
+</span><span id="__span-0-66"><a id="__codelineno-0-66" name="__codelineno-0-66"></a>    <span class="k">return</span> <span class="n">sampled_population</span>
+</span></code></pre></div></td></tr></table></div>
       </details>
   </div>
 
@@ -1857,6 +1862,7 @@ and their legs.</p>
 
 
                 
+
               </article>
             </div>
           
@@ -1891,7 +1897,7 @@ and their legs.</p>
     <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b425cdc4.min.js"></script>
       
     
   </body>

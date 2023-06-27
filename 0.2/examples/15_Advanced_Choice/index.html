@@ -1,3 +1,5 @@
+<!--Add download button to all pages built from jupyter notebooks-->
+
 
 <!doctype html>
 <html lang="en" class="no-js">
@@ -15,11 +17,11 @@
         <link rel="next" href="../../get_involved/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.17">
     
     
       
-        <title>Advanced Choice - Population Activity Modeller (PAM)</title>
+        <title>Applying a location and mode choice model to populations - Population Activity Modeller (PAM)</title>
       
     
     
@@ -65,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction" class="md-skip">
+        <a href="#applying-a-location-and-mode-choice-model-to-populations" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Advanced Choice
+              Applying a location and mode choice model to populations
             
           </span>
         </div>
@@ -319,7 +321,7 @@
   
     <li class="md-nav__item">
       <a href="../01_PAM_Getting_Started/" class="md-nav__link">
-        PAM Getting Started
+        PAM - Getting Started
       </a>
     </li>
   
@@ -347,7 +349,7 @@
   
     <li class="md-nav__item">
       <a href="../03_Example_Generate_Random_Population/" class="md-nav__link">
-        Example Generate Random Population
+        Generating a random population for West London
       </a>
     </li>
   
@@ -361,7 +363,7 @@
   
     <li class="md-nav__item">
       <a href="../04_Example_Ingest_NTS_Diaries/" class="md-nav__link">
-        Example Ingest NTS Diaries
+        Converting the National Travel Survey into a Simple MATSim Format Population
       </a>
     </li>
   
@@ -375,7 +377,7 @@
   
     <li class="md-nav__item">
       <a href="../05_PAM_Policies_Walk_Through/" class="md-nav__link">
-        PAM Policies Walk Through
+        Modifying the population using simple policies
       </a>
     </li>
   
@@ -389,7 +391,7 @@
   
     <li class="md-nav__item">
       <a href="../06_PAM_Complex_Policies/" class="md-nav__link">
-        PAM Complex Policies
+        Modifying the population using complex policies
       </a>
     </li>
   
@@ -403,7 +405,7 @@
   
     <li class="md-nav__item">
       <a href="../07_PAM_Point_Sampling/" class="md-nav__link">
-        PAM Point Sampling
+        Geometry Sampling in PAM
       </a>
     </li>
   
@@ -417,7 +419,7 @@
   
     <li class="md-nav__item">
       <a href="../08_PAM_Population_Activity_Plots/" class="md-nav__link">
-        PAM Population Activity Plots
+        Plotting activity times
       </a>
     </li>
   
@@ -431,7 +433,7 @@
   
     <li class="md-nav__item">
       <a href="../09_Travel_Plots/" class="md-nav__link">
-        Travel Plots
+        Plot Activity Plan Travel
       </a>
     </li>
   
@@ -445,7 +447,7 @@
   
     <li class="md-nav__item">
       <a href="../10_Advanced_Spatial-Sampling_Demo/" class="md-nav__link">
-        Advanced Spatial-Sampling Demo
+        Facility sampling
       </a>
     </li>
   
@@ -459,7 +461,7 @@
   
     <li class="md-nav__item">
       <a href="../11_Advanced_Plan_Rescheduling/" class="md-nav__link">
-        Advanced Plan Rescheduling
+        Plan rescheduling
       </a>
     </li>
   
@@ -473,7 +475,7 @@
   
     <li class="md-nav__item">
       <a href="../12_Advanced_Adding_Vehicles/" class="md-nav__link">
-        Advanced Adding Vehicles
+        Adding vehicles to the plans
       </a>
     </li>
   
@@ -487,7 +489,7 @@
   
     <li class="md-nav__item">
       <a href="../13_Advanced_Freight_Synthesis/" class="md-nav__link">
-        Advanced Freight Synthesis
+        Freight synthesis
       </a>
     </li>
   
@@ -501,7 +503,7 @@
   
     <li class="md-nav__item">
       <a href="../14_Advanced_Plan_Cropping/" class="md-nav__link">
-        Advanced Plan Cropping
+        Plan cropping
       </a>
     </li>
   
@@ -523,9 +525,47 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Applying a location and mode choice model to populations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        Advanced Choice
+        Applying a location and mode choice model to populations
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choice-model" class="md-nav__link">
+    Choice model
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -603,22 +643,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/scoring/" class="md-nav__link">
-        pam.scoring
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../api/vehicle/" class="md-nav__link">
-        pam.vehicle
+      <a href="../../api/core/" class="md-nav__link">
+        pam.core
       </a>
     </li>
   
@@ -645,8 +671,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/core/" class="md-nav__link">
-        pam.core
+      <a href="../../api/scoring/" class="md-nav__link">
+        pam.scoring
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/utils/" class="md-nav__link">
+        pam.utils
       </a>
     </li>
   
@@ -673,8 +713,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/utils/" class="md-nav__link">
-        pam.utils
+      <a href="../../api/vehicle/" class="md-nav__link">
+        pam.vehicle
       </a>
     </li>
   
@@ -697,14 +737,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_7" id="__nav_9_7_label" tabindex="0">
-          pam.write
+          pam.planner
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_7">
           <span class="md-nav__icon md-icon"></span>
-          pam.write
+          pam.planner
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -714,8 +754,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/write/matrices/" class="md-nav__link">
-        pam.write.matrices
+      <a href="../../api/planner/od/" class="md-nav__link">
+        pam.planner.od
       </a>
     </li>
   
@@ -728,8 +768,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/write/diary/" class="md-nav__link">
-        pam.write.diary
+      <a href="../../api/planner/encoder/" class="md-nav__link">
+        pam.planner.encoder
       </a>
     </li>
   
@@ -742,8 +782,50 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/write/matsim/" class="md-nav__link">
-        pam.write.matsim
+      <a href="../../api/planner/choice_location/" class="md-nav__link">
+        pam.planner.choice_location
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/planner/clustering/" class="md-nav__link">
+        pam.planner.clustering
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/planner/utils_planner/" class="md-nav__link">
+        pam.planner.utils_planner
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/planner/zones/" class="md-nav__link">
+        pam.planner.zones
       </a>
     </li>
   
@@ -773,14 +855,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_8" id="__nav_9_8_label" tabindex="0">
-          pam.plot
+          pam.operations
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_8_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_8">
           <span class="md-nav__icon md-icon"></span>
-          pam.plot
+          pam.operations
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -790,8 +872,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/plot/stats/" class="md-nav__link">
-        pam.plot.stats
+      <a href="../../api/operations/combine/" class="md-nav__link">
+        pam.operations.combine
       </a>
     </li>
   
@@ -804,8 +886,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/plot/plans/" class="md-nav__link">
-        pam.plot.plans
+      <a href="../../api/operations/cropping/" class="md-nav__link">
+        pam.operations.cropping
       </a>
     </li>
   
@@ -835,14 +917,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_9" id="__nav_9_9_label" tabindex="0">
-          pam.optimise
+          pam.write
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_9_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_9">
           <span class="md-nav__icon md-icon"></span>
-          pam.optimise
+          pam.write
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -852,8 +934,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/optimise/grid/" class="md-nav__link">
-        pam.optimise.grid
+      <a href="../../api/write/diary/" class="md-nav__link">
+        pam.write.diary
       </a>
     </li>
   
@@ -866,8 +948,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/optimise/random/" class="md-nav__link">
-        pam.optimise.random
+      <a href="../../api/write/matsim/" class="md-nav__link">
+        pam.write.matsim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/write/matrices/" class="md-nav__link">
+        pam.write.matrices
       </a>
     </li>
   
@@ -897,14 +993,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_10" id="__nav_9_10_label" tabindex="0">
-          pam.array
+          pam.report
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_10_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_10">
           <span class="md-nav__icon md-icon"></span>
-          pam.array
+          pam.report
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -914,8 +1010,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/array/encode/" class="md-nav__link">
-        pam.array.encode
+      <a href="../../api/report/summary/" class="md-nav__link">
+        pam.report.summary
       </a>
     </li>
   
@@ -928,8 +1024,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/array/distance/" class="md-nav__link">
-        pam.array.distance
+      <a href="../../api/report/benchmarks/" class="md-nav__link">
+        pam.report.benchmarks
       </a>
     </li>
   
@@ -942,8 +1038,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/array/decode/" class="md-nav__link">
-        pam.array.decode
+      <a href="../../api/report/stringify/" class="md-nav__link">
+        pam.report.stringify
       </a>
     </li>
   
@@ -973,14 +1069,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_11" id="__nav_9_11_label" tabindex="0">
-          pam.planner
+          pam.policy
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_11_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_11">
           <span class="md-nav__icon md-icon"></span>
-          pam.planner
+          pam.policy
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -990,8 +1086,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/planner/od/" class="md-nav__link">
-        pam.planner.od
+      <a href="../../api/policy/filters/" class="md-nav__link">
+        pam.policy.filters
       </a>
     </li>
   
@@ -1004,8 +1100,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/planner/clustering/" class="md-nav__link">
-        pam.planner.clustering
+      <a href="../../api/policy/policies/" class="md-nav__link">
+        pam.policy.policies
       </a>
     </li>
   
@@ -1018,8 +1114,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/planner/encoder/" class="md-nav__link">
-        pam.planner.encoder
+      <a href="../../api/policy/modifiers/" class="md-nav__link">
+        pam.policy.modifiers
       </a>
     </li>
   
@@ -1032,36 +1128,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/planner/utils_planner/" class="md-nav__link">
-        pam.planner.utils_planner
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../api/planner/choice_location/" class="md-nav__link">
-        pam.planner.choice_location
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../api/planner/zones/" class="md-nav__link">
-        pam.planner.zones
+      <a href="../../api/policy/probability_samplers/" class="md-nav__link">
+        pam.policy.probability_samplers
       </a>
     </li>
   
@@ -1153,14 +1221,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_13" id="__nav_9_13_label" tabindex="0">
-          pam.operations
+          pam.optimise
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_13_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_13">
           <span class="md-nav__icon md-icon"></span>
-          pam.operations
+          pam.optimise
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1170,8 +1238,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/operations/cropping/" class="md-nav__link">
-        pam.operations.cropping
+      <a href="../../api/optimise/random/" class="md-nav__link">
+        pam.optimise.random
       </a>
     </li>
   
@@ -1184,8 +1252,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/operations/combine/" class="md-nav__link">
-        pam.operations.combine
+      <a href="../../api/optimise/grid/" class="md-nav__link">
+        pam.optimise.grid
       </a>
     </li>
   
@@ -1215,14 +1283,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_14" id="__nav_9_14_label" tabindex="0">
-          pam.samplers
+          pam.array
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_14_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_14">
           <span class="md-nav__icon md-icon"></span>
-          pam.samplers
+          pam.array
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1232,8 +1300,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/samplers/time/" class="md-nav__link">
-        pam.samplers.time
+      <a href="../../api/array/decode/" class="md-nav__link">
+        pam.array.decode
       </a>
     </li>
   
@@ -1246,8 +1314,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/samplers/attributes/" class="md-nav__link">
-        pam.samplers.attributes
+      <a href="../../api/array/distance/" class="md-nav__link">
+        pam.array.distance
       </a>
     </li>
   
@@ -1260,64 +1328,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/samplers/population/" class="md-nav__link">
-        pam.samplers.population
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../api/samplers/spatial/" class="md-nav__link">
-        pam.samplers.spatial
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../api/samplers/facility/" class="md-nav__link">
-        pam.samplers.facility
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../api/samplers/basic/" class="md-nav__link">
-        pam.samplers.basic
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../api/samplers/tour/" class="md-nav__link">
-        pam.samplers.tour
+      <a href="../../api/array/encode/" class="md-nav__link">
+        pam.array.encode
       </a>
     </li>
   
@@ -1347,14 +1359,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_15" id="__nav_9_15_label" tabindex="0">
-          pam.report
+          pam.samplers
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_15_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_15">
           <span class="md-nav__icon md-icon"></span>
-          pam.report
+          pam.samplers
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1364,8 +1376,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/report/stringify/" class="md-nav__link">
-        pam.report.stringify
+      <a href="../../api/samplers/tour/" class="md-nav__link">
+        pam.samplers.tour
       </a>
     </li>
   
@@ -1378,8 +1390,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/report/summary/" class="md-nav__link">
-        pam.report.summary
+      <a href="../../api/samplers/attributes/" class="md-nav__link">
+        pam.samplers.attributes
       </a>
     </li>
   
@@ -1392,8 +1404,64 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/report/benchmarks/" class="md-nav__link">
-        pam.report.benchmarks
+      <a href="../../api/samplers/spatial/" class="md-nav__link">
+        pam.samplers.spatial
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/samplers/time/" class="md-nav__link">
+        pam.samplers.time
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/samplers/basic/" class="md-nav__link">
+        pam.samplers.basic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/samplers/facility/" class="md-nav__link">
+        pam.samplers.facility
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/samplers/population/" class="md-nav__link">
+        pam.samplers.population
       </a>
     </li>
   
@@ -1423,14 +1491,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_16" id="__nav_9_16_label" tabindex="0">
-          pam.policy
+          pam.plot
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_16_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_16">
           <span class="md-nav__icon md-icon"></span>
-          pam.policy
+          pam.plot
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1440,8 +1508,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/policy/probability_samplers/" class="md-nav__link">
-        pam.policy.probability_samplers
+      <a href="../../api/plot/plans/" class="md-nav__link">
+        pam.plot.plans
       </a>
     </li>
   
@@ -1454,36 +1522,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/policy/modifiers/" class="md-nav__link">
-        pam.policy.modifiers
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../api/policy/policies/" class="md-nav__link">
-        pam.policy.policies
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../api/policy/filters/" class="md-nav__link">
-        pam.policy.filters
+      <a href="../../api/plot/stats/" class="md-nav__link">
+        pam.plot.stats
       </a>
     </li>
   
@@ -1523,6 +1563,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choice-model" class="md-nav__link">
+    Choice model
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1533,6 +1595,13 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
+
+<a href="15_Advanced_Choice.ipynb" title="Download Notebook" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7Z"/></svg>
+</a>
+
+
+
                   
 
   
@@ -2576,48 +2645,14 @@ Licensed under the Apache License, Version 2.0.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="introduction">Introduction<a class="anchor-link" href="#introduction">&#182;</a></h1>
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=eaa3f397" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>This notebook applies a simple location and mode choice model to a PAM population.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=d8729af8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="applying-a-location-and-mode-choice-model-to-populations">Applying a location and mode choice model to populations<a class="anchor-link" href="#applying-a-location-and-mode-choice-model-to-populations">&#182;</a></h1><p>This notebook applies a simple location and mode choice model to a PAM population.</p>
 <p>The <code>pam.planner.choice.ChoiceMNL</code> class allows the user to apply an MNL specification for selecting the location of activities and the mode for accessing them, given person characteristics, network conditions and/or zone attraction data.</p>
 <p>The typical workflow goes as follows:</p>
-<pre><code>choice_model = ChoiceMNL(population, od, zones) # initialize the model and point to the data objects 
-choice_model.configure(u, scope) # configure the model by specifying a utility function and the scope of application.
-choice_model.apply() # apply the model and update the population with the results.
+<div class="highlight"><pre><span></span><span class="n">choice_model</span> <span class="o">=</span> <span class="n">ChoiceMNL</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="n">od</span><span class="p">,</span> <span class="n">zones</span><span class="p">)</span> <span class="c1"># initialize the model and point to the data objects </span>
+<span class="n">choice_model</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">scope</span><span class="p">)</span> <span class="c1"># configure the model by specifying a utility function and the scope of application.</span>
+<span class="n">choice_model</span><span class="o">.</span><span class="n">apply</span><span class="p">()</span> <span class="c1"># apply the model and update the population with the results.</span>
+</pre></div>
 
-</code></pre>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=8a484a5b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="dependencies">Dependencies<a class="anchor-link" href="#dependencies">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -2642,67 +2677,37 @@ choice_model.apply() # apply the model and update the population with the result
                     </div>
                 </clipboard-copy>
             </div>
-            <div class="highlight-ipynb hl-python "><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">pam.read</span> <span class="kn">import</span> <span class="n">read_matsim</span>
-<span class="kn">from</span> <span class="nn">pam.planner</span> <span class="kn">import</span> <span class="n">choice_location</span> <span class="k">as</span> <span class="n">choice</span>
-<span class="kn">from</span> <span class="nn">pam.operations.cropping</span> <span class="kn">import</span> <span class="n">link_population</span>
-<span class="kn">from</span> <span class="nn">pam.planner.od</span> <span class="kn">import</span> <span class="n">OD</span><span class="p">,</span> <span class="n">Labels</span><span class="p">,</span> <span class="n">ODMatrix</span><span class="p">,</span> <span class="n">ODFactory</span>
-<span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+            <div class="highlight-ipynb hl-python "><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">prettytable</span> <span class="kn">import</span> <span class="n">PrettyTable</span>
 
-<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">pam.operations.cropping</span> <span class="kn">import</span> <span class="n">link_population</span>
+<span class="kn">from</span> <span class="nn">pam.planner</span> <span class="kn">import</span> <span class="n">choice_location</span> <span class="k">as</span> <span class="n">choice</span>
+<span class="kn">from</span> <span class="nn">pam.planner.od</span> <span class="kn">import</span> <span class="n">ODFactory</span><span class="p">,</span> <span class="n">ODMatrix</span>
+<span class="kn">from</span> <span class="nn">pam.read</span> <span class="kn">import</span> <span class="n">read_matsim</span>
+
 <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
 <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
-<div id="cell-1" class="clipboard-copy-txt">import pandas as pd
-from pam.read import read_matsim
-from pam.planner import choice_location as choice
-from pam.operations.cropping import link_population
-from pam.planner.od import OD, Labels, ODMatrix, ODFactory
-import random
-import numpy as np
+<div id="cell-1" class="clipboard-copy-txt">import logging
 import os
+import random
+
+import numpy as np
+import pandas as pd
 from prettytable import PrettyTable
 
-import logging
+from pam.operations.cropping import link_population
+from pam.planner import choice_location as choice
+from pam.planner.od import ODFactory, ODMatrix
+from pam.read import read_matsim
+
 logging.basicConfig(level=logging.DEBUG)
 random.seed(0)</div>
-        
-        </div>
-    </div>
-
-</div>
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=4154e47e" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="CodeMirror cm-s-jupyter">
-            <div class="zeroclipboard-container">
-                <clipboard-copy for="cell-2">
-                <div>
-                    <span class="notice" hidden>Copied!</span>
-                    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                        <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
-                        <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                    </svg>
-                    </div>
-                </clipboard-copy>
-            </div>
-            <div class="highlight-ipynb hl-python "><pre><span></span><span class="o">%</span><span class="n">load_ext</span> <span class="n">autoreload</span>
-<span class="o">%</span><span class="n">autoreload</span> <span class="mi">2</span>
-</pre></div>
-<div id="cell-2" class="clipboard-copy-txt">%load_ext autoreload
-%autoreload 2</div>
         
         </div>
     </div>
@@ -2718,7 +2723,7 @@ random.seed(0)</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="data">Data<a class="anchor-link" href="#data">&#182;</a></h1>
+<h2 id="data">Data<a class="anchor-link" href="#data">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -2740,6 +2745,46 @@ random.seed(0)</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+            <div class="zeroclipboard-container">
+                <clipboard-copy for="cell-2">
+                <div>
+                    <span class="notice" hidden>Copied!</span>
+                    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                        <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                        <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                    </svg>
+                    </div>
+                </clipboard-copy>
+            </div>
+            <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">population</span> <span class="o">=</span> <span class="n">read_matsim</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;tests&quot;</span><span class="p">,</span> <span class="s2">&quot;test_data&quot;</span><span class="p">,</span> <span class="s2">&quot;test_matsim_plansv12.xml&quot;</span><span class="p">))</span>
+<span class="n">link_population</span><span class="p">(</span><span class="n">population</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">hid</span><span class="p">,</span> <span class="n">pid</span><span class="p">,</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">population</span><span class="o">.</span><span class="n">people</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">act</span> <span class="ow">in</span> <span class="n">person</span><span class="o">.</span><span class="n">activities</span><span class="p">:</span>
+        <span class="n">act</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">area</span> <span class="o">=</span> <span class="s2">&quot;a&quot;</span>
+</pre></div>
+<div id="cell-2" class="clipboard-copy-txt">population = read_matsim(os.path.join("..", "tests", "test_data", "test_matsim_plansv12.xml"))
+link_population(population)
+for hid, pid, person in population.people():
+    for act in person.activities:
+        act.location.area = "a"</div>
+        
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div id="cell-id=e1163184" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
@@ -2755,71 +2800,33 @@ random.seed(0)</div>
                     </div>
                 </clipboard-copy>
             </div>
-            <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">population</span> <span class="o">=</span> <span class="n">read_matsim</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="s1">&#39;tests&#39;</span><span class="p">,</span> <span class="s1">&#39;test_data&#39;</span><span class="p">,</span> <span class="s1">&#39;test_matsim_plansv12.xml&#39;</span><span class="p">))</span>
-<span class="n">link_population</span><span class="p">(</span><span class="n">population</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">hid</span><span class="p">,</span> <span class="n">pid</span><span class="p">,</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">population</span><span class="o">.</span><span class="n">people</span><span class="p">():</span>
-    <span class="k">for</span> <span class="n">act</span> <span class="ow">in</span> <span class="n">person</span><span class="o">.</span><span class="n">activities</span><span class="p">:</span>
-        <span class="n">act</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">area</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span>
-</pre></div>
-<div id="cell-3" class="clipboard-copy-txt">population = read_matsim(os.path.join('..', 'tests', 'test_data', 'test_matsim_plansv12.xml'))
-link_population(population)
-for hid, pid, person in population.people():
-    for act in person.activities:
-        act.location.area = 'a' </div>
-        
-        </div>
-    </div>
-
-</div>
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div id="cell-id=e1163184" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="CodeMirror cm-s-jupyter">
-            <div class="zeroclipboard-container">
-                <clipboard-copy for="cell-4">
-                <div>
-                    <span class="notice" hidden>Copied!</span>
-                    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                        <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
-                        <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                    </svg>
-                    </div>
-                </clipboard-copy>
-            </div>
-            <div class="highlight-ipynb hl-python "><pre><span></span><span class="k">def</span> <span class="nf">print_activity_locs</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="n">act_scope</span><span class="o">=</span><span class="s1">&#39;work&#39;</span><span class="p">):</span>
-    <span class="n">summary</span> <span class="o">=</span> <span class="n">PrettyTable</span><span class="p">([</span><span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;seq&#39;</span><span class="p">,</span> <span class="s1">&#39;location&#39;</span><span class="p">,</span> <span class="s1">&#39;mode&#39;</span><span class="p">])</span>
+            <div class="highlight-ipynb hl-python "><pre><span></span><span class="k">def</span> <span class="nf">print_activity_locs</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="n">act_scope</span><span class="o">=</span><span class="s2">&quot;work&quot;</span><span class="p">):</span>
+    <span class="n">summary</span> <span class="o">=</span> <span class="n">PrettyTable</span><span class="p">([</span><span class="s2">&quot;pid&quot;</span><span class="p">,</span> <span class="s2">&quot;seq&quot;</span><span class="p">,</span> <span class="s2">&quot;location&quot;</span><span class="p">,</span> <span class="s2">&quot;mode&quot;</span><span class="p">])</span>
     <span class="k">for</span> <span class="n">hid</span><span class="p">,</span> <span class="n">pid</span><span class="p">,</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">population</span><span class="o">.</span><span class="n">people</span><span class="p">():</span>
         <span class="k">for</span> <span class="n">seq</span><span class="p">,</span> <span class="n">act</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">plan</span><span class="o">.</span><span class="n">activities</span><span class="p">):</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">act</span><span class="o">.</span><span class="n">act</span><span class="o">==</span><span class="n">act_scope</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">act_scope</span><span class="o">==</span><span class="s1">&#39;all&#39;</span><span class="p">):</span>
-                <span class="n">trmode</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">previous</span><span class="o">.</span><span class="n">mode</span> <span class="k">if</span> <span class="n">act</span><span class="o">.</span><span class="n">previous</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s1">&#39;NA&#39;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">act</span><span class="o">.</span><span class="n">act</span> <span class="o">==</span> <span class="n">act_scope</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">act_scope</span> <span class="o">==</span> <span class="s2">&quot;all&quot;</span><span class="p">):</span>
+                <span class="n">trmode</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">previous</span><span class="o">.</span><span class="n">mode</span> <span class="k">if</span> <span class="n">act</span><span class="o">.</span><span class="n">previous</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s2">&quot;NA&quot;</span>
                 <span class="n">summary</span><span class="o">.</span><span class="n">add_row</span><span class="p">([</span><span class="n">pid</span><span class="p">,</span> <span class="n">seq</span><span class="p">,</span> <span class="n">act</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">area</span><span class="p">,</span> <span class="n">trmode</span><span class="p">])</span>
-                
+
     <span class="nb">print</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Work locations and travel modes:&#39;</span><span class="p">)</span>
-<span class="n">print_activity_locs</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="n">act_scope</span><span class="o">=</span><span class="s1">&#39;work&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Work locations and travel modes:&quot;</span><span class="p">)</span>
+<span class="n">print_activity_locs</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="n">act_scope</span><span class="o">=</span><span class="s2">&quot;work&quot;</span><span class="p">)</span>
 </pre></div>
-<div id="cell-4" class="clipboard-copy-txt">def print_activity_locs(population, act_scope='work'):
-    summary = PrettyTable(['pid', 'seq', 'location', 'mode'])
+<div id="cell-3" class="clipboard-copy-txt">def print_activity_locs(population, act_scope="work"):
+    summary = PrettyTable(["pid", "seq", "location", "mode"])
     for hid, pid, person in population.people():
         for seq, act in enumerate(person.plan.activities):
-            if (act.act==act_scope) or (act_scope=='all'):
-                trmode = act.previous.mode if act.previous is not None else 'NA'
+            if (act.act == act_scope) or (act_scope == "all"):
+                trmode = act.previous.mode if act.previous is not None else "NA"
                 summary.add_row([pid, seq, act.location.area, trmode])
-                
+
     print(summary)
 
-print('Work locations and travel modes:')
-print_activity_locs(population, act_scope='work')</div>
+
+print("Work locations and travel modes:")
+print_activity_locs(population, act_scope="work")</div>
         
         </div>
     </div>
@@ -2876,12 +2883,12 @@ print_activity_locs(population, act_scope='work')</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
             <div class="zeroclipboard-container">
-                <clipboard-copy for="cell-5">
+                <clipboard-copy for="cell-4">
                 <div>
                     <span class="notice" hidden>Copied!</span>
                     <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2891,22 +2898,10 @@ print_activity_locs(population, act_scope='work')</div>
                     </div>
                 </clipboard-copy>
             </div>
-            <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">data_zones</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
-    <span class="p">{</span>
-        <span class="s1">&#39;zone&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;jobs&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">],</span>
-        <span class="s1">&#39;schools&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;zone&#39;</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">data_zones</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;zone&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">],</span> <span class="s2">&quot;jobs&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">],</span> <span class="s2">&quot;schools&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]})</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;zone&quot;</span><span class="p">)</span>
 <span class="n">data_zones</span>
 </pre></div>
-<div id="cell-5" class="clipboard-copy-txt">data_zones = pd.DataFrame(
-    {
-        'zone': ['a', 'b'],
-        'jobs': [100, 200],
-        'schools': [3, 1]
-    }
-).set_index('zone')
+<div id="cell-4" class="clipboard-copy-txt">data_zones = pd.DataFrame({"zone": ["a", "b"], "jobs": [100, 200], "schools": [3, 1]}).set_index("zone")
 data_zones</div>
         
         </div>
@@ -2923,7 +2918,7 @@ data_zones</div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
 
 
 
@@ -2996,12 +2991,12 @@ data_zones</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
             <div class="zeroclipboard-container">
-                <clipboard-copy for="cell-6">
+                <clipboard-copy for="cell-5">
                 <div>
                     <span class="notice" hidden>Copied!</span>
                     <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -3011,22 +3006,26 @@ data_zones</div>
                     </div>
                 </clipboard-copy>
             </div>
-            <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">zone_labels</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="n">od</span> <span class="o">=</span> <span class="n">ODFactory</span><span class="o">.</span><span class="n">from_matrices</span><span class="p">([</span>
-    <span class="n">ODMatrix</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="n">zone_labels</span><span class="p">,</span> <span class="n">zone_labels</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">20</span><span class="p">]])),</span>
-    <span class="n">ODMatrix</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;bus&#39;</span><span class="p">,</span> <span class="n">zone_labels</span><span class="p">,</span> <span class="n">zone_labels</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">45</span><span class="p">],</span> <span class="p">[</span><span class="mi">45</span><span class="p">,</span> <span class="mi">30</span><span class="p">]])),</span>
-    <span class="n">ODMatrix</span><span class="p">(</span><span class="s1">&#39;distance&#39;</span><span class="p">,</span> <span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="n">zone_labels</span><span class="p">,</span> <span class="n">zone_labels</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])),</span>
-    <span class="n">ODMatrix</span><span class="p">(</span><span class="s1">&#39;distance&#39;</span><span class="p">,</span> <span class="s1">&#39;bus&#39;</span><span class="p">,</span> <span class="n">zone_labels</span><span class="p">,</span> <span class="n">zone_labels</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]))</span>    
-<span class="p">])</span>
+            <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">zone_labels</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">)</span>
+<span class="n">od</span> <span class="o">=</span> <span class="n">ODFactory</span><span class="o">.</span><span class="n">from_matrices</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="n">ODMatrix</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;car&quot;</span><span class="p">,</span> <span class="n">zone_labels</span><span class="p">,</span> <span class="n">zone_labels</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">20</span><span class="p">]])),</span>
+        <span class="n">ODMatrix</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;bus&quot;</span><span class="p">,</span> <span class="n">zone_labels</span><span class="p">,</span> <span class="n">zone_labels</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">45</span><span class="p">],</span> <span class="p">[</span><span class="mi">45</span><span class="p">,</span> <span class="mi">30</span><span class="p">]])),</span>
+        <span class="n">ODMatrix</span><span class="p">(</span><span class="s2">&quot;distance&quot;</span><span class="p">,</span> <span class="s2">&quot;car&quot;</span><span class="p">,</span> <span class="n">zone_labels</span><span class="p">,</span> <span class="n">zone_labels</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])),</span>
+        <span class="n">ODMatrix</span><span class="p">(</span><span class="s2">&quot;distance&quot;</span><span class="p">,</span> <span class="s2">&quot;bus&quot;</span><span class="p">,</span> <span class="n">zone_labels</span><span class="p">,</span> <span class="n">zone_labels</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])),</span>
+    <span class="p">]</span>
+<span class="p">)</span>
 <span class="n">od</span>
 </pre></div>
-<div id="cell-6" class="clipboard-copy-txt">zone_labels = ('a', 'b')
-od = ODFactory.from_matrices([
-    ODMatrix('time', 'car', zone_labels, zone_labels, np.array([[20, 40], [40, 20]])),
-    ODMatrix('time', 'bus', zone_labels, zone_labels, np.array([[30, 45], [45, 30]])),
-    ODMatrix('distance', 'car', zone_labels, zone_labels, np.array([[5, 8], [8, 5]])),
-    ODMatrix('distance', 'bus', zone_labels, zone_labels, np.array([[5, 9], [9, 5]]))    
-])
+<div id="cell-5" class="clipboard-copy-txt">zone_labels = ("a", "b")
+od = ODFactory.from_matrices(
+    [
+        ODMatrix("time", "car", zone_labels, zone_labels, np.array([[20, 40], [40, 20]])),
+        ODMatrix("time", "bus", zone_labels, zone_labels, np.array([[30, 45], [45, 30]])),
+        ODMatrix("distance", "car", zone_labels, zone_labels, np.array([[5, 8], [8, 5]])),
+        ODMatrix("distance", "bus", zone_labels, zone_labels, np.array([[5, 9], [9, 5]])),
+    ]
+)
 od</div>
         
         </div>
@@ -3043,7 +3042,7 @@ od</div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
 
 
 
@@ -3096,12 +3095,12 @@ distance - bus:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
             <div class="zeroclipboard-container">
-                <clipboard-copy for="cell-7">
+                <clipboard-copy for="cell-6">
                 <div>
                     <span class="notice" hidden>Copied!</span>
                     <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -3111,9 +3110,9 @@ distance - bus:
                     </div>
                 </clipboard-copy>
             </div>
-            <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">od</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;bus&#39;</span><span class="p">]</span>
+            <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">od</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;bus&quot;</span><span class="p">]</span>
 </pre></div>
-<div id="cell-7" class="clipboard-copy-txt">od['time', 'a', 'b', 'bus']</div>
+<div id="cell-6" class="clipboard-copy-txt">od["time", "a", "b", "bus"]</div>
         
         </div>
     </div>
@@ -3129,7 +3128,7 @@ distance - bus:
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
 
 
 
@@ -3152,7 +3151,7 @@ distance - bus:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="choice-model">Choice model<a class="anchor-link" href="#choice-model">&#182;</a></h1>
+<h2 id="choice-model">Choice model<a class="anchor-link" href="#choice-model">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -3162,12 +3161,12 @@ distance - bus:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
             <div class="zeroclipboard-container">
-                <clipboard-copy for="cell-8">
+                <clipboard-copy for="cell-7">
                 <div>
                     <span class="notice" hidden>Copied!</span>
                     <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -3179,7 +3178,7 @@ distance - bus:
             </div>
             <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">planner</span> <span class="o">=</span> <span class="n">choice</span><span class="o">.</span><span class="n">ChoiceMNL</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="n">od</span><span class="p">,</span> <span class="n">data_zones</span><span class="p">)</span>
 </pre></div>
-<div id="cell-8" class="clipboard-copy-txt">planner = choice.ChoiceMNL(population, od, data_zones)</div>
+<div id="cell-7" class="clipboard-copy-txt">planner = choice.ChoiceMNL(population, od, data_zones)</div>
         
         </div>
     </div>
@@ -3200,7 +3199,7 @@ distance - bus:
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
 <pre>INFO:pam.planner.choice_location:Updated model configuration
-INFO:pam.planner.choice_location:ChoiceConfiguration(u=None, scope=None, func_probabilities=&lt;function calculate_mnl_probabilities at 0x7f7a192acca0&gt;, func_sampling=&lt;function sample_weighted at 0x7f7a192acd30&gt;)
+INFO:pam.planner.choice_location:ChoiceConfiguration(u=None, scope=None, func_probabilities=&lt;function calculate_mnl_probabilities at 0x1207f6ca0&gt;, func_sampling=&lt;function sample_weighted at 0x1207f6e50&gt;)
 </pre>
 </div>
 </div>
@@ -3234,12 +3233,12 @@ INFO:pam.planner.choice_location:ChoiceConfiguration(u=None, scope=None, func_pr
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
             <div class="zeroclipboard-container">
-                <clipboard-copy for="cell-9">
+                <clipboard-copy for="cell-8">
                 <div>
                     <span class="notice" hidden>Copied!</span>
                     <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -3250,9 +3249,9 @@ INFO:pam.planner.choice_location:ChoiceConfiguration(u=None, scope=None, func_pr
                 </clipboard-copy>
             </div>
             <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">scope</span> <span class="o">=</span> <span class="s2">&quot;act.act==&#39;work&#39;&quot;</span>
-<span class="n">asc</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># one value for each mode, 0-&gt;car, -1-&gt;</span>
-<span class="n">asc_shift_poor</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="c1"># one value for each mode</span>
-<span class="n">beta_time</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.07</span><span class="p">]</span> <span class="c1"># one value for each mode</span>
+<span class="n">asc</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># one value for each mode, 0-&gt;car, -1-&gt;</span>
+<span class="n">asc_shift_poor</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>  <span class="c1"># one value for each mode</span>
+<span class="n">beta_time</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.07</span><span class="p">]</span>  <span class="c1"># one value for each mode</span>
 <span class="n">beta_zones</span> <span class="o">=</span> <span class="mf">0.4</span>
 <span class="n">u</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot; </span><span class="se">\</span>
 <span class="s2">    </span><span class="si">{</span><span class="n">asc</span><span class="si">}</span><span class="s2"> + </span><span class="se">\</span>
@@ -3264,10 +3263,10 @@ INFO:pam.planner.choice_location:ChoiceConfiguration(u=None, scope=None, func_pr
 <span class="n">planner</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">u</span><span class="o">=</span><span class="n">u</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="n">scope</span><span class="p">)</span>
 <span class="c1"># print(&#39;Utility specification: \n&#39;, planner.u)</span>
 </pre></div>
-<div id="cell-9" class="clipboard-copy-txt">scope = "act.act=='work'"
-asc = [0, -1] # one value for each mode, 0->car, -1->
-asc_shift_poor = [0, 2] # one value for each mode
-beta_time = [-0.05, -0.07] # one value for each mode
+<div id="cell-8" class="clipboard-copy-txt">scope = "act.act=='work'"
+asc = [0, -1]  # one value for each mode, 0->car, -1->
+asc_shift_poor = [0, 2]  # one value for each mode
+beta_time = [-0.05, -0.07]  # one value for each mode
 beta_zones = 0.4
 u = f""" \
     {asc} + \
@@ -3298,7 +3297,7 @@ planner.configure(u=u, scope=scope)
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
 <pre>INFO:pam.planner.choice_location:Updated model configuration
-INFO:pam.planner.choice_location:ChoiceConfiguration(u=&#34;[0,-1]+(np.array([0,2])*(person.attributes[&#39;subpopulation&#39;]==&#39;poor&#39;))+([-0.05,-0.07]*od[&#39;time&#39;,person.home.area])+(0.4*np.log(zones[&#39;jobs&#39;]))\n&#34;, scope=&#34;act.act==&#39;work&#39;&#34;, func_probabilities=&lt;function calculate_mnl_probabilities at 0x7f7a192acca0&gt;, func_sampling=&lt;function sample_weighted at 0x7f7a192acd30&gt;)
+INFO:pam.planner.choice_location:ChoiceConfiguration(u=&#34;[0,-1]+(np.array([0,2])*(person.attributes[&#39;subpopulation&#39;]==&#39;poor&#39;))+([-0.05,-0.07]*od[&#39;time&#39;,person.home.area])+(0.4*np.log(zones[&#39;jobs&#39;]))\n&#34;, scope=&#34;act.act==&#39;work&#39;&#34;, func_probabilities=&lt;function calculate_mnl_probabilities at 0x1207f6ca0&gt;, func_sampling=&lt;function sample_weighted at 0x1207f6e50&gt;)
 </pre>
 </div>
 </div>
@@ -3326,12 +3325,12 @@ INFO:pam.planner.choice_location:ChoiceConfiguration(u=&#34;[0,-1]+(np.array([0,
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
             <div class="zeroclipboard-container">
-                <clipboard-copy for="cell-10">
+                <clipboard-copy for="cell-9">
                 <div>
                     <span class="notice" hidden>Copied!</span>
                     <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -3342,14 +3341,14 @@ INFO:pam.planner.choice_location:ChoiceConfiguration(u=&#34;[0,-1]+(np.array([0,
                 </clipboard-copy>
             </div>
             <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">choice_set</span> <span class="o">=</span> <span class="n">planner</span><span class="o">.</span><span class="n">get_choice_set</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Activities in scope: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">choice_set</span><span class="o">.</span><span class="n">idxs</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Alternatives: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">choice_set</span><span class="o">.</span><span class="n">choice_labels</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Choice set utilities: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">choice_set</span><span class="o">.</span><span class="n">u_choices</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Activities in scope: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">choice_set</span><span class="o">.</span><span class="n">idxs</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Alternatives: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">choice_set</span><span class="o">.</span><span class="n">choice_labels</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Choice set utilities: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">choice_set</span><span class="o">.</span><span class="n">u_choices</span><span class="p">)</span>
 </pre></div>
-<div id="cell-10" class="clipboard-copy-txt">choice_set = planner.get_choice_set()
-print('Activities in scope: \n', choice_set.idxs)
-print('\nAlternatives: \n', choice_set.choice_labels)
-print('\nChoice set utilities: \n', choice_set.u_choices)</div>
+<div id="cell-9" class="clipboard-copy-txt">choice_set = planner.get_choice_set()
+print("Activities in scope: \n", choice_set.idxs)
+print("\nAlternatives: \n", choice_set.choice_labels)
+print("\nChoice set utilities: \n", choice_set.u_choices)</div>
         
         </div>
     </div>
@@ -3370,7 +3369,7 @@ print('\nChoice set utilities: \n', choice_set.u_choices)</div>
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Activities in scope: 
- [ChoiceIdx(pid=&#39;chris&#39;, hid=&#39;chris&#39;, seq=1, act=&lt;pam.activity.Activity object at 0x7f7a193248b0&gt;), ChoiceIdx(pid=&#39;fatema&#39;, hid=&#39;fatema&#39;, seq=1, act=&lt;pam.activity.Activity object at 0x7f7a19324f40&gt;), ChoiceIdx(pid=&#39;fred&#39;, hid=&#39;fred&#39;, seq=3, act=&lt;pam.activity.Activity object at 0x7f7a1926c8e0&gt;), ChoiceIdx(pid=&#39;gerry&#39;, hid=&#39;gerry&#39;, seq=3, act=&lt;pam.activity.Activity object at 0x7f7a19270520&gt;), ChoiceIdx(pid=&#39;nick&#39;, hid=&#39;nick&#39;, seq=1, act=&lt;pam.activity.Activity object at 0x7f7a192702b0&gt;)]
+ [ChoiceIdx(pid=&#39;chris&#39;, hid=&#39;chris&#39;, seq=1, act=&lt;pam.activity.Activity object at 0x1207fe850&gt;), ChoiceIdx(pid=&#39;fatema&#39;, hid=&#39;fatema&#39;, seq=1, act=&lt;pam.activity.Activity object at 0x1207feca0&gt;), ChoiceIdx(pid=&#39;fred&#39;, hid=&#39;fred&#39;, seq=3, act=&lt;pam.activity.Activity object at 0x120b3c640&gt;), ChoiceIdx(pid=&#39;gerry&#39;, hid=&#39;gerry&#39;, seq=3, act=&lt;pam.activity.Activity object at 0x120b3e250&gt;), ChoiceIdx(pid=&#39;nick&#39;, hid=&#39;nick&#39;, seq=1, act=&lt;pam.activity.Activity object at 0x120b3e1c0&gt;)]
 
 Alternatives: 
  [ChoiceLabel(destination=&#39;a&#39;, mode=&#39;car&#39;), ChoiceLabel(destination=&#39;a&#39;, mode=&#39;bus&#39;), ChoiceLabel(destination=&#39;b&#39;, mode=&#39;car&#39;), ChoiceLabel(destination=&#39;b&#39;, mode=&#39;bus&#39;)]
@@ -3408,12 +3407,12 @@ Choice set utilities:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
             <div class="zeroclipboard-container">
-                <clipboard-copy for="cell-11">
+                <clipboard-copy for="cell-10">
                 <div>
                     <span class="notice" hidden>Copied!</span>
                     <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -3424,10 +3423,10 @@ Choice set utilities:
                 </clipboard-copy>
             </div>
             <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">planner</span><span class="o">.</span><span class="n">apply</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sampled choices: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">planner</span><span class="o">.</span><span class="n">_selections</span><span class="o">.</span><span class="n">selections</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sampled choices: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">planner</span><span class="o">.</span><span class="n">_selections</span><span class="o">.</span><span class="n">selections</span><span class="p">)</span>
 </pre></div>
-<div id="cell-11" class="clipboard-copy-txt">planner.apply()
-print('Sampled choices: \n', planner._selections.selections)</div>
+<div id="cell-10" class="clipboard-copy-txt">planner.apply()
+print("Sampled choices: \n", planner._selections.selections)</div>
         
         </div>
     </div>
@@ -3449,7 +3448,7 @@ print('Sampled choices: \n', planner._selections.selections)</div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
 <pre>INFO:pam.planner.choice_location:Applying choice model...
 INFO:pam.planner.choice_location:Configuration: 
-ChoiceConfiguration(u=&#34;[0,-1]+(np.array([0,2])*(person.attributes[&#39;subpopulation&#39;]==&#39;poor&#39;))+([-0.05,-0.07]*od[&#39;time&#39;,person.home.area])+(0.4*np.log(zones[&#39;jobs&#39;]))\n&#34;, scope=&#34;act.act==&#39;work&#39;&#34;, func_probabilities=&lt;function calculate_mnl_probabilities at 0x7f7a192acca0&gt;, func_sampling=&lt;function sample_weighted at 0x7f7a192acd30&gt;)
+ChoiceConfiguration(u=&#34;[0,-1]+(np.array([0,2])*(person.attributes[&#39;subpopulation&#39;]==&#39;poor&#39;))+([-0.05,-0.07]*od[&#39;time&#39;,person.home.area])+(0.4*np.log(zones[&#39;jobs&#39;]))\n&#34;, scope=&#34;act.act==&#39;work&#39;&#34;, func_probabilities=&lt;function calculate_mnl_probabilities at 0x1207f6ca0&gt;, func_sampling=&lt;function sample_weighted at 0x1207f6e50&gt;)
 INFO:pam.planner.choice_location:Choice model application complete.
 </pre>
 </div>
@@ -3489,12 +3488,12 @@ INFO:pam.planner.choice_location:Choice model application complete.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
             <div class="zeroclipboard-container">
-                <clipboard-copy for="cell-12">
+                <clipboard-copy for="cell-11">
                 <div>
                     <span class="notice" hidden>Copied!</span>
                     <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -3506,7 +3505,7 @@ INFO:pam.planner.choice_location:Choice model application complete.
             </div>
             <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">print_activity_locs</span><span class="p">(</span><span class="n">planner</span><span class="o">.</span><span class="n">population</span><span class="p">)</span>
 </pre></div>
-<div id="cell-12" class="clipboard-copy-txt">print_activity_locs(planner.population)</div>
+<div id="cell-11" class="clipboard-copy-txt">print_activity_locs(planner.population)</div>
         
         </div>
     </div>
@@ -3554,6 +3553,7 @@ INFO:pam.planner.choice_location:Choice model application complete.
 
 
                 
+
               </article>
             </div>
           
@@ -3588,7 +3588,7 @@ INFO:pam.planner.choice_location:Choice model application complete.
     <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b425cdc4.min.js"></script>
       
     
   </body>

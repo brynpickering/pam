@@ -1,3 +1,5 @@
+<!--Add download button to all pages built from jupyter notebooks-->
+
 
 <!doctype html>
 <html lang="en" class="no-js">
@@ -15,7 +17,7 @@
         <link rel="next" href="../examples/01_PAM_Getting_Started/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.17">
     
     
       
@@ -406,7 +408,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/01_PAM_Getting_Started/" class="md-nav__link">
-        PAM Getting Started
+        PAM - Getting Started
       </a>
     </li>
   
@@ -434,7 +436,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/03_Example_Generate_Random_Population/" class="md-nav__link">
-        Example Generate Random Population
+        Generating a random population for West London
       </a>
     </li>
   
@@ -448,7 +450,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/04_Example_Ingest_NTS_Diaries/" class="md-nav__link">
-        Example Ingest NTS Diaries
+        Converting the National Travel Survey into a Simple MATSim Format Population
       </a>
     </li>
   
@@ -462,7 +464,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/05_PAM_Policies_Walk_Through/" class="md-nav__link">
-        PAM Policies Walk Through
+        Modifying the population using simple policies
       </a>
     </li>
   
@@ -476,7 +478,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/06_PAM_Complex_Policies/" class="md-nav__link">
-        PAM Complex Policies
+        Modifying the population using complex policies
       </a>
     </li>
   
@@ -490,7 +492,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/07_PAM_Point_Sampling/" class="md-nav__link">
-        PAM Point Sampling
+        Geometry Sampling in PAM
       </a>
     </li>
   
@@ -504,7 +506,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/08_PAM_Population_Activity_Plots/" class="md-nav__link">
-        PAM Population Activity Plots
+        Plotting activity times
       </a>
     </li>
   
@@ -518,7 +520,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/09_Travel_Plots/" class="md-nav__link">
-        Travel Plots
+        Plot Activity Plan Travel
       </a>
     </li>
   
@@ -532,7 +534,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/10_Advanced_Spatial-Sampling_Demo/" class="md-nav__link">
-        Advanced Spatial-Sampling Demo
+        Facility sampling
       </a>
     </li>
   
@@ -546,7 +548,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/11_Advanced_Plan_Rescheduling/" class="md-nav__link">
-        Advanced Plan Rescheduling
+        Plan rescheduling
       </a>
     </li>
   
@@ -560,7 +562,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/12_Advanced_Adding_Vehicles/" class="md-nav__link">
-        Advanced Adding Vehicles
+        Adding vehicles to the plans
       </a>
     </li>
   
@@ -574,7 +576,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/13_Advanced_Freight_Synthesis/" class="md-nav__link">
-        Advanced Freight Synthesis
+        Freight synthesis
       </a>
     </li>
   
@@ -588,7 +590,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/14_Advanced_Plan_Cropping/" class="md-nav__link">
-        Advanced Plan Cropping
+        Plan cropping
       </a>
     </li>
   
@@ -602,7 +604,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/15_Advanced_Choice/" class="md-nav__link">
-        Advanced Choice
+        Applying a location and mode choice model to populations
       </a>
     </li>
   
@@ -680,22 +682,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/scoring/" class="md-nav__link">
-        pam.scoring
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/vehicle/" class="md-nav__link">
-        pam.vehicle
+      <a href="../api/core/" class="md-nav__link">
+        pam.core
       </a>
     </li>
   
@@ -722,8 +710,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/core/" class="md-nav__link">
-        pam.core
+      <a href="../api/scoring/" class="md-nav__link">
+        pam.scoring
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/utils/" class="md-nav__link">
+        pam.utils
       </a>
     </li>
   
@@ -750,8 +752,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/utils/" class="md-nav__link">
-        pam.utils
+      <a href="../api/vehicle/" class="md-nav__link">
+        pam.vehicle
       </a>
     </li>
   
@@ -774,14 +776,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_7" id="__nav_9_7_label" tabindex="0">
-          pam.write
+          pam.planner
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_7">
           <span class="md-nav__icon md-icon"></span>
-          pam.write
+          pam.planner
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -791,8 +793,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/write/matrices/" class="md-nav__link">
-        pam.write.matrices
+      <a href="../api/planner/od/" class="md-nav__link">
+        pam.planner.od
       </a>
     </li>
   
@@ -805,8 +807,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/write/diary/" class="md-nav__link">
-        pam.write.diary
+      <a href="../api/planner/encoder/" class="md-nav__link">
+        pam.planner.encoder
       </a>
     </li>
   
@@ -819,8 +821,50 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/write/matsim/" class="md-nav__link">
-        pam.write.matsim
+      <a href="../api/planner/choice_location/" class="md-nav__link">
+        pam.planner.choice_location
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/planner/clustering/" class="md-nav__link">
+        pam.planner.clustering
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/planner/utils_planner/" class="md-nav__link">
+        pam.planner.utils_planner
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/planner/zones/" class="md-nav__link">
+        pam.planner.zones
       </a>
     </li>
   
@@ -850,14 +894,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_8" id="__nav_9_8_label" tabindex="0">
-          pam.plot
+          pam.operations
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_8_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_8">
           <span class="md-nav__icon md-icon"></span>
-          pam.plot
+          pam.operations
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -867,8 +911,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/plot/stats/" class="md-nav__link">
-        pam.plot.stats
+      <a href="../api/operations/combine/" class="md-nav__link">
+        pam.operations.combine
       </a>
     </li>
   
@@ -881,8 +925,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/plot/plans/" class="md-nav__link">
-        pam.plot.plans
+      <a href="../api/operations/cropping/" class="md-nav__link">
+        pam.operations.cropping
       </a>
     </li>
   
@@ -912,14 +956,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_9" id="__nav_9_9_label" tabindex="0">
-          pam.optimise
+          pam.write
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_9_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_9">
           <span class="md-nav__icon md-icon"></span>
-          pam.optimise
+          pam.write
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -929,8 +973,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/optimise/grid/" class="md-nav__link">
-        pam.optimise.grid
+      <a href="../api/write/diary/" class="md-nav__link">
+        pam.write.diary
       </a>
     </li>
   
@@ -943,8 +987,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/optimise/random/" class="md-nav__link">
-        pam.optimise.random
+      <a href="../api/write/matsim/" class="md-nav__link">
+        pam.write.matsim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/write/matrices/" class="md-nav__link">
+        pam.write.matrices
       </a>
     </li>
   
@@ -974,14 +1032,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_10" id="__nav_9_10_label" tabindex="0">
-          pam.array
+          pam.report
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_10_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_10">
           <span class="md-nav__icon md-icon"></span>
-          pam.array
+          pam.report
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -991,8 +1049,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/array/encode/" class="md-nav__link">
-        pam.array.encode
+      <a href="../api/report/summary/" class="md-nav__link">
+        pam.report.summary
       </a>
     </li>
   
@@ -1005,8 +1063,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/array/distance/" class="md-nav__link">
-        pam.array.distance
+      <a href="../api/report/benchmarks/" class="md-nav__link">
+        pam.report.benchmarks
       </a>
     </li>
   
@@ -1019,8 +1077,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/array/decode/" class="md-nav__link">
-        pam.array.decode
+      <a href="../api/report/stringify/" class="md-nav__link">
+        pam.report.stringify
       </a>
     </li>
   
@@ -1050,14 +1108,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_11" id="__nav_9_11_label" tabindex="0">
-          pam.planner
+          pam.policy
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_11_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_11">
           <span class="md-nav__icon md-icon"></span>
-          pam.planner
+          pam.policy
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1067,8 +1125,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/planner/od/" class="md-nav__link">
-        pam.planner.od
+      <a href="../api/policy/filters/" class="md-nav__link">
+        pam.policy.filters
       </a>
     </li>
   
@@ -1081,8 +1139,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/planner/clustering/" class="md-nav__link">
-        pam.planner.clustering
+      <a href="../api/policy/policies/" class="md-nav__link">
+        pam.policy.policies
       </a>
     </li>
   
@@ -1095,8 +1153,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/planner/encoder/" class="md-nav__link">
-        pam.planner.encoder
+      <a href="../api/policy/modifiers/" class="md-nav__link">
+        pam.policy.modifiers
       </a>
     </li>
   
@@ -1109,36 +1167,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/planner/utils_planner/" class="md-nav__link">
-        pam.planner.utils_planner
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/planner/choice_location/" class="md-nav__link">
-        pam.planner.choice_location
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/planner/zones/" class="md-nav__link">
-        pam.planner.zones
+      <a href="../api/policy/probability_samplers/" class="md-nav__link">
+        pam.policy.probability_samplers
       </a>
     </li>
   
@@ -1230,14 +1260,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_13" id="__nav_9_13_label" tabindex="0">
-          pam.operations
+          pam.optimise
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_13_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_13">
           <span class="md-nav__icon md-icon"></span>
-          pam.operations
+          pam.optimise
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1247,8 +1277,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/operations/cropping/" class="md-nav__link">
-        pam.operations.cropping
+      <a href="../api/optimise/random/" class="md-nav__link">
+        pam.optimise.random
       </a>
     </li>
   
@@ -1261,8 +1291,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/operations/combine/" class="md-nav__link">
-        pam.operations.combine
+      <a href="../api/optimise/grid/" class="md-nav__link">
+        pam.optimise.grid
       </a>
     </li>
   
@@ -1292,14 +1322,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_14" id="__nav_9_14_label" tabindex="0">
-          pam.samplers
+          pam.array
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_14_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_14">
           <span class="md-nav__icon md-icon"></span>
-          pam.samplers
+          pam.array
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1309,8 +1339,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/samplers/time/" class="md-nav__link">
-        pam.samplers.time
+      <a href="../api/array/decode/" class="md-nav__link">
+        pam.array.decode
       </a>
     </li>
   
@@ -1323,8 +1353,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/samplers/attributes/" class="md-nav__link">
-        pam.samplers.attributes
+      <a href="../api/array/distance/" class="md-nav__link">
+        pam.array.distance
       </a>
     </li>
   
@@ -1337,64 +1367,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/samplers/population/" class="md-nav__link">
-        pam.samplers.population
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/samplers/spatial/" class="md-nav__link">
-        pam.samplers.spatial
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/samplers/facility/" class="md-nav__link">
-        pam.samplers.facility
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/samplers/basic/" class="md-nav__link">
-        pam.samplers.basic
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/samplers/tour/" class="md-nav__link">
-        pam.samplers.tour
+      <a href="../api/array/encode/" class="md-nav__link">
+        pam.array.encode
       </a>
     </li>
   
@@ -1424,14 +1398,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_15" id="__nav_9_15_label" tabindex="0">
-          pam.report
+          pam.samplers
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_15_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_15">
           <span class="md-nav__icon md-icon"></span>
-          pam.report
+          pam.samplers
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1441,8 +1415,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/report/stringify/" class="md-nav__link">
-        pam.report.stringify
+      <a href="../api/samplers/tour/" class="md-nav__link">
+        pam.samplers.tour
       </a>
     </li>
   
@@ -1455,8 +1429,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/report/summary/" class="md-nav__link">
-        pam.report.summary
+      <a href="../api/samplers/attributes/" class="md-nav__link">
+        pam.samplers.attributes
       </a>
     </li>
   
@@ -1469,8 +1443,64 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/report/benchmarks/" class="md-nav__link">
-        pam.report.benchmarks
+      <a href="../api/samplers/spatial/" class="md-nav__link">
+        pam.samplers.spatial
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/samplers/time/" class="md-nav__link">
+        pam.samplers.time
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/samplers/basic/" class="md-nav__link">
+        pam.samplers.basic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/samplers/facility/" class="md-nav__link">
+        pam.samplers.facility
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/samplers/population/" class="md-nav__link">
+        pam.samplers.population
       </a>
     </li>
   
@@ -1500,14 +1530,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_16" id="__nav_9_16_label" tabindex="0">
-          pam.policy
+          pam.plot
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_16_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_16">
           <span class="md-nav__icon md-icon"></span>
-          pam.policy
+          pam.plot
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1517,8 +1547,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/policy/probability_samplers/" class="md-nav__link">
-        pam.policy.probability_samplers
+      <a href="../api/plot/plans/" class="md-nav__link">
+        pam.plot.plans
       </a>
     </li>
   
@@ -1531,36 +1561,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/policy/modifiers/" class="md-nav__link">
-        pam.policy.modifiers
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/policy/policies/" class="md-nav__link">
-        pam.policy.policies
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/policy/filters/" class="md-nav__link">
-        pam.policy.filters
+      <a href="../api/plot/stats/" class="md-nav__link">
+        pam.plot.stats
       </a>
     </li>
   
@@ -1673,6 +1675,9 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
+
+
+
                   
 
   
@@ -1680,25 +1685,24 @@
 
 
 <h1 id="modelling-the-impact-of-policies-on-populations">Modelling the impact of policies on populations<a class="headerlink" href="#modelling-the-impact-of-policies-on-populations" title="Permanent link">#</a></h1>
-<p>PAM uses <strong>policies</strong> to model change to a population. For example, based on social distancing requirements we might
-want to reflect that people are expected to make less shared shopping trips or tours. We can do this using the
-following policy:
-<div class="highlight"><pre><span></span><code>policy_reduce_shopping_activities = HouseholdPolicy(
-        ReduceSharedActivity([&#39;shop&#39;, &#39;shop_food&#39;]),
-        ActivityProbability([&#39;shop&#39;, &#39;shop_food&#39;], 1)
-)
-</code></pre></div>
-if you want to define the policy from first principles. There exists a convenience class for this policy and
-an equivalent policy can be defined in the following way:
-<div class="highlight"><pre><span></span><code>policy_reduce_shopping_activities = ReduceSharedHouseholdActivities(
-        [&#39;shop&#39;, &#39;shop_food&#39;],
-        ActivityProbability([&#39;shop&#39;, &#39;shop_food&#39;], 1)
-)
-</code></pre></div>
-This policy removes all but one the household's shared shopping tours:</p>
+<p>PAM uses <strong>policies</strong> to model change to a population. 
+For example, based on social distancing requirements we might want to reflect that people are expected to make less shared shopping trips or tours. 
+We can do this using the following policy, if you want to define the policy from first principles:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">policy_reduce_shopping_activities</span> <span class="o">=</span> <span class="n">HouseholdPolicy</span><span class="p">(</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        <span class="n">ReduceSharedActivity</span><span class="p">([</span><span class="s1">&#39;shop&#39;</span><span class="p">,</span> <span class="s1">&#39;shop_food&#39;</span><span class="p">]),</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="n">ActivityProbability</span><span class="p">([</span><span class="s1">&#39;shop&#39;</span><span class="p">,</span> <span class="s1">&#39;shop_food&#39;</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">)</span>
+</span></code></pre></div>
+<p>There exists a convenience class for this policy and an equivalent policy can be defined in the following way:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">policy_reduce_shopping_activities</span> <span class="o">=</span> <span class="n">ReduceSharedHouseholdActivities</span><span class="p">(</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>        <span class="p">[</span><span class="s1">&#39;shop&#39;</span><span class="p">,</span> <span class="s1">&#39;shop_food&#39;</span><span class="p">],</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        <span class="n">ActivityProbability</span><span class="p">([</span><span class="s1">&#39;shop&#39;</span><span class="p">,</span> <span class="s1">&#39;shop_food&#39;</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">)</span>
+</span></code></pre></div>
+<p>This policy removes all but one the household's shared shopping tours:</p>
 <p><img alt="PAM-policy-example" src="../resources/PAM-policy-example.png" /></p>
 <p>In general, a policy is defined in the following way:</p>
-<ul>
+<ol>
 <li>You first select the level at which is should be applied:<ul>
 <li><code>HouseholdPolicy</code></li>
 <li><code>PersonPolicy</code></li>
@@ -1711,32 +1715,33 @@ This policy removes all but one the household's shared shopping tours:</p>
 <li><code>MoveActivityTourToHomeLocation</code></li>
 </ul>
 </li>
-<li>Finally, you give a likelihood value with which the policy should be applied with. You have a few choices here:<ul>
-<li>a number greater than 0 and less or equal to 1. This will be understood to be at the level at which the policy
-is applied.<ul>
-<li>E.g. <code>PersonPolicy(RemoveActivity(['work']), 0.5)</code> will give each person a fifty-fifty chance of having
-their work activities removed.</li>
-</ul>
+<li>
+<p>Finally, you give a likelihood value with which the policy should be applied with. 
+    You have a few choices here:</p>
+<ul>
+<li>
+<p>a number greater than 0 and less or equal to 1. 
+This will be understood to be at the level at which the policy is applied.
+E.g. <code class="language-python highlight"><span class="n">PersonPolicy</span><span class="p">(</span><span class="n">RemoveActivity</span><span class="p">([</span><span class="s1">&#39;work&#39;</span><span class="p">]),</span> <span class="mf">0.5</span><span class="p">)</span></code> will give each person a fifty-fifty chance of having their work activities removed.</p>
 </li>
-<li>you can explicitly define at which level a number greater than 0 and less or equal to 1 will be applied by passing:<ul>
-<li>E.g. <code>HouseholdPolicy(RemoveActivity(['work']), PersonProbability(0.5))</code> will apply a probability of 0.5
-per person in a household, and apply the policy to all persons within a household if selected.</li>
-</ul>
+<li>
+<p>you can explicitly define at which level a number greater than 0 and less or equal to 1 will be applied.
+E.g. <code class="language-python highlight"><span class="n">HouseholdPolicy</span><span class="p">(</span><span class="n">RemoveActivity</span><span class="p">([</span><span class="s1">&#39;work&#39;</span><span class="p">]),</span> <span class="n">PersonProbability</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span></code> will apply a probability of 0.5 per person in a household, and apply the policy to all persons within a household if selected.</p>
 </li>
-<li>you can also pass a function that operates on a <code>core.Household</code>, <code>core.Person</code> or <code>core.Activity</code> object and
-returns a number between 0 and 1.<ul>
-<li>E.g. if
-<div class="highlight"><pre><span></span><code>def sampler(person):
-    if person.attributes[&#39;key_worker&#39;] == True:
-        return 0
-    else:
-        return 1
-</code></pre></div>
-we can define <code>PersonPolicy(RemoveActivity(['work']), PersonProbability(sampler))</code> which will remove all work
-activities from anyone who is not a 'key_worker'</li>
-</ul>
+<li>
+<p>you can also pass a function that operates on a <code>core.Household</code>, <code>core.Person</code> or <code>core.Activity</code> object and returns a number between 0 and 1.
+E.g. if our function is:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span> <span class="nf">sampler</span><span class="p">(</span><span class="n">person</span><span class="p">):</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="k">if</span> <span class="n">person</span><span class="o">.</span><span class="n">attributes</span><span class="p">[</span><span class="s1">&#39;key_worker&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        <span class="k">return</span> <span class="mi">0</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        <span class="k">return</span> <span class="mi">1</span>
+</span></code></pre></div>
+we can define <code class="language-python highlight"><span class="n">PersonPolicy</span><span class="p">(</span><span class="n">RemoveActivity</span><span class="p">([</span><span class="s1">&#39;work&#39;</span><span class="p">]),</span> <span class="n">PersonProbability</span><span class="p">(</span><span class="n">sampler</span><span class="p">))</span></code> which will remove all work activities from anyone who is not a 'key_worker'</p>
 </li>
-<li>you can choose from:<ul>
+<li>
+<p>you can choose from:</p>
+<ul>
 <li><code>HouseholdProbability</code></li>
 <li><code>PersonProbability</code></li>
 <li><code>ActivityProbability</code></li>
@@ -1744,8 +1749,8 @@ activities from anyone who is not a 'key_worker'</li>
 </li>
 </ul>
 </li>
-</ul>
-<p>PAM allows multiple of such policies to be combined to build realistic and complex scenarios. Leveraging activity plans means that PAM can implement detailed policies that are dependant on:</p>
+</ol>
+<p>PAM allows multiple of such policies to be combined to build realistic and complex scenarios. Leveraging activity plans means that PAM can implement detailed policies that are dependent on:</p>
 <ul>
 <li>person attributes</li>
 <li>household attributes</li>
@@ -1756,7 +1761,7 @@ activities from anyone who is not a 'key_worker'</li>
 <li>sequences such as tours</li>
 <li>any combination of the above</li>
 </ul>
-<p>A full overview of policies and examples of the policies available are <a href="https://github.com/arup-group/pam/blob/master/notebooks/PAM%20Policies%20walk-through.ipynb">detailed in this notebook</a>.</p>
+<p>A full overview of policies and examples of the policies available are <a class="autorefs autorefs-internal" href="../examples/05_PAM_Policies_Walk_Through/#modifying-the-population-using-simple-policies">detailed in this example</a>.</p>
 <h2 id="example-modifierspolicies">Example modifiers/policies:<a class="headerlink" href="#example-modifierspolicies" title="Permanent link">#</a></h2>
 <h3 id="ill-and-self-quarantined">Ill and self-quarantined<a class="headerlink" href="#ill-and-self-quarantined" title="Permanent link">#</a></h3>
 <ul>
@@ -1801,6 +1806,7 @@ activities from anyone who is not a 'key_worker'</li>
 
 
                 
+
               </article>
             </div>
           
@@ -1835,7 +1841,7 @@ activities from anyone who is not a 'key_worker'</li>
     <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../assets/javascripts/bundle.b425cdc4.min.js"></script>
       
     
   </body>

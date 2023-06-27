@@ -1,3 +1,5 @@
+<!--Add download button to all pages built from jupyter notebooks-->
+
 
 <!doctype html>
 <html lang="en" class="no-js">
@@ -15,7 +17,7 @@
         <link rel="next" href="../modelling_policy_impact/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.17">
     
     
       
@@ -372,7 +374,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/01_PAM_Getting_Started/" class="md-nav__link">
-        PAM Getting Started
+        PAM - Getting Started
       </a>
     </li>
   
@@ -400,7 +402,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/03_Example_Generate_Random_Population/" class="md-nav__link">
-        Example Generate Random Population
+        Generating a random population for West London
       </a>
     </li>
   
@@ -414,7 +416,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/04_Example_Ingest_NTS_Diaries/" class="md-nav__link">
-        Example Ingest NTS Diaries
+        Converting the National Travel Survey into a Simple MATSim Format Population
       </a>
     </li>
   
@@ -428,7 +430,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/05_PAM_Policies_Walk_Through/" class="md-nav__link">
-        PAM Policies Walk Through
+        Modifying the population using simple policies
       </a>
     </li>
   
@@ -442,7 +444,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/06_PAM_Complex_Policies/" class="md-nav__link">
-        PAM Complex Policies
+        Modifying the population using complex policies
       </a>
     </li>
   
@@ -456,7 +458,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/07_PAM_Point_Sampling/" class="md-nav__link">
-        PAM Point Sampling
+        Geometry Sampling in PAM
       </a>
     </li>
   
@@ -470,7 +472,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/08_PAM_Population_Activity_Plots/" class="md-nav__link">
-        PAM Population Activity Plots
+        Plotting activity times
       </a>
     </li>
   
@@ -484,7 +486,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/09_Travel_Plots/" class="md-nav__link">
-        Travel Plots
+        Plot Activity Plan Travel
       </a>
     </li>
   
@@ -498,7 +500,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/10_Advanced_Spatial-Sampling_Demo/" class="md-nav__link">
-        Advanced Spatial-Sampling Demo
+        Facility sampling
       </a>
     </li>
   
@@ -512,7 +514,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/11_Advanced_Plan_Rescheduling/" class="md-nav__link">
-        Advanced Plan Rescheduling
+        Plan rescheduling
       </a>
     </li>
   
@@ -526,7 +528,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/12_Advanced_Adding_Vehicles/" class="md-nav__link">
-        Advanced Adding Vehicles
+        Adding vehicles to the plans
       </a>
     </li>
   
@@ -540,7 +542,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/13_Advanced_Freight_Synthesis/" class="md-nav__link">
-        Advanced Freight Synthesis
+        Freight synthesis
       </a>
     </li>
   
@@ -554,7 +556,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/14_Advanced_Plan_Cropping/" class="md-nav__link">
-        Advanced Plan Cropping
+        Plan cropping
       </a>
     </li>
   
@@ -568,7 +570,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/15_Advanced_Choice/" class="md-nav__link">
-        Advanced Choice
+        Applying a location and mode choice model to populations
       </a>
     </li>
   
@@ -646,22 +648,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/scoring/" class="md-nav__link">
-        pam.scoring
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/vehicle/" class="md-nav__link">
-        pam.vehicle
+      <a href="../api/core/" class="md-nav__link">
+        pam.core
       </a>
     </li>
   
@@ -688,8 +676,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/core/" class="md-nav__link">
-        pam.core
+      <a href="../api/scoring/" class="md-nav__link">
+        pam.scoring
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/utils/" class="md-nav__link">
+        pam.utils
       </a>
     </li>
   
@@ -716,8 +718,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/utils/" class="md-nav__link">
-        pam.utils
+      <a href="../api/vehicle/" class="md-nav__link">
+        pam.vehicle
       </a>
     </li>
   
@@ -740,14 +742,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_7" id="__nav_9_7_label" tabindex="0">
-          pam.write
+          pam.planner
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_7">
           <span class="md-nav__icon md-icon"></span>
-          pam.write
+          pam.planner
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -757,8 +759,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/write/matrices/" class="md-nav__link">
-        pam.write.matrices
+      <a href="../api/planner/od/" class="md-nav__link">
+        pam.planner.od
       </a>
     </li>
   
@@ -771,8 +773,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/write/diary/" class="md-nav__link">
-        pam.write.diary
+      <a href="../api/planner/encoder/" class="md-nav__link">
+        pam.planner.encoder
       </a>
     </li>
   
@@ -785,8 +787,50 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/write/matsim/" class="md-nav__link">
-        pam.write.matsim
+      <a href="../api/planner/choice_location/" class="md-nav__link">
+        pam.planner.choice_location
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/planner/clustering/" class="md-nav__link">
+        pam.planner.clustering
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/planner/utils_planner/" class="md-nav__link">
+        pam.planner.utils_planner
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/planner/zones/" class="md-nav__link">
+        pam.planner.zones
       </a>
     </li>
   
@@ -816,14 +860,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_8" id="__nav_9_8_label" tabindex="0">
-          pam.plot
+          pam.operations
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_8_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_8">
           <span class="md-nav__icon md-icon"></span>
-          pam.plot
+          pam.operations
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -833,8 +877,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/plot/stats/" class="md-nav__link">
-        pam.plot.stats
+      <a href="../api/operations/combine/" class="md-nav__link">
+        pam.operations.combine
       </a>
     </li>
   
@@ -847,8 +891,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/plot/plans/" class="md-nav__link">
-        pam.plot.plans
+      <a href="../api/operations/cropping/" class="md-nav__link">
+        pam.operations.cropping
       </a>
     </li>
   
@@ -878,14 +922,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_9" id="__nav_9_9_label" tabindex="0">
-          pam.optimise
+          pam.write
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_9_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_9">
           <span class="md-nav__icon md-icon"></span>
-          pam.optimise
+          pam.write
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -895,8 +939,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/optimise/grid/" class="md-nav__link">
-        pam.optimise.grid
+      <a href="../api/write/diary/" class="md-nav__link">
+        pam.write.diary
       </a>
     </li>
   
@@ -909,8 +953,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/optimise/random/" class="md-nav__link">
-        pam.optimise.random
+      <a href="../api/write/matsim/" class="md-nav__link">
+        pam.write.matsim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/write/matrices/" class="md-nav__link">
+        pam.write.matrices
       </a>
     </li>
   
@@ -940,14 +998,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_10" id="__nav_9_10_label" tabindex="0">
-          pam.array
+          pam.report
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_10_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_10">
           <span class="md-nav__icon md-icon"></span>
-          pam.array
+          pam.report
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -957,8 +1015,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/array/encode/" class="md-nav__link">
-        pam.array.encode
+      <a href="../api/report/summary/" class="md-nav__link">
+        pam.report.summary
       </a>
     </li>
   
@@ -971,8 +1029,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/array/distance/" class="md-nav__link">
-        pam.array.distance
+      <a href="../api/report/benchmarks/" class="md-nav__link">
+        pam.report.benchmarks
       </a>
     </li>
   
@@ -985,8 +1043,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/array/decode/" class="md-nav__link">
-        pam.array.decode
+      <a href="../api/report/stringify/" class="md-nav__link">
+        pam.report.stringify
       </a>
     </li>
   
@@ -1016,14 +1074,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_11" id="__nav_9_11_label" tabindex="0">
-          pam.planner
+          pam.policy
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_11_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_11">
           <span class="md-nav__icon md-icon"></span>
-          pam.planner
+          pam.policy
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1033,8 +1091,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/planner/od/" class="md-nav__link">
-        pam.planner.od
+      <a href="../api/policy/filters/" class="md-nav__link">
+        pam.policy.filters
       </a>
     </li>
   
@@ -1047,8 +1105,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/planner/clustering/" class="md-nav__link">
-        pam.planner.clustering
+      <a href="../api/policy/policies/" class="md-nav__link">
+        pam.policy.policies
       </a>
     </li>
   
@@ -1061,8 +1119,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/planner/encoder/" class="md-nav__link">
-        pam.planner.encoder
+      <a href="../api/policy/modifiers/" class="md-nav__link">
+        pam.policy.modifiers
       </a>
     </li>
   
@@ -1075,36 +1133,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/planner/utils_planner/" class="md-nav__link">
-        pam.planner.utils_planner
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/planner/choice_location/" class="md-nav__link">
-        pam.planner.choice_location
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/planner/zones/" class="md-nav__link">
-        pam.planner.zones
+      <a href="../api/policy/probability_samplers/" class="md-nav__link">
+        pam.policy.probability_samplers
       </a>
     </li>
   
@@ -1196,14 +1226,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_13" id="__nav_9_13_label" tabindex="0">
-          pam.operations
+          pam.optimise
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_13_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_13">
           <span class="md-nav__icon md-icon"></span>
-          pam.operations
+          pam.optimise
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1213,8 +1243,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/operations/cropping/" class="md-nav__link">
-        pam.operations.cropping
+      <a href="../api/optimise/random/" class="md-nav__link">
+        pam.optimise.random
       </a>
     </li>
   
@@ -1227,8 +1257,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/operations/combine/" class="md-nav__link">
-        pam.operations.combine
+      <a href="../api/optimise/grid/" class="md-nav__link">
+        pam.optimise.grid
       </a>
     </li>
   
@@ -1258,14 +1288,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_14" id="__nav_9_14_label" tabindex="0">
-          pam.samplers
+          pam.array
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_14_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_14">
           <span class="md-nav__icon md-icon"></span>
-          pam.samplers
+          pam.array
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1275,8 +1305,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/samplers/time/" class="md-nav__link">
-        pam.samplers.time
+      <a href="../api/array/decode/" class="md-nav__link">
+        pam.array.decode
       </a>
     </li>
   
@@ -1289,8 +1319,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/samplers/attributes/" class="md-nav__link">
-        pam.samplers.attributes
+      <a href="../api/array/distance/" class="md-nav__link">
+        pam.array.distance
       </a>
     </li>
   
@@ -1303,64 +1333,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/samplers/population/" class="md-nav__link">
-        pam.samplers.population
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/samplers/spatial/" class="md-nav__link">
-        pam.samplers.spatial
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/samplers/facility/" class="md-nav__link">
-        pam.samplers.facility
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/samplers/basic/" class="md-nav__link">
-        pam.samplers.basic
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/samplers/tour/" class="md-nav__link">
-        pam.samplers.tour
+      <a href="../api/array/encode/" class="md-nav__link">
+        pam.array.encode
       </a>
     </li>
   
@@ -1390,14 +1364,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_15" id="__nav_9_15_label" tabindex="0">
-          pam.report
+          pam.samplers
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_15_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_15">
           <span class="md-nav__icon md-icon"></span>
-          pam.report
+          pam.samplers
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1407,8 +1381,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/report/stringify/" class="md-nav__link">
-        pam.report.stringify
+      <a href="../api/samplers/tour/" class="md-nav__link">
+        pam.samplers.tour
       </a>
     </li>
   
@@ -1421,8 +1395,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/report/summary/" class="md-nav__link">
-        pam.report.summary
+      <a href="../api/samplers/attributes/" class="md-nav__link">
+        pam.samplers.attributes
       </a>
     </li>
   
@@ -1435,8 +1409,64 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/report/benchmarks/" class="md-nav__link">
-        pam.report.benchmarks
+      <a href="../api/samplers/spatial/" class="md-nav__link">
+        pam.samplers.spatial
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/samplers/time/" class="md-nav__link">
+        pam.samplers.time
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/samplers/basic/" class="md-nav__link">
+        pam.samplers.basic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/samplers/facility/" class="md-nav__link">
+        pam.samplers.facility
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/samplers/population/" class="md-nav__link">
+        pam.samplers.population
       </a>
     </li>
   
@@ -1466,14 +1496,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_16" id="__nav_9_16_label" tabindex="0">
-          pam.policy
+          pam.plot
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_16_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_16">
           <span class="md-nav__icon md-icon"></span>
-          pam.policy
+          pam.plot
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1483,8 +1513,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/policy/probability_samplers/" class="md-nav__link">
-        pam.policy.probability_samplers
+      <a href="../api/plot/plans/" class="md-nav__link">
+        pam.plot.plans
       </a>
     </li>
   
@@ -1497,36 +1527,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/policy/modifiers/" class="md-nav__link">
-        pam.policy.modifiers
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/policy/policies/" class="md-nav__link">
-        pam.policy.policies
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/policy/filters/" class="md-nav__link">
-        pam.policy.filters
+      <a href="../api/plot/stats/" class="md-nav__link">
+        pam.plot.stats
       </a>
     </li>
   
@@ -1605,6 +1607,9 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
+
+
+
                   
 
   
@@ -1612,129 +1617,128 @@
 
 
 <h1 id="activity-plans">Activity Plans<a class="headerlink" href="#activity-plans" title="Permanent link">#</a></h1>
-<p>PAM supports arbitrarily complex chains of activities connected by 'legs' (these are equivalent to 'trips'). The main rules are (i) that plans must consist of sequences of alternate <code>pam.activity.Activity</code> and <code>pam.activity.Leg</code> objects and (ii) that a plan must start and end with an <code>Activity</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pam.core</span> <span class="kn">import</span> <span class="n">Person</span>
-<span class="kn">from</span> <span class="nn">pam.activity</span> <span class="kn">import</span> <span class="n">Leg</span><span class="p">,</span> <span class="n">Activity</span>
-<span class="kn">from</span> <span class="nn">pam</span>
-
-<span class="n">person</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Tony&#39;</span><span class="p">,</span> <span class="n">attributes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;phylosophy&#39;</span><span class="p">:</span> <span class="s1">&#39;stoicism&#39;</span><span class="p">})</span>
-
-<span class="n">person</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
-    <span class="n">Activity</span><span class="p">(</span>
-        <span class="n">act</span><span class="o">=</span><span class="s1">&#39;home&#39;</span><span class="p">,</span>
-        <span class="n">area</span><span class="o">=</span><span class="s1">&#39;zone A&#39;</span><span class="p">,</span>
-    <span class="p">)</span>
-<span class="p">)</span>
-
-<span class="n">person</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
-    <span class="n">Leg</span><span class="p">(</span>
-        <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;car&#39;</span><span class="p">,</span>
-        <span class="n">start_time</span><span class="o">=</span><span class="n">utils</span><span class="o">.</span><span class="n">parse_time</span><span class="p">(</span><span class="mi">600</span><span class="p">),</span>  <span class="c1"># (minutes)</span>
-        <span class="n">end_time</span><span class="o">=</span><span class="n">utils</span><span class="o">.</span><span class="n">parse_time</span><span class="p">(</span><span class="mi">630</span><span class="p">),</span>
-    <span class="p">)</span>
-<span class="p">)</span>
-
-<span class="n">person</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
-    <span class="n">Activity</span><span class="p">(</span>
-        <span class="n">act</span><span class="o">=</span><span class="s1">&#39;work&#39;</span><span class="p">,</span>
-        <span class="n">area</span><span class="o">=</span><span class="s1">&#39;zone B&#39;</span><span class="p">,</span>
-        <span class="p">)</span>
-    <span class="p">)</span>
-
-<span class="n">person</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
-    <span class="n">Leg</span><span class="p">(</span>
-        <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;car&#39;</span><span class="p">,</span>
-        <span class="n">start_time</span><span class="o">=</span><span class="n">utils</span><span class="o">.</span><span class="n">parse_time</span><span class="p">(</span><span class="mi">1800</span><span class="p">),</span>
-        <span class="n">end_time</span><span class="o">=</span><span class="n">utils</span><span class="o">.</span><span class="n">parse_time</span><span class="p">(</span><span class="mi">1830</span><span class="p">),</span>
-    <span class="p">)</span>
-<span class="p">)</span>
-
-<span class="c1"># Continue adding Activities and Legs alternately.</span>
-<span class="c1"># A sequence must start and end with an activity.</span>
-<span class="c1"># ...</span>
-
-<span class="n">person</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
-    <span class="n">Activity</span><span class="p">(</span>
-        <span class="n">act</span><span class="o">=</span><span class="s1">&#39;home&#39;</span><span class="p">,</span>
-        <span class="n">area</span><span class="o">=</span><span class="s1">&#39;zone B&#39;</span>
-    <span class="p">)</span>
-<span class="p">)</span>
-
-<span class="n">activities</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">plan</span><span class="o">.</span><span class="n">activities</span><span class="p">)</span>
-<span class="n">trips</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">plan</span><span class="o">.</span><span class="n">legs</span><span class="p">)</span>
-
-<span class="n">person</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
-</code></pre></div>
+<p>PAM supports arbitrarily complex chains of activities connected by 'legs' (these are equivalent to 'trips').
+The main rules are (i) that plans must consist of sequences of alternate <code>pam.activity.Activity</code> and <code>pam.activity.Leg</code> objects and (ii) that a plan must start and end with an <code>Activity</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">pam.core</span> <span class="kn">import</span> <span class="n">Person</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">pam.activity</span> <span class="kn">import</span> <span class="n">Leg</span><span class="p">,</span> <span class="n">Activity</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">from</span> <span class="nn">pam</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">person</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Tony&#39;</span><span class="p">,</span> <span class="n">attributes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;phylosophy&#39;</span><span class="p">:</span> <span class="s1">&#39;stoicism&#39;</span><span class="p">})</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">person</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">Activity</span><span class="p">(</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="n">act</span><span class="o">=</span><span class="s1">&#39;home&#39;</span><span class="p">,</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        <span class="n">area</span><span class="o">=</span><span class="s1">&#39;zone A&#39;</span><span class="p">,</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="p">)</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">)</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="n">person</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="n">Leg</span><span class="p">(</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>        <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;car&#39;</span><span class="p">,</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>        <span class="n">start_time</span><span class="o">=</span><span class="n">utils</span><span class="o">.</span><span class="n">parse_time</span><span class="p">(</span><span class="mi">600</span><span class="p">),</span>  <span class="c1"># (minutes)</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>        <span class="n">end_time</span><span class="o">=</span><span class="n">utils</span><span class="o">.</span><span class="n">parse_time</span><span class="p">(</span><span class="mi">630</span><span class="p">),</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="p">)</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="p">)</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="n">person</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    <span class="n">Activity</span><span class="p">(</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>        <span class="n">act</span><span class="o">=</span><span class="s1">&#39;work&#39;</span><span class="p">,</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>        <span class="n">area</span><span class="o">=</span><span class="s1">&#39;zone B&#39;</span><span class="p">,</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>        <span class="p">)</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>    <span class="p">)</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="n">person</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>    <span class="n">Leg</span><span class="p">(</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>        <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;car&#39;</span><span class="p">,</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>        <span class="n">start_time</span><span class="o">=</span><span class="n">utils</span><span class="o">.</span><span class="n">parse_time</span><span class="p">(</span><span class="mi">1800</span><span class="p">),</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>        <span class="n">end_time</span><span class="o">=</span><span class="n">utils</span><span class="o">.</span><span class="n">parse_time</span><span class="p">(</span><span class="mi">1830</span><span class="p">),</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>    <span class="p">)</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="p">)</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="c1"># Continue adding Activities and Legs alternately.</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="c1"># A sequence must start and end with an activity.</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="c1"># ...</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="n">person</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>    <span class="n">Activity</span><span class="p">(</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>        <span class="n">act</span><span class="o">=</span><span class="s1">&#39;home&#39;</span><span class="p">,</span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>        <span class="n">area</span><span class="o">=</span><span class="s1">&#39;zone B&#39;</span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>    <span class="p">)</span>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="p">)</span>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="n">activities</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">plan</span><span class="o">.</span><span class="n">activities</span><span class="p">)</span>
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="n">trips</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">plan</span><span class="o">.</span><span class="n">legs</span><span class="p">)</span>
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="n">person</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
+</span></code></pre></div>
 <h2 id="how-travel-diaries-relate-to-activity-plans">How travel diaries relate to activity plans<a class="headerlink" href="#how-travel-diaries-relate-to-activity-plans" title="Permanent link">#</a></h2>
-<p>A key component of this project is the conversion of Travel Diaries to Activity Plans. We define
-a Travel Diary as a sequence of travel legs from zone to zone for a given purpose over a single
-day. The Activity Plan takes these legs and infers the activity types between. Example activity
-types are <code>home</code>, <code>work</code>, <code>education</code>, <code>excort_education</code> and so on.</p>
-<p>Activity Plan chains can be pretty complex, consider for example a business person attending
-meetings in many different locations and stopping to eat and shop. We always require the plan
- to last 24 hours and start
-and stop with an activity. We like these start and stop activities to both be the same and ideally
-<code>home</code>. We think of this as 'looping', but they don't have to. Night shift workers, for example,
-do not start or end the day at <code>home</code>.</p>
-<p>When we try to infer activity purpose from trip purpose, we expect a return trip to have the
-same purpose as the outbound trip, eg:</p>
+<p>A key component of this project is the conversion of Travel Diaries to Activity Plans.
+We define a Travel Diary as a sequence of travel legs from zone to zone for a given purpose over a single day.
+The Activity Plan takes these legs and infers the activity types between.
+Example activity types are <code>home</code>, <code>work</code>, <code>education</code>, <code>excort_education</code> and so on.</p>
+<p>Activity Plan chains can be pretty complex, consider for example a business person attending meetings in many different locations and stopping to eat and shop.
+We always require the plan to last 24 hours and start and stop with an activity.
+We like these start and stop activities to both be the same and ideally <code>home</code>.
+We think of this as 'looping', but they don't have to.
+Night shift workers, for example, do not start or end the day at <code>home</code>.</p>
+<p>When we try to infer activity purpose from trip purpose, we expect a return trip to have the same purpose as the outbound trip, e.g.:</p>
 <p><em>trip1(work) + trip2(work) --&gt; activity1(home) + activity2(work) + activity3(home)</em></p>
 <p>But this logic is hard to follow for more complex chains, eg:</p>
-<p><em>trip1(work) + trip2(shop) + trip3(work) --&gt; activity1(home) + activity2(work) + activity3(shop) +
- activity4(home)</em></p>
-<p>The test cases in <code>test_3_parse_challenge</code> capture <strong>some</strong> of the difficult and edge cases observed
- so far.</p>
-<p>It is important to note that as a consequence of encoding outbound and return purpose as an
-activity, we never observe a trip purpose as <code>home</code>. Luckily we do know the home area from the
-travel diary data (<code>hzone</code>). But have to be careful with our logic, as travel between different
-activities locations can be intra-zonal, eg:</p>
+<p><em>trip1(work) + trip2(shop) + trip3(work) --&gt; activity1(home) + activity2(work) + activity3(shop) + activity4(home)</em></p>
+<p>The test cases in <code>test_3_parse_challenge</code> capture <strong>some</strong> of the difficult and edge cases observed so far.</p>
+<p>It is important to note that as a consequence of encoding outbound and return purpose as an activity, we never observe a trip purpose as <code>home</code>.
+Luckily we do know the home area from the travel diary data (<code>hzone</code>).
+But have to be careful with our logic, as travel between different activities locations can be intra-zonal, e.g.:</p>
 <p><em>activity1(home, zoneA) + activity2(shop, zoneA) + activity2(shop, zoneA)</em></p>
-<p>Activity Plans are represented in this project as regular python <code>lists()</code>, containing <strong>ordered</strong>
-<code>activity.Activity</code> and <code>activity.Leg</code> objects. Plans must start and end with a
-<code>activity.Activity</code>. Two <code>activity.Actvity</code> objects must be seperated by a <code>core.Leg</code>.</p>
-<p>Plans belong to <code>core.People</code> which belong to
-<code>core.Households</code> which belong to a <code>core.Population</code>. For example:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pam.core</span> <span class="kn">import</span> <span class="n">Population</span><span class="p">,</span> <span class="n">Household</span><span class="p">,</span> <span class="n">Person</span>
-<span class="kn">from</span> <span class="nn">pam.activity</span> <span class="kn">import</span> <span class="n">Activity</span><span class="p">,</span> <span class="n">Leg</span>
-
-<span class="n">population</span> <span class="o">=</span> <span class="n">Population</span><span class="p">()</span>  <span class="c1"># init</span>
-<span class="n">household</span> <span class="o">=</span> <span class="n">HouseHold</span><span class="p">(</span><span class="n">hid</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># hid is household id</span>
-<span class="n">person</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="n">pid</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># pid is person id</span>
-<span class="n">person</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
-    <span class="n">Activity</span><span class="p">(</span><span class="n">seq</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">act</span><span class="o">=</span><span class="s1">&#39;home&#39;</span><span class="p">,</span> <span class="n">area</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">start_time</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">end_time</span><span class="o">=</span><span class="mi">450</span><span class="p">)</span>  <span class="c1"># time in minutes</span>
-<span class="p">)</span>
-<span class="n">person</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
-    <span class="n">Leg</span><span class="p">(</span><span class="n">seq</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="n">start_area</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">end_area</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">start_time</span><span class="o">=</span><span class="mi">450</span><span class="p">,</span> <span class="n">end_time</span><span class="o">=</span><span class="mi">480</span><span class="p">)</span>
-<span class="p">)</span>
-<span class="n">person</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
-    <span class="n">Activity</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;work&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="mi">880</span><span class="p">)</span>
-<span class="p">)</span>
-<span class="n">person</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
-    <span class="n">Leg</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">880</span><span class="p">,</span> <span class="mi">900</span><span class="p">)</span>
-<span class="p">)</span>
-<span class="n">person</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
-    <span class="n">Activity</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;home&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">900</span><span class="p">,</span> <span class="mi">24</span><span class="o">*</span><span class="mi">60</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># last activity must end at 23:59(:59)</span>
-<span class="p">)</span>
-<span class="n">household</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
-<span class="n">population</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">household</span><span class="p">)</span>
-</code></pre></div>
+<p>Activity Plans are represented in this project as regular python <code>lists()</code>, containing <strong>ordered</strong> <code>activity.Activity</code> and <code>activity.Leg</code> objects.
+Plans must start and end with a <code>activity.Activity</code>.
+Two <code>activity.Actvity</code> objects must be seperated by a <code>core.Leg</code>.</p>
+<p>Plans belong to <code>core.People</code> which belong to <code>core.Households</code> which belong to a <code>core.Population</code>. For example:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">pam.core</span> <span class="kn">import</span> <span class="n">Population</span><span class="p">,</span> <span class="n">Household</span><span class="p">,</span> <span class="n">Person</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">from</span> <span class="nn">pam.activity</span> <span class="kn">import</span> <span class="n">Activity</span><span class="p">,</span> <span class="n">Leg</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">population</span> <span class="o">=</span> <span class="n">Population</span><span class="p">()</span>  <span class="c1"># init</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">household</span> <span class="o">=</span> <span class="n">HouseHold</span><span class="p">(</span><span class="n">hid</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># hid is household id</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">person</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="n">pid</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># pid is person id</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">person</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="n">Activity</span><span class="p">(</span><span class="n">seq</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">act</span><span class="o">=</span><span class="s1">&#39;home&#39;</span><span class="p">,</span> <span class="n">area</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">start_time</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">end_time</span><span class="o">=</span><span class="mi">450</span><span class="p">)</span>  <span class="c1"># time in minutes</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">)</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">person</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="n">Leg</span><span class="p">(</span><span class="n">seq</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="n">start_area</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">end_area</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">start_time</span><span class="o">=</span><span class="mi">450</span><span class="p">,</span> <span class="n">end_time</span><span class="o">=</span><span class="mi">480</span><span class="p">)</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="p">)</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="n">person</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    <span class="n">Activity</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;work&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="mi">880</span><span class="p">)</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="p">)</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="n">person</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>    <span class="n">Leg</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">880</span><span class="p">,</span> <span class="mi">900</span><span class="p">)</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="p">)</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="n">person</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    <span class="n">Activity</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;home&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">900</span><span class="p">,</span> <span class="mi">24</span><span class="o">*</span><span class="mi">60</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># last activity must end at 23:59(:59)</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="p">)</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="n">household</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="n">population</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">household</span><span class="p">)</span>
+</span></code></pre></div>
 <h2 id="a-note-on-the-pain-of-wrapping">A note on the pain of wrapping<a class="headerlink" href="#a-note-on-the-pain-of-wrapping" title="Permanent link">#</a></h2>
-<p>Activity Plans often enforce that a plan returns to the same activity (type and location) that
-they started at. Furthermore they sometimes enforce that this activity be <code>home</code>. Such plans can
-be thought of as wrapping plans. Where the last and first activity can be though of as linked.
+<p>Activity Plans often enforce that a plan returns to the same activity (type and location) that they started at.
+Furthermore they sometimes enforce that this activity be <code>home</code>.
+Such plans can be thought of as wrapping plans.
+Where the last and first activity can be though of as linked.
 This need not be a <code>home</code> activity, for example in the case of night workers.</p>
 <p>We have encountered many variations of sequences for plans, including wrapping and wrapping.
-Although they are generally edge cases, they exists and generally represent real people. We are
-therefore endeavoring to support all these cases in our plan modifiers. This is resulting some
-difficult to follow logic (eg <code>pam.activity.Plan.fill_plan()</code>).</p>
+Although they are generally edge cases, they exists and generally represent real people.
+We are therefore endeavoring to support all these cases in our plan modifiers.
+This is resulting some difficult to follow logic (eg <code>pam.activity.Plan.fill_plan()</code>).</p>
 <h2 id="plan-cropping">Plan cropping<a class="headerlink" href="#plan-cropping" title="Permanent link">#</a></h2>
-<p>The <code>pam.cropping</code> module allows to spatially subset populations, by simplifying plan components that take place outside the "core" area. Any activities or legs that do not affect that core area are removed from the agents' plans, and agents with fully-external plans are removed from the population. Examples of using the module can be found in the <code>18_plan_cropping.ipynb</code> notebook.</p>
+<p>The <code>pam.cropping</code> module allows to spatially subset populations, by simplifying plan components that take place outside the "core" area.
+Any activities or legs that do not affect that core area are removed from the agents' plans, and agents with fully-external plans are removed from the population.
+Examples of using the module can be found in the <code>18_plan_cropping.ipynb</code> notebook.</p>
 
 
 
 
 
                 
+
               </article>
             </div>
           
@@ -1769,7 +1773,7 @@ difficult to follow logic (eg <code>pam.activity.Plan.fill_plan()</code>).</p>
     <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../assets/javascripts/bundle.b425cdc4.min.js"></script>
       
     
   </body>

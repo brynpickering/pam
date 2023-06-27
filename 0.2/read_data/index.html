@@ -1,3 +1,5 @@
+<!--Add download button to all pages built from jupyter notebooks-->
+
 
 <!doctype html>
 <html lang="en" class="no-js">
@@ -15,7 +17,7 @@
         <link rel="next" href="../activity_plans/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.17">
     
     
       
@@ -378,7 +380,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/01_PAM_Getting_Started/" class="md-nav__link">
-        PAM Getting Started
+        PAM - Getting Started
       </a>
     </li>
   
@@ -406,7 +408,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/03_Example_Generate_Random_Population/" class="md-nav__link">
-        Example Generate Random Population
+        Generating a random population for West London
       </a>
     </li>
   
@@ -420,7 +422,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/04_Example_Ingest_NTS_Diaries/" class="md-nav__link">
-        Example Ingest NTS Diaries
+        Converting the National Travel Survey into a Simple MATSim Format Population
       </a>
     </li>
   
@@ -434,7 +436,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/05_PAM_Policies_Walk_Through/" class="md-nav__link">
-        PAM Policies Walk Through
+        Modifying the population using simple policies
       </a>
     </li>
   
@@ -448,7 +450,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/06_PAM_Complex_Policies/" class="md-nav__link">
-        PAM Complex Policies
+        Modifying the population using complex policies
       </a>
     </li>
   
@@ -462,7 +464,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/07_PAM_Point_Sampling/" class="md-nav__link">
-        PAM Point Sampling
+        Geometry Sampling in PAM
       </a>
     </li>
   
@@ -476,7 +478,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/08_PAM_Population_Activity_Plots/" class="md-nav__link">
-        PAM Population Activity Plots
+        Plotting activity times
       </a>
     </li>
   
@@ -490,7 +492,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/09_Travel_Plots/" class="md-nav__link">
-        Travel Plots
+        Plot Activity Plan Travel
       </a>
     </li>
   
@@ -504,7 +506,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/10_Advanced_Spatial-Sampling_Demo/" class="md-nav__link">
-        Advanced Spatial-Sampling Demo
+        Facility sampling
       </a>
     </li>
   
@@ -518,7 +520,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/11_Advanced_Plan_Rescheduling/" class="md-nav__link">
-        Advanced Plan Rescheduling
+        Plan rescheduling
       </a>
     </li>
   
@@ -532,7 +534,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/12_Advanced_Adding_Vehicles/" class="md-nav__link">
-        Advanced Adding Vehicles
+        Adding vehicles to the plans
       </a>
     </li>
   
@@ -546,7 +548,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/13_Advanced_Freight_Synthesis/" class="md-nav__link">
-        Advanced Freight Synthesis
+        Freight synthesis
       </a>
     </li>
   
@@ -560,7 +562,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/14_Advanced_Plan_Cropping/" class="md-nav__link">
-        Advanced Plan Cropping
+        Plan cropping
       </a>
     </li>
   
@@ -574,7 +576,7 @@
   
     <li class="md-nav__item">
       <a href="../examples/15_Advanced_Choice/" class="md-nav__link">
-        Advanced Choice
+        Applying a location and mode choice model to populations
       </a>
     </li>
   
@@ -652,22 +654,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/scoring/" class="md-nav__link">
-        pam.scoring
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/vehicle/" class="md-nav__link">
-        pam.vehicle
+      <a href="../api/core/" class="md-nav__link">
+        pam.core
       </a>
     </li>
   
@@ -694,8 +682,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/core/" class="md-nav__link">
-        pam.core
+      <a href="../api/scoring/" class="md-nav__link">
+        pam.scoring
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/utils/" class="md-nav__link">
+        pam.utils
       </a>
     </li>
   
@@ -722,8 +724,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/utils/" class="md-nav__link">
-        pam.utils
+      <a href="../api/vehicle/" class="md-nav__link">
+        pam.vehicle
       </a>
     </li>
   
@@ -746,14 +748,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_7" id="__nav_9_7_label" tabindex="0">
-          pam.write
+          pam.planner
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_7">
           <span class="md-nav__icon md-icon"></span>
-          pam.write
+          pam.planner
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -763,8 +765,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/write/matrices/" class="md-nav__link">
-        pam.write.matrices
+      <a href="../api/planner/od/" class="md-nav__link">
+        pam.planner.od
       </a>
     </li>
   
@@ -777,8 +779,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/write/diary/" class="md-nav__link">
-        pam.write.diary
+      <a href="../api/planner/encoder/" class="md-nav__link">
+        pam.planner.encoder
       </a>
     </li>
   
@@ -791,8 +793,50 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/write/matsim/" class="md-nav__link">
-        pam.write.matsim
+      <a href="../api/planner/choice_location/" class="md-nav__link">
+        pam.planner.choice_location
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/planner/clustering/" class="md-nav__link">
+        pam.planner.clustering
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/planner/utils_planner/" class="md-nav__link">
+        pam.planner.utils_planner
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/planner/zones/" class="md-nav__link">
+        pam.planner.zones
       </a>
     </li>
   
@@ -822,14 +866,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_8" id="__nav_9_8_label" tabindex="0">
-          pam.plot
+          pam.operations
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_8_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_8">
           <span class="md-nav__icon md-icon"></span>
-          pam.plot
+          pam.operations
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -839,8 +883,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/plot/stats/" class="md-nav__link">
-        pam.plot.stats
+      <a href="../api/operations/combine/" class="md-nav__link">
+        pam.operations.combine
       </a>
     </li>
   
@@ -853,8 +897,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/plot/plans/" class="md-nav__link">
-        pam.plot.plans
+      <a href="../api/operations/cropping/" class="md-nav__link">
+        pam.operations.cropping
       </a>
     </li>
   
@@ -884,14 +928,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_9" id="__nav_9_9_label" tabindex="0">
-          pam.optimise
+          pam.write
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_9_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_9">
           <span class="md-nav__icon md-icon"></span>
-          pam.optimise
+          pam.write
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -901,8 +945,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/optimise/grid/" class="md-nav__link">
-        pam.optimise.grid
+      <a href="../api/write/diary/" class="md-nav__link">
+        pam.write.diary
       </a>
     </li>
   
@@ -915,8 +959,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/optimise/random/" class="md-nav__link">
-        pam.optimise.random
+      <a href="../api/write/matsim/" class="md-nav__link">
+        pam.write.matsim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/write/matrices/" class="md-nav__link">
+        pam.write.matrices
       </a>
     </li>
   
@@ -946,14 +1004,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_10" id="__nav_9_10_label" tabindex="0">
-          pam.array
+          pam.report
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_10_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_10">
           <span class="md-nav__icon md-icon"></span>
-          pam.array
+          pam.report
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -963,8 +1021,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/array/encode/" class="md-nav__link">
-        pam.array.encode
+      <a href="../api/report/summary/" class="md-nav__link">
+        pam.report.summary
       </a>
     </li>
   
@@ -977,8 +1035,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/array/distance/" class="md-nav__link">
-        pam.array.distance
+      <a href="../api/report/benchmarks/" class="md-nav__link">
+        pam.report.benchmarks
       </a>
     </li>
   
@@ -991,8 +1049,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/array/decode/" class="md-nav__link">
-        pam.array.decode
+      <a href="../api/report/stringify/" class="md-nav__link">
+        pam.report.stringify
       </a>
     </li>
   
@@ -1022,14 +1080,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_11" id="__nav_9_11_label" tabindex="0">
-          pam.planner
+          pam.policy
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_11_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_11">
           <span class="md-nav__icon md-icon"></span>
-          pam.planner
+          pam.policy
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1039,8 +1097,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/planner/od/" class="md-nav__link">
-        pam.planner.od
+      <a href="../api/policy/filters/" class="md-nav__link">
+        pam.policy.filters
       </a>
     </li>
   
@@ -1053,8 +1111,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/planner/clustering/" class="md-nav__link">
-        pam.planner.clustering
+      <a href="../api/policy/policies/" class="md-nav__link">
+        pam.policy.policies
       </a>
     </li>
   
@@ -1067,8 +1125,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/planner/encoder/" class="md-nav__link">
-        pam.planner.encoder
+      <a href="../api/policy/modifiers/" class="md-nav__link">
+        pam.policy.modifiers
       </a>
     </li>
   
@@ -1081,36 +1139,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/planner/utils_planner/" class="md-nav__link">
-        pam.planner.utils_planner
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/planner/choice_location/" class="md-nav__link">
-        pam.planner.choice_location
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/planner/zones/" class="md-nav__link">
-        pam.planner.zones
+      <a href="../api/policy/probability_samplers/" class="md-nav__link">
+        pam.policy.probability_samplers
       </a>
     </li>
   
@@ -1202,14 +1232,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_13" id="__nav_9_13_label" tabindex="0">
-          pam.operations
+          pam.optimise
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_13_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_13">
           <span class="md-nav__icon md-icon"></span>
-          pam.operations
+          pam.optimise
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1219,8 +1249,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/operations/cropping/" class="md-nav__link">
-        pam.operations.cropping
+      <a href="../api/optimise/random/" class="md-nav__link">
+        pam.optimise.random
       </a>
     </li>
   
@@ -1233,8 +1263,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/operations/combine/" class="md-nav__link">
-        pam.operations.combine
+      <a href="../api/optimise/grid/" class="md-nav__link">
+        pam.optimise.grid
       </a>
     </li>
   
@@ -1264,14 +1294,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_14" id="__nav_9_14_label" tabindex="0">
-          pam.samplers
+          pam.array
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_14_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_14">
           <span class="md-nav__icon md-icon"></span>
-          pam.samplers
+          pam.array
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1281,8 +1311,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/samplers/time/" class="md-nav__link">
-        pam.samplers.time
+      <a href="../api/array/decode/" class="md-nav__link">
+        pam.array.decode
       </a>
     </li>
   
@@ -1295,8 +1325,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/samplers/attributes/" class="md-nav__link">
-        pam.samplers.attributes
+      <a href="../api/array/distance/" class="md-nav__link">
+        pam.array.distance
       </a>
     </li>
   
@@ -1309,64 +1339,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/samplers/population/" class="md-nav__link">
-        pam.samplers.population
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/samplers/spatial/" class="md-nav__link">
-        pam.samplers.spatial
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/samplers/facility/" class="md-nav__link">
-        pam.samplers.facility
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/samplers/basic/" class="md-nav__link">
-        pam.samplers.basic
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/samplers/tour/" class="md-nav__link">
-        pam.samplers.tour
+      <a href="../api/array/encode/" class="md-nav__link">
+        pam.array.encode
       </a>
     </li>
   
@@ -1396,14 +1370,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_15" id="__nav_9_15_label" tabindex="0">
-          pam.report
+          pam.samplers
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_15_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_15">
           <span class="md-nav__icon md-icon"></span>
-          pam.report
+          pam.samplers
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1413,8 +1387,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/report/stringify/" class="md-nav__link">
-        pam.report.stringify
+      <a href="../api/samplers/tour/" class="md-nav__link">
+        pam.samplers.tour
       </a>
     </li>
   
@@ -1427,8 +1401,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/report/summary/" class="md-nav__link">
-        pam.report.summary
+      <a href="../api/samplers/attributes/" class="md-nav__link">
+        pam.samplers.attributes
       </a>
     </li>
   
@@ -1441,8 +1415,64 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/report/benchmarks/" class="md-nav__link">
-        pam.report.benchmarks
+      <a href="../api/samplers/spatial/" class="md-nav__link">
+        pam.samplers.spatial
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/samplers/time/" class="md-nav__link">
+        pam.samplers.time
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/samplers/basic/" class="md-nav__link">
+        pam.samplers.basic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/samplers/facility/" class="md-nav__link">
+        pam.samplers.facility
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/samplers/population/" class="md-nav__link">
+        pam.samplers.population
       </a>
     </li>
   
@@ -1472,14 +1502,14 @@
       
       
         <label class="md-nav__link" for="__nav_9_16" id="__nav_9_16_label" tabindex="0">
-          pam.policy
+          pam.plot
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_16_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_16">
           <span class="md-nav__icon md-icon"></span>
-          pam.policy
+          pam.plot
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1489,8 +1519,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/policy/probability_samplers/" class="md-nav__link">
-        pam.policy.probability_samplers
+      <a href="../api/plot/plans/" class="md-nav__link">
+        pam.plot.plans
       </a>
     </li>
   
@@ -1503,36 +1533,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/policy/modifiers/" class="md-nav__link">
-        pam.policy.modifiers
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/policy/policies/" class="md-nav__link">
-        pam.policy.policies
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/policy/filters/" class="md-nav__link">
-        pam.policy.filters
+      <a href="../api/plot/stats/" class="md-nav__link">
+        pam.plot.stats
       </a>
     </li>
   
@@ -1617,6 +1619,9 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
+
+
+
                   
 
   
@@ -1627,21 +1632,21 @@
 <h2 id="populations">Populations<a class="headerlink" href="#populations" title="Permanent link">#</a></h2>
 <p>We have some read methods for common input data formats - but first let's take a quick
 look at the core pam data structure for populations:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pam.core</span> <span class="kn">import</span> <span class="n">Population</span><span class="p">,</span> <span class="n">Household</span><span class="p">,</span> <span class="n">Person</span>
-
-<span class="n">population</span> <span class="o">=</span> <span class="n">Population</span><span class="p">()</span>  <span class="c1"># initialise an empty population</span>
-
-<span class="n">household</span> <span class="o">=</span> <span class="n">Household</span><span class="p">(</span><span class="s1">&#39;hid0&#39;</span><span class="p">,</span> <span class="n">attributes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;struct&#39;</span><span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;dogs&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="o">...</span><span class="p">})</span>
-<span class="n">population</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">household</span><span class="p">)</span>
-
-<span class="n">person</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;pid0&#39;</span><span class="p">,</span> <span class="n">attributes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">33</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">:</span> <span class="s1">&#39;tall&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">})</span>
-<span class="n">household</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
-
-<span class="n">person</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;pid1&#39;</span><span class="p">,</span> <span class="n">attributes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">35</span><span class="p">,</span> <span class="s1">&#39;cats_or_dogs?&#39;</span><span class="p">:</span> <span class="s1">&#39;dogs&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">})</span>
-<span class="n">household</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
-
-<span class="n">population</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
-</code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">pam.core</span> <span class="kn">import</span> <span class="n">Population</span><span class="p">,</span> <span class="n">Household</span><span class="p">,</span> <span class="n">Person</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">population</span> <span class="o">=</span> <span class="n">Population</span><span class="p">()</span>  <span class="c1"># initialise an empty population</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">household</span> <span class="o">=</span> <span class="n">Household</span><span class="p">(</span><span class="s1">&#39;hid0&#39;</span><span class="p">,</span> <span class="n">attributes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;struct&#39;</span><span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;dogs&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="o">...</span><span class="p">})</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">population</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">household</span><span class="p">)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">person</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;pid0&#39;</span><span class="p">,</span> <span class="n">attributes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">33</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">:</span> <span class="s1">&#39;tall&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">})</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">household</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">person</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;pid1&#39;</span><span class="p">,</span> <span class="n">attributes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">35</span><span class="p">,</span> <span class="s1">&#39;cats_or_dogs?&#39;</span><span class="p">:</span> <span class="s1">&#39;dogs&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">})</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">household</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="n">population</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
+</span></code></pre></div>
 <h2 id="read-methods">Read methods<a class="headerlink" href="#read-methods" title="Permanent link">#</a></h2>
 <p>The first step in any application is to load your data into the core pam format (pam.core.Population). We
 are trying to support comon tabular formats ('travel diaries') using <code>pam.read.load_travel_diary</code>. A
@@ -1652,27 +1657,27 @@ travel diary can be composed of three tables:</p>
 <li><code>households_attributes</code> (optional) - optionally include households attributes (eg: <code>hh number of cars</code>)</li>
 </ul>
 <p>The input tables are expected as pandas.DataFrame, eg:
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">pam</span>
-
-<span class="n">trips_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">trips</span><span class="o">.</span><span class="n">csv</span><span class="p">)</span>
-<span class="n">persons_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">persons</span><span class="o">.</span><span class="n">csv</span><span class="p">)</span>
-
-<span class="c1"># Fix headers and wrangle as required</span>
-<span class="c1"># ...</span>
-
-<span class="n">population</span> <span class="o">=</span> <span class="n">pam</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">load_travel_diary</span><span class="p">(</span>
-    <span class="n">trips</span> <span class="o">=</span> <span class="n">trips_df</span><span class="p">,</span>
-    <span class="n">persons_attributes</span> <span class="o">=</span> <span class="n">persons_df</span><span class="p">,</span>
-    <span class="n">hhs_attributes</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-    <span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">population</span><span class="o">.</span><span class="n">stats</span><span class="p">)</span>
-
-<span class="n">example_person</span> <span class="o">=</span> <span class="n">population</span><span class="o">.</span><span class="n">random_person</span>
-<span class="n">example_person</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
-<span class="n">example_person</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-</code></pre></div></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span> <span class="nn">pam</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">trips_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">trips</span><span class="o">.</span><span class="n">csv</span><span class="p">)</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">persons_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">persons</span><span class="o">.</span><span class="n">csv</span><span class="p">)</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># Fix headers and wrangle as required</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># ...</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">population</span> <span class="o">=</span> <span class="n">pam</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">load_travel_diary</span><span class="p">(</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="n">trips</span> <span class="o">=</span> <span class="n">trips_df</span><span class="p">,</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="n">persons_attributes</span> <span class="o">=</span> <span class="n">persons_df</span><span class="p">,</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="n">hhs_attributes</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    <span class="p">)</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="nb">print</span><span class="p">(</span><span class="n">population</span><span class="o">.</span><span class="n">stats</span><span class="p">)</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="n">example_person</span> <span class="o">=</span> <span class="n">population</span><span class="o">.</span><span class="n">random_person</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="n">example_person</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="n">example_person</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</span></code></pre></div></p>
 <p>PAM requires tabular inputs to follow a basic structure. Rows in the <code>trips</code> dataframe represent unique trips by all persons, rows in the
 <code>persons_attributes</code> dataframe represent unique persons and rows in the <code>hhs_attributes</code> dataframe represent unique households. Fields
 named <code>pid</code> (person ID) and <code>hid</code> (household ID) are used to provide unique identifiers to people and households.</p>
@@ -1890,11 +1895,11 @@ named <code>pid</code> (person ID) and <code>hid</code> (household ID) are used 
 <p>Because it is quite common to provide a person or household <code>freq</code> in the trips table, there are two special options (<code>trip_freq_as_person_freq = True</code> and <code>trip_freq_as_hh_freq = True</code>) that can be used to pass the <code>freq</code> field from the trips table to either the people or households table instead.</p>
 <p>Generally PAM will assume when you want some weighted output, that it should use household frequencies. If these have not been set then PAM will assume that the household frequency is the average
 frequency of persons within the household. If person frequencies are not set the PAM will assume that the person frequency is the average frequency of legs within the persons plan. If you wish to adjust frequencies of a population then you should use the <code>set_freq()</code> method, eg:</p>
-<div class="highlight"><pre><span></span><code><span class="n">factor</span> <span class="o">=</span> <span class="mf">1.2</span>
-<span class="n">household</span><span class="o">.</span><span class="n">set_freq</span><span class="p">(</span><span class="n">household</span><span class="o">.</span><span class="n">freq</span> <span class="o">*</span> <span class="n">factor</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">pid</span><span class="p">,</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">household</span><span class="p">:</span>
-    <span class="n">person</span><span class="o">.</span><span class="n">set_freq</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">freq</span> <span class="o">*</span> <span class="n">factor</span><span class="p">)</span>
-</code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">factor</span> <span class="o">=</span> <span class="mf">1.2</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">household</span><span class="o">.</span><span class="n">set_freq</span><span class="p">(</span><span class="n">household</span><span class="o">.</span><span class="n">freq</span> <span class="o">*</span> <span class="n">factor</span><span class="p">)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">for</span> <span class="n">pid</span><span class="p">,</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">household</span><span class="p">:</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">person</span><span class="o">.</span><span class="n">set_freq</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">freq</span> <span class="o">*</span> <span class="n">factor</span><span class="p">)</span>
+</span></code></pre></div>
 <h3 id="readwriteother-formats">Read/Write/Other formats<a class="headerlink" href="#readwriteother-formats" title="Permanent link">#</a></h3>
 <p>PAM can read/write to tabular formats and MATSim xml (<code>pam.read.read_matsim</code> and <code>pam.write.write_matsim</code>). PAM can also write to segmented OD matrices using <code>pam.write.write_od_matrices</code>.</p>
 <p>Benchmark or summary data and cross-tabulations can be extracted with the <code>pam.write.write_benchmarks</code> method, passing as arguments the data field(s) to summarise, the dimension(s) to group by, and the aggregation function(s). For example <code>pam.write_benchmarks(population, dimensions = ['duration_category'], data_fields= ['freq'], aggfunc = [sum]</code> returns the frequency breakdown of trips' duration. The <code>write</code> module also provides a number of wrappers for frequently-used bechmarks under the <code>write_*****_benchmark</code> name.</p>
@@ -1905,6 +1910,7 @@ frequency of persons within the household. If person frequencies are not set the
 
 
                 
+
               </article>
             </div>
           
@@ -1939,7 +1945,7 @@ frequency of persons within the household. If person frequencies are not set the
     <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../assets/javascripts/bundle.b425cdc4.min.js"></script>
       
     
   </body>
