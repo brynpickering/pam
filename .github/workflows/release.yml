@@ -1,9 +1,8 @@
 name: Publish
 
 on:
-  push:
-    tags:
-      - '*'
+  release:
+    types: [published]
 
 defaults:
   run:
@@ -23,32 +22,12 @@ jobs:
     - uses: mamba-org/setup-micromamba@v1
       with:
         micromamba-version: latest
-        environment-name: pam-condabuild
+        environment-name: pam-condaupload
         create-args: >-
             python=3.11
-            conda-build
             anaconda-client
         post-cleanup: all
     
-    - name: add CML conda channel
-      run: conda config --add channels city-modelling-lab
-
-    - name: Build conda package
-      run: |
-        mkdir ${{ runner.temp }}/conda_builds
-        conda build --output-folder ${{ runner.temp }}/conda_builds .
-        echo conda build --output .
-    
-    - name: Upload built conda package ready for upload on release
-      uses: actions/upload-artifact@v3
-      with:
-        name: conda-build-$RELEASE_TAG_VERSION
-        path: ${{ runner.temp }}/conda_builds
-        retention-days: 7
-
-    - name: Test installing built conda package
-      run: micromamba -c local pam
-
     - name: Download built conda package ready for upload on release
       uses: actions/download-artifact@v3
       with:
