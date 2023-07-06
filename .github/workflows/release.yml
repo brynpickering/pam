@@ -61,8 +61,8 @@ jobs:
         environment-file: requirements/base.txt
         create-args: >-
             -c city-modelling-lab
+            -f requirements/docs.txt
             python=3.11
-            requirements/docs.txt
         post-cleanup: all
         cache-environment: true
 
