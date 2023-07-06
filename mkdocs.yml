@@ -68,13 +68,13 @@ plugins:
             signature_crossrefs: true
             show_root_toc_entry: false
   - generate-api:
-      package_dir: "pam"
+      package_dir: "src/pam"
       api_dir: "api"
       skip:
-          - pam/cli.py
-          - pam/variables.py
+          - src/pam/cli.py
+          - src/pam/variables.py
 watch: 
-  - pam
+  - src/pam
 extra_css:
   - static/extras.css
 extra:

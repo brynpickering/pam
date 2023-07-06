@@ -1,6 +1,7 @@
 import logging
 import os
 
+import importlib_resources
 import lxml
 import pytest
 
@@ -193,22 +194,14 @@ def test_extracting_unique_electric_charger_types_from_population(
 
 @pytest.fixture
 def vehicles_v2_xsd():
-    xsd_path = os.path.abspath(
-        os.path.join(
-            os.path.dirname(__file__), "..", "pam", "fixtures", "dtd", "vehicleDefinitions_v2.0.xsd"
-        )
-    )
+    xsd_path = importlib_resources.files("pam") / "fixtures" / "dtd" / "vehicleDefinitions_v2.0.xsd"
     xml_schema_doc = lxml.etree.parse(xsd_path)
     yield lxml.etree.XMLSchema(xml_schema_doc)
 
 
 @pytest.fixture
 def electric_vehicles_v1_dtd():
-    dtd_path = os.path.abspath(
-        os.path.join(
-            os.path.dirname(__file__), "..", "pam", "fixtures", "dtd", "electric_vehicles_v1.dtd"
-        )
-    )
+    dtd_path = importlib_resources.files("pam") / "fixtures" / "dtd" / "electric_vehicles_v1.dtd"
     yield lxml.etree.DTD(dtd_path)
 
 
