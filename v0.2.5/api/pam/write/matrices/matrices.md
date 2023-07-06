@@ -1,0 +1,2 @@
+
+::: src.pam.write.matrices

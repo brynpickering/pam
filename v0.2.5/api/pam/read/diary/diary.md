@@ -1,0 +1,2 @@
+
+::: src.pam.read.diary

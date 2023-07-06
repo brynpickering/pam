@@ -1,0 +1,3188 @@
+<!--Add download button to all pages built from jupyter notebooks-->
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../modifiers/">
+      
+      
+        <link rel="next" href="../probability_samplers/">
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+    
+    
+      
+        <title>src.pam.policy.policies - Population Activity Modeller (PAM)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.26e3688c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../../../static/extras.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#src.pam.policy.policies.ActivityPolicy" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Population Activity Modeller (PAM)" class="md-header__button md-logo" aria-label="Population Activity Modeller (PAM)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Population Activity Modeller (PAM)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              src.pam.policy.policies
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/arup-group/pam/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Population Activity Modeller (PAM)" class="md-nav__button md-logo" aria-label="Population Activity Modeller (PAM)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Population Activity Modeller (PAM)
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/arup-group/pam/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../read_data/" class="md-nav__link">
+        Reading data
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../activity_plans/" class="md-nav__link">
+        Activity plans
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../modelling_policy_impact/" class="md-nav__link">
+        Modelling the impact of policies on populations
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../examples/01_PAM_Getting_Started/" class="md-nav__link">
+        PAM - Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../examples/02_Population_Basics/" class="md-nav__link">
+        Population Basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../examples/03_Example_Generate_Random_Population/" class="md-nav__link">
+        Generating a random population for West London
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../examples/04_Example_Ingest_NTS_Diaries/" class="md-nav__link">
+        Converting the National Travel Survey into a Simple MATSim Format Population
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../examples/05_PAM_Policies_Walk_Through/" class="md-nav__link">
+        Modifying the population using simple policies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../examples/06_PAM_Complex_Policies/" class="md-nav__link">
+        Modifying the population using complex policies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../examples/07_PAM_Point_Sampling/" class="md-nav__link">
+        Geometry Sampling in PAM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../examples/08_PAM_Population_Activity_Plots/" class="md-nav__link">
+        Plotting activity times
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../examples/09_Travel_Plots/" class="md-nav__link">
+        Plot Activity Plan Travel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../examples/10_Advanced_Spatial-Sampling_Demo/" class="md-nav__link">
+        Facility sampling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../examples/11_Advanced_Plan_Rescheduling/" class="md-nav__link">
+        Plan rescheduling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../examples/12_Advanced_Adding_Vehicles/" class="md-nav__link">
+        Adding vehicles to the plans
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../examples/13_Advanced_Freight_Synthesis/" class="md-nav__link">
+        Freight synthesis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../examples/14_Advanced_Plan_Cropping/" class="md-nav__link">
+        Plan cropping
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../examples/15_Advanced_Choice/" class="md-nav__link">
+        Applying a location and mode choice model to populations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../get_involved/" class="md-nav__link">
+        Get involved
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/" class="md-nav__link">
+        Command line interface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+          Python API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_8_2">
+          <span class="md-nav__icon md-icon"></span>
+          Python API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_1" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_2_1" id="__nav_8_2_1_label" tabindex="0">
+          src.pam
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_8_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          src.pam
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../activity/" class="md-nav__link">
+        src.pam.activity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../array/decode/" class="md-nav__link">
+        src.pam.array.decode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../array/distance/" class="md-nav__link">
+        src.pam.array.distance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../array/encode/" class="md-nav__link">
+        src.pam.array.encode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core/" class="md-nav__link">
+        src.pam.core
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../location/" class="md-nav__link">
+        src.pam.location
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/combine/" class="md-nav__link">
+        src.pam.operations.combine
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/cropping/" class="md-nav__link">
+        src.pam.operations.cropping
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../optimise/grid/" class="md-nav__link">
+        src.pam.optimise.grid
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../optimise/random/" class="md-nav__link">
+        src.pam.optimise.random
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planner/choice_location/" class="md-nav__link">
+        src.pam.planner.choice_location
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planner/clustering/" class="md-nav__link">
+        src.pam.planner.clustering
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planner/encoder/" class="md-nav__link">
+        src.pam.planner.encoder
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planner/od/" class="md-nav__link">
+        src.pam.planner.od
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planner/utils_planner/" class="md-nav__link">
+        src.pam.planner.utils_planner
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planner/zones/" class="md-nav__link">
+        src.pam.planner.zones
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plot/plans/" class="md-nav__link">
+        src.pam.plot.plans
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plot/stats/" class="md-nav__link">
+        src.pam.plot.stats
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../filters/" class="md-nav__link">
+        src.pam.policy.filters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modifiers/" class="md-nav__link">
+        src.pam.policy.modifiers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          src.pam.policy.policies
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        src.pam.policy.policies
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.ActivityPolicy" class="md-nav__link">
+    ActivityPolicy
+  </a>
+  
+    <nav class="md-nav" aria-label="ActivityPolicy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.ActivityPolicy.probability" class="md-nav__link">
+    probability
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.ActivityPolicy.apply_to" class="md-nav__link">
+    apply_to()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.HouseholdPolicy" class="md-nav__link">
+    HouseholdPolicy
+  </a>
+  
+    <nav class="md-nav" aria-label="HouseholdPolicy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.HouseholdPolicy.probability" class="md-nav__link">
+    probability
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.HouseholdPolicy.apply_to" class="md-nav__link">
+    apply_to()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.HouseholdQuarantined" class="md-nav__link">
+    HouseholdQuarantined
+  </a>
+  
+    <nav class="md-nav" aria-label="HouseholdQuarantined">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.HouseholdQuarantined.probability" class="md-nav__link">
+    probability
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.HouseholdQuarantined.apply_to" class="md-nav__link">
+    apply_to()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.MovePersonActivitiesToHome" class="md-nav__link">
+    MovePersonActivitiesToHome
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.PersonPolicy" class="md-nav__link">
+    PersonPolicy
+  </a>
+  
+    <nav class="md-nav" aria-label="PersonPolicy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.PersonPolicy.probability" class="md-nav__link">
+    probability
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.PersonPolicy.apply_to" class="md-nav__link">
+    apply_to()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.PersonStayAtHome" class="md-nav__link">
+    PersonStayAtHome
+  </a>
+  
+    <nav class="md-nav" aria-label="PersonStayAtHome">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.PersonStayAtHome.probability" class="md-nav__link">
+    probability
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.PersonStayAtHome.apply_to" class="md-nav__link">
+    apply_to()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.Policy" class="md-nav__link">
+    Policy
+  </a>
+  
+    <nav class="md-nav" aria-label="Policy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.Policy.apply_to" class="md-nav__link">
+    apply_to()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.Policy.print" class="md-nav__link">
+    print()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.PolicyLevel" class="md-nav__link">
+    PolicyLevel
+  </a>
+  
+    <nav class="md-nav" aria-label="PolicyLevel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.PolicyLevel.attribute_filter" class="md-nav__link">
+    attribute_filter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.PolicyLevel.modifier" class="md-nav__link">
+    modifier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.PolicyLevel.apply_to" class="md-nav__link">
+    apply_to()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.ReduceSharedHouseholdActivities" class="md-nav__link">
+    ReduceSharedHouseholdActivities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.RemoveHouseholdActivities" class="md-nav__link">
+    RemoveHouseholdActivities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.RemoveIndividualActivities" class="md-nav__link">
+    RemoveIndividualActivities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.RemovePersonActivities" class="md-nav__link">
+    RemovePersonActivities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.apply_policies" class="md-nav__link">
+    apply_policies()
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../probability_samplers/" class="md-nav__link">
+        src.pam.policy.probability_samplers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../read/diary/" class="md-nav__link">
+        src.pam.read.diary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../read/matsim/" class="md-nav__link">
+        src.pam.read.matsim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../report/benchmarks/" class="md-nav__link">
+        src.pam.report.benchmarks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../report/stringify/" class="md-nav__link">
+        src.pam.report.stringify
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../report/summary/" class="md-nav__link">
+        src.pam.report.summary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samplers/attributes/" class="md-nav__link">
+        src.pam.samplers.attributes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samplers/basic/" class="md-nav__link">
+        src.pam.samplers.basic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samplers/facility/" class="md-nav__link">
+        src.pam.samplers.facility
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samplers/population/" class="md-nav__link">
+        src.pam.samplers.population
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samplers/spatial/" class="md-nav__link">
+        src.pam.samplers.spatial
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samplers/time/" class="md-nav__link">
+        src.pam.samplers.time
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samplers/tour/" class="md-nav__link">
+        src.pam.samplers.tour
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scoring/" class="md-nav__link">
+        src.pam.scoring
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utils/" class="md-nav__link">
+        src.pam.utils
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vehicle/" class="md-nav__link">
+        src.pam.vehicle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../write/diary/" class="md-nav__link">
+        src.pam.write.diary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../write/matrices/" class="md-nav__link">
+        src.pam.write.matrices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../write/matsim/" class="md-nav__link">
+        src.pam.write.matsim
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../CHANGELOG/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.ActivityPolicy" class="md-nav__link">
+    ActivityPolicy
+  </a>
+  
+    <nav class="md-nav" aria-label="ActivityPolicy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.ActivityPolicy.probability" class="md-nav__link">
+    probability
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.ActivityPolicy.apply_to" class="md-nav__link">
+    apply_to()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.HouseholdPolicy" class="md-nav__link">
+    HouseholdPolicy
+  </a>
+  
+    <nav class="md-nav" aria-label="HouseholdPolicy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.HouseholdPolicy.probability" class="md-nav__link">
+    probability
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.HouseholdPolicy.apply_to" class="md-nav__link">
+    apply_to()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.HouseholdQuarantined" class="md-nav__link">
+    HouseholdQuarantined
+  </a>
+  
+    <nav class="md-nav" aria-label="HouseholdQuarantined">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.HouseholdQuarantined.probability" class="md-nav__link">
+    probability
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.HouseholdQuarantined.apply_to" class="md-nav__link">
+    apply_to()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.MovePersonActivitiesToHome" class="md-nav__link">
+    MovePersonActivitiesToHome
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.PersonPolicy" class="md-nav__link">
+    PersonPolicy
+  </a>
+  
+    <nav class="md-nav" aria-label="PersonPolicy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.PersonPolicy.probability" class="md-nav__link">
+    probability
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.PersonPolicy.apply_to" class="md-nav__link">
+    apply_to()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.PersonStayAtHome" class="md-nav__link">
+    PersonStayAtHome
+  </a>
+  
+    <nav class="md-nav" aria-label="PersonStayAtHome">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.PersonStayAtHome.probability" class="md-nav__link">
+    probability
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.PersonStayAtHome.apply_to" class="md-nav__link">
+    apply_to()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.Policy" class="md-nav__link">
+    Policy
+  </a>
+  
+    <nav class="md-nav" aria-label="Policy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.Policy.apply_to" class="md-nav__link">
+    apply_to()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.Policy.print" class="md-nav__link">
+    print()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.PolicyLevel" class="md-nav__link">
+    PolicyLevel
+  </a>
+  
+    <nav class="md-nav" aria-label="PolicyLevel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.PolicyLevel.attribute_filter" class="md-nav__link">
+    attribute_filter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.PolicyLevel.modifier" class="md-nav__link">
+    modifier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.PolicyLevel.apply_to" class="md-nav__link">
+    apply_to()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.ReduceSharedHouseholdActivities" class="md-nav__link">
+    ReduceSharedHouseholdActivities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.RemoveHouseholdActivities" class="md-nav__link">
+    RemoveHouseholdActivities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.RemoveIndividualActivities" class="md-nav__link">
+    RemoveIndividualActivities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.RemovePersonActivities" class="md-nav__link">
+    RemovePersonActivities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.pam.policy.policies.apply_policies" class="md-nav__link">
+    apply_policies()
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+
+
+                  
+
+  
+  
+
+
+  <h1>src.pam.policy.policies</h1>
+
+<div class="doc doc-object doc-module">
+
+
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="src.pam.policy.policies.ActivityPolicy" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">ActivityPolicy</span><span class="p">(</span><span class="n">modifier</span><span class="p">:</span> <span class="n">modifiers</span><span class="o">.</span><span class="n">Modifier</span><span class="p">,</span> <span class="n">probability</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">SamplingProbability</span><span class="p">],</span> <span class="n">attribute_filter</span><span class="p">:</span> <span class="n">filters</span><span class="o">.</span><span class="n">Filter</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#src.pam.policy.policies.ActivityPolicy" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="src.pam.policy.policies.PolicyLevel" href="#src.pam.policy.policies.PolicyLevel">PolicyLevel</a></code></p>
+
+  
+      <p>Policy that is to be applied on an individual activity level.</p>
+<h4 id="src.pam.policy.policies.ActivityPolicy--parameters">Parameters<a class="headerlink" href="#src.pam.policy.policies.ActivityPolicy--parameters" title="Permanent link">#</a></h4>
+<p>:param modifier
+A subclass of the 'Modifier' base class - the class which
+governs the change to be performed to the activities
+in a person's plan.</p>
+<p>:param probability
+A number or a subclass of the 'SamplingProbability' base class.
+The activity policy accepts all but 'HouseholdProbability' and
+'PersonProbability' levels of Sampling Probabilities.
+If probability given as float: 0&lt;probability&lt;=1 then the probability
+level is assumed to be of the same level as the policy, i.e. Activity.</p>
+<p>:param attribute_filter, default 'None'
+Optional argument which helps filter/select activity for policy application
+based on object attributes.</p>
+
+
+          <details class="quote">
+            <summary>Source code in <code>src/pam/policy/policies.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-171">171</a></span>
+<span class="normal"><a href="#__codelineno-0-172">172</a></span>
+<span class="normal"><a href="#__codelineno-0-173">173</a></span>
+<span class="normal"><a href="#__codelineno-0-174">174</a></span>
+<span class="normal"><a href="#__codelineno-0-175">175</a></span>
+<span class="normal"><a href="#__codelineno-0-176">176</a></span>
+<span class="normal"><a href="#__codelineno-0-177">177</a></span>
+<span class="normal"><a href="#__codelineno-0-178">178</a></span>
+<span class="normal"><a href="#__codelineno-0-179">179</a></span>
+<span class="normal"><a href="#__codelineno-0-180">180</a></span>
+<span class="normal"><a href="#__codelineno-0-181">181</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-171"><a id="__codelineno-0-171" name="__codelineno-0-171"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="__span-0-172"><a id="__codelineno-0-172" name="__codelineno-0-172"></a>    <span class="bp">self</span><span class="p">,</span>
+</span><span id="__span-0-173"><a id="__codelineno-0-173" name="__codelineno-0-173"></a>    <span class="n">modifier</span><span class="p">:</span> <span class="n">modifiers</span><span class="o">.</span><span class="n">Modifier</span><span class="p">,</span>
+</span><span id="__span-0-174"><a id="__codelineno-0-174" name="__codelineno-0-174"></a>    <span class="n">probability</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">SamplingProbability</span><span class="p">],</span>
+</span><span id="__span-0-175"><a id="__codelineno-0-175" name="__codelineno-0-175"></a>    <span class="n">attribute_filter</span><span class="p">:</span> <span class="n">filters</span><span class="o">.</span><span class="n">Filter</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-0-176"><a id="__codelineno-0-176" name="__codelineno-0-176"></a><span class="p">):</span>
+</span><span id="__span-0-177"><a id="__codelineno-0-177" name="__codelineno-0-177"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">modifier</span><span class="p">,</span> <span class="n">attribute_filter</span><span class="p">)</span>
+</span><span id="__span-0-178"><a id="__codelineno-0-178" name="__codelineno-0-178"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">probability</span> <span class="o">=</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">verify_probability</span><span class="p">(</span>
+</span><span id="__span-0-179"><a id="__codelineno-0-179" name="__codelineno-0-179"></a>        <span class="n">probability</span><span class="p">,</span>
+</span><span id="__span-0-180"><a id="__codelineno-0-180" name="__codelineno-0-180"></a>        <span class="p">(</span><span class="n">probability_samplers</span><span class="o">.</span><span class="n">HouseholdProbability</span><span class="p">,</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">PersonProbability</span><span class="p">),</span>
+</span><span id="__span-0-181"><a id="__codelineno-0-181" name="__codelineno-0-181"></a>    <span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+          </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="src.pam.policy.policies.ActivityPolicy.probability" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">probability</span> <span class="o">=</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">verify_probability</span><span class="p">(</span><span class="n">probability</span><span class="p">,</span> <span class="p">(</span><span class="n">probability_samplers</span><span class="o">.</span><span class="n">HouseholdProbability</span><span class="p">,</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">PersonProbability</span><span class="p">))</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+<a href="#src.pam.policy.policies.ActivityPolicy.probability" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.pam.policy.policies.ActivityPolicy.apply_to" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">apply_to</span><span class="p">(</span><span class="n">household</span><span class="p">,</span> <span class="n">person</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">activities</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#src.pam.policy.policies.ActivityPolicy.apply_to" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+
+      <details class="quote">
+        <summary>Source code in <code>src/pam/policy/policies.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-183">183</a></span>
+<span class="normal"><a href="#__codelineno-0-184">184</a></span>
+<span class="normal"><a href="#__codelineno-0-185">185</a></span>
+<span class="normal"><a href="#__codelineno-0-186">186</a></span>
+<span class="normal"><a href="#__codelineno-0-187">187</a></span>
+<span class="normal"><a href="#__codelineno-0-188">188</a></span>
+<span class="normal"><a href="#__codelineno-0-189">189</a></span>
+<span class="normal"><a href="#__codelineno-0-190">190</a></span>
+<span class="normal"><a href="#__codelineno-0-191">191</a></span>
+<span class="normal"><a href="#__codelineno-0-192">192</a></span>
+<span class="normal"><a href="#__codelineno-0-193">193</a></span>
+<span class="normal"><a href="#__codelineno-0-194">194</a></span>
+<span class="normal"><a href="#__codelineno-0-195">195</a></span>
+<span class="normal"><a href="#__codelineno-0-196">196</a></span>
+<span class="normal"><a href="#__codelineno-0-197">197</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-183"><a id="__codelineno-0-183" name="__codelineno-0-183"></a><span class="k">def</span> <span class="nf">apply_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">household</span><span class="p">,</span> <span class="n">person</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">activities</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="__span-0-184"><a id="__codelineno-0-184" name="__codelineno-0-184"></a>    <span class="k">for</span> <span class="n">pid</span><span class="p">,</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">household</span><span class="o">.</span><span class="n">people</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="__span-0-185"><a id="__codelineno-0-185" name="__codelineno-0-185"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">attribute_filter</span><span class="o">.</span><span class="n">satisfies_conditions</span><span class="p">(</span><span class="n">person</span><span class="p">):</span>
+</span><span id="__span-0-186"><a id="__codelineno-0-186" name="__codelineno-0-186"></a>            <span class="n">activities_to_purge</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-0-187"><a id="__codelineno-0-187" name="__codelineno-0-187"></a>            <span class="k">for</span> <span class="n">activity</span> <span class="ow">in</span> <span class="n">person</span><span class="o">.</span><span class="n">activities</span><span class="p">:</span>
+</span><span id="__span-0-188"><a id="__codelineno-0-188" name="__codelineno-0-188"></a>                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">probability</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+</span><span id="__span-0-189"><a id="__codelineno-0-189" name="__codelineno-0-189"></a>                    <span class="n">p</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span id="__span-0-190"><a id="__codelineno-0-190" name="__codelineno-0-190"></a>                    <span class="k">for</span> <span class="n">prob</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">probability</span><span class="p">:</span>
+</span><span id="__span-0-191"><a id="__codelineno-0-191" name="__codelineno-0-191"></a>                        <span class="n">p</span> <span class="o">*=</span> <span class="n">prob</span><span class="o">.</span><span class="n">p</span><span class="p">(</span><span class="n">activity</span><span class="p">)</span>
+</span><span id="__span-0-192"><a id="__codelineno-0-192" name="__codelineno-0-192"></a>                    <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">p</span><span class="p">:</span>
+</span><span id="__span-0-193"><a id="__codelineno-0-193" name="__codelineno-0-193"></a>                        <span class="n">activities_to_purge</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">activity</span><span class="p">)</span>
+</span><span id="__span-0-194"><a id="__codelineno-0-194" name="__codelineno-0-194"></a>                <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">probability</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">activity</span><span class="p">):</span>
+</span><span id="__span-0-195"><a id="__codelineno-0-195" name="__codelineno-0-195"></a>                    <span class="n">activities_to_purge</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">activity</span><span class="p">)</span>
+</span><span id="__span-0-196"><a id="__codelineno-0-196" name="__codelineno-0-196"></a>            <span class="k">if</span> <span class="n">activities_to_purge</span><span class="p">:</span>
+</span><span id="__span-0-197"><a id="__codelineno-0-197" name="__codelineno-0-197"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">modifier</span><span class="o">.</span><span class="n">apply_to</span><span class="p">(</span><span class="n">household</span><span class="p">,</span> <span class="n">person</span><span class="p">,</span> <span class="n">activities_to_purge</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="src.pam.policy.policies.HouseholdPolicy" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">HouseholdPolicy</span><span class="p">(</span><span class="n">modifier</span><span class="p">:</span> <span class="n">modifiers</span><span class="o">.</span><span class="n">Modifier</span><span class="p">,</span> <span class="n">probability</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">SamplingProbability</span><span class="p">],</span> <span class="n">attribute_filter</span><span class="p">:</span> <span class="n">filters</span><span class="o">.</span><span class="n">Filter</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#src.pam.policy.policies.HouseholdPolicy" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="src.pam.policy.policies.PolicyLevel" href="#src.pam.policy.policies.PolicyLevel">PolicyLevel</a></code></p>
+
+  
+      <p>Policy that is to be applied on a household level.</p>
+<h4 id="src.pam.policy.policies.HouseholdPolicy--parameters">Parameters<a class="headerlink" href="#src.pam.policy.policies.HouseholdPolicy--parameters" title="Permanent link">#</a></h4>
+<p>:param modifier
+A subclass of the 'Modifier' base class - the class which
+governs the change to be performed to the activities
+in a person's plan.</p>
+<p>:param probability
+A number or a subclass of the 'SamplingProbability' base class.
+The household policy accepts all levels of Sampling Probabilities.
+If probability given as float: 0&lt;probability&lt;=1 then the probability
+level is assumed to be of the same level as the policy, i.e. Household.</p>
+<p>:param attribute_filter, default 'None'
+Optional argument which helps filter/select household for policy application
+based on object attributes.</p>
+
+
+          <details class="quote">
+            <summary>Source code in <code>src/pam/policy/policies.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-76">76</a></span>
+<span class="normal"><a href="#__codelineno-0-77">77</a></span>
+<span class="normal"><a href="#__codelineno-0-78">78</a></span>
+<span class="normal"><a href="#__codelineno-0-79">79</a></span>
+<span class="normal"><a href="#__codelineno-0-80">80</a></span>
+<span class="normal"><a href="#__codelineno-0-81">81</a></span>
+<span class="normal"><a href="#__codelineno-0-82">82</a></span>
+<span class="normal"><a href="#__codelineno-0-83">83</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-76"><a id="__codelineno-0-76" name="__codelineno-0-76"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="__span-0-77"><a id="__codelineno-0-77" name="__codelineno-0-77"></a>    <span class="bp">self</span><span class="p">,</span>
+</span><span id="__span-0-78"><a id="__codelineno-0-78" name="__codelineno-0-78"></a>    <span class="n">modifier</span><span class="p">:</span> <span class="n">modifiers</span><span class="o">.</span><span class="n">Modifier</span><span class="p">,</span>
+</span><span id="__span-0-79"><a id="__codelineno-0-79" name="__codelineno-0-79"></a>    <span class="n">probability</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">SamplingProbability</span><span class="p">],</span>
+</span><span id="__span-0-80"><a id="__codelineno-0-80" name="__codelineno-0-80"></a>    <span class="n">attribute_filter</span><span class="p">:</span> <span class="n">filters</span><span class="o">.</span><span class="n">Filter</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-0-81"><a id="__codelineno-0-81" name="__codelineno-0-81"></a><span class="p">):</span>
+</span><span id="__span-0-82"><a id="__codelineno-0-82" name="__codelineno-0-82"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">modifier</span><span class="p">,</span> <span class="n">attribute_filter</span><span class="p">)</span>
+</span><span id="__span-0-83"><a id="__codelineno-0-83" name="__codelineno-0-83"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">probability</span> <span class="o">=</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">verify_probability</span><span class="p">(</span><span class="n">probability</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+          </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="src.pam.policy.policies.HouseholdPolicy.probability" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">probability</span> <span class="o">=</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">verify_probability</span><span class="p">(</span><span class="n">probability</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+<a href="#src.pam.policy.policies.HouseholdPolicy.probability" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.pam.policy.policies.HouseholdPolicy.apply_to" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">apply_to</span><span class="p">(</span><span class="n">household</span><span class="p">,</span> <span class="n">person</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">activities</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#src.pam.policy.policies.HouseholdPolicy.apply_to" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Uses self.probability to decide if household should be selected
+:param household:
+:param person:
+:param activities:
+:return:</p>
+
+      <details class="quote">
+        <summary>Source code in <code>src/pam/policy/policies.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-85"> 85</a></span>
+<span class="normal"><a href="#__codelineno-0-86"> 86</a></span>
+<span class="normal"><a href="#__codelineno-0-87"> 87</a></span>
+<span class="normal"><a href="#__codelineno-0-88"> 88</a></span>
+<span class="normal"><a href="#__codelineno-0-89"> 89</a></span>
+<span class="normal"><a href="#__codelineno-0-90"> 90</a></span>
+<span class="normal"><a href="#__codelineno-0-91"> 91</a></span>
+<span class="normal"><a href="#__codelineno-0-92"> 92</a></span>
+<span class="normal"><a href="#__codelineno-0-93"> 93</a></span>
+<span class="normal"><a href="#__codelineno-0-94"> 94</a></span>
+<span class="normal"><a href="#__codelineno-0-95"> 95</a></span>
+<span class="normal"><a href="#__codelineno-0-96"> 96</a></span>
+<span class="normal"><a href="#__codelineno-0-97"> 97</a></span>
+<span class="normal"><a href="#__codelineno-0-98"> 98</a></span>
+<span class="normal"><a href="#__codelineno-0-99"> 99</a></span>
+<span class="normal"><a href="#__codelineno-0-100">100</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-85"><a id="__codelineno-0-85" name="__codelineno-0-85"></a><span class="k">def</span> <span class="nf">apply_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">household</span><span class="p">,</span> <span class="n">person</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">activities</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="__span-0-86"><a id="__codelineno-0-86" name="__codelineno-0-86"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Uses self.probability to decide if household should be selected</span>
+</span><span id="__span-0-87"><a id="__codelineno-0-87" name="__codelineno-0-87"></a><span class="sd">    :param household:</span>
+</span><span id="__span-0-88"><a id="__codelineno-0-88" name="__codelineno-0-88"></a><span class="sd">    :param person:</span>
+</span><span id="__span-0-89"><a id="__codelineno-0-89" name="__codelineno-0-89"></a><span class="sd">    :param activities:</span>
+</span><span id="__span-0-90"><a id="__codelineno-0-90" name="__codelineno-0-90"></a><span class="sd">    :return:</span>
+</span><span id="__span-0-91"><a id="__codelineno-0-91" name="__codelineno-0-91"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-92"><a id="__codelineno-0-92" name="__codelineno-0-92"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">attribute_filter</span><span class="o">.</span><span class="n">satisfies_conditions</span><span class="p">(</span><span class="n">household</span><span class="p">):</span>
+</span><span id="__span-0-93"><a id="__codelineno-0-93" name="__codelineno-0-93"></a>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">probability</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+</span><span id="__span-0-94"><a id="__codelineno-0-94" name="__codelineno-0-94"></a>            <span class="n">p</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span id="__span-0-95"><a id="__codelineno-0-95" name="__codelineno-0-95"></a>            <span class="k">for</span> <span class="n">prob</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">probability</span><span class="p">:</span>
+</span><span id="__span-0-96"><a id="__codelineno-0-96" name="__codelineno-0-96"></a>                <span class="n">p</span> <span class="o">*=</span> <span class="n">prob</span><span class="o">.</span><span class="n">p</span><span class="p">(</span><span class="n">household</span><span class="p">)</span>
+</span><span id="__span-0-97"><a id="__codelineno-0-97" name="__codelineno-0-97"></a>            <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">p</span><span class="p">:</span>
+</span><span id="__span-0-98"><a id="__codelineno-0-98" name="__codelineno-0-98"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">modifier</span><span class="o">.</span><span class="n">apply_to</span><span class="p">(</span><span class="n">household</span><span class="p">)</span>
+</span><span id="__span-0-99"><a id="__codelineno-0-99" name="__codelineno-0-99"></a>        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">probability</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">household</span><span class="p">):</span>
+</span><span id="__span-0-100"><a id="__codelineno-0-100" name="__codelineno-0-100"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">modifier</span><span class="o">.</span><span class="n">apply_to</span><span class="p">(</span><span class="n">household</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="src.pam.policy.policies.HouseholdQuarantined" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">HouseholdQuarantined</span><span class="p">(</span><span class="n">probability</span><span class="p">)</span></code>
+
+<a href="#src.pam.policy.policies.HouseholdQuarantined" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="src.pam.policy.policies.Policy" href="#src.pam.policy.policies.Policy">Policy</a></code></p>
+
+  
+      <p>Household level Policy which removes all non-home activities
+for all persons in a household.</p>
+<h4 id="src.pam.policy.policies.HouseholdQuarantined--parameters">Parameters<a class="headerlink" href="#src.pam.policy.policies.HouseholdQuarantined--parameters" title="Permanent link">#</a></h4>
+<p>:param probability
+A number or a subclass of the 'SamplingProbability' base class.
+This policy accepts all levels of Sampling Probabilities.
+If probability given as float: 0&lt;probability&lt;=1 then the probability
+level is assumed to be of the same level as the policy, i.e. Household.</p>
+
+
+          <details class="quote">
+            <summary>Source code in <code>src/pam/policy/policies.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-213">213</a></span>
+<span class="normal"><a href="#__codelineno-0-214">214</a></span>
+<span class="normal"><a href="#__codelineno-0-215">215</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-213"><a id="__codelineno-0-213" name="__codelineno-0-213"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">probability</span><span class="p">):</span>
+</span><span id="__span-0-214"><a id="__codelineno-0-214" name="__codelineno-0-214"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+</span><span id="__span-0-215"><a id="__codelineno-0-215" name="__codelineno-0-215"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">probability</span> <span class="o">=</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">verify_probability</span><span class="p">(</span><span class="n">probability</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+          </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="src.pam.policy.policies.HouseholdQuarantined.probability" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">probability</span> <span class="o">=</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">verify_probability</span><span class="p">(</span><span class="n">probability</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+<a href="#src.pam.policy.policies.HouseholdQuarantined.probability" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.pam.policy.policies.HouseholdQuarantined.apply_to" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">apply_to</span><span class="p">(</span><span class="n">household</span><span class="p">,</span> <span class="n">person</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">activity</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#src.pam.policy.policies.HouseholdQuarantined.apply_to" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+
+      <details class="quote">
+        <summary>Source code in <code>src/pam/policy/policies.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-217">217</a></span>
+<span class="normal"><a href="#__codelineno-0-218">218</a></span>
+<span class="normal"><a href="#__codelineno-0-219">219</a></span>
+<span class="normal"><a href="#__codelineno-0-220">220</a></span>
+<span class="normal"><a href="#__codelineno-0-221">221</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-217"><a id="__codelineno-0-217" name="__codelineno-0-217"></a><span class="k">def</span> <span class="nf">apply_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">household</span><span class="p">,</span> <span class="n">person</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">activity</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="__span-0-218"><a id="__codelineno-0-218" name="__codelineno-0-218"></a>    <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">probability</span><span class="o">.</span><span class="n">p</span><span class="p">(</span><span class="n">household</span><span class="p">)</span>
+</span><span id="__span-0-219"><a id="__codelineno-0-219" name="__codelineno-0-219"></a>    <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">p</span><span class="p">:</span>
+</span><span id="__span-0-220"><a id="__codelineno-0-220" name="__codelineno-0-220"></a>        <span class="k">for</span> <span class="n">pid</span><span class="p">,</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">household</span><span class="o">.</span><span class="n">people</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="__span-0-221"><a id="__codelineno-0-221" name="__codelineno-0-221"></a>            <span class="n">person</span><span class="o">.</span><span class="n">stay_at_home</span><span class="p">()</span>
+</span></code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="src.pam.policy.policies.MovePersonActivitiesToHome" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">MovePersonActivitiesToHome</span><span class="p">(</span><span class="n">activities</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">probability</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">SamplingProbability</span><span class="p">],</span> <span class="n">attribute_filter</span><span class="p">:</span> <span class="n">filters</span><span class="o">.</span><span class="n">Filter</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#src.pam.policy.policies.MovePersonActivitiesToHome" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="src.pam.policy.policies.PersonPolicy" href="#src.pam.policy.policies.PersonPolicy">PersonPolicy</a></code></p>
+
+  
+      <p>Pre-packaged person-level policy which moves a tour of activities
+to home location. A tour is defined as a list of activities sandwiched
+between two home activities.</p>
+<h4 id="src.pam.policy.policies.MovePersonActivitiesToHome--parameters">Parameters<a class="headerlink" href="#src.pam.policy.policies.MovePersonActivitiesToHome--parameters" title="Permanent link">#</a></h4>
+<p>:param activities
+List of activities to be considered in a tour. Does not
+require an exact match. E.g. if passed ['shop_food', 'shop_other']
+if a person has a tour of only 'shop_food', the location of that
+activity will be changed.</p>
+<p>:param probability
+A number or a subclass of the 'SamplingProbability' base class.
+The activity policy accepts all but 'HouseholdProbability' level
+of Sampling Probabilities.
+If probability given as float: 0&lt;probability&lt;=1 then the probability
+level is assumed to be of the same level as the policy, i.e. Person.</p>
+<p>:param attribute_filter, default 'None'
+Optional argument which helps filter/select household for policy application
+based on object attributes.</p>
+
+
+          <details class="quote">
+            <summary>Source code in <code>src/pam/policy/policies.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-364">364</a></span>
+<span class="normal"><a href="#__codelineno-0-365">365</a></span>
+<span class="normal"><a href="#__codelineno-0-366">366</a></span>
+<span class="normal"><a href="#__codelineno-0-367">367</a></span>
+<span class="normal"><a href="#__codelineno-0-368">368</a></span>
+<span class="normal"><a href="#__codelineno-0-369">369</a></span>
+<span class="normal"><a href="#__codelineno-0-370">370</a></span>
+<span class="normal"><a href="#__codelineno-0-371">371</a></span>
+<span class="normal"><a href="#__codelineno-0-372">372</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-364"><a id="__codelineno-0-364" name="__codelineno-0-364"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="__span-0-365"><a id="__codelineno-0-365" name="__codelineno-0-365"></a>    <span class="bp">self</span><span class="p">,</span>
+</span><span id="__span-0-366"><a id="__codelineno-0-366" name="__codelineno-0-366"></a>    <span class="n">activities</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span>
+</span><span id="__span-0-367"><a id="__codelineno-0-367" name="__codelineno-0-367"></a>    <span class="n">probability</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">SamplingProbability</span><span class="p">],</span>
+</span><span id="__span-0-368"><a id="__codelineno-0-368" name="__codelineno-0-368"></a>    <span class="n">attribute_filter</span><span class="p">:</span> <span class="n">filters</span><span class="o">.</span><span class="n">Filter</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-0-369"><a id="__codelineno-0-369" name="__codelineno-0-369"></a><span class="p">):</span>
+</span><span id="__span-0-370"><a id="__codelineno-0-370" name="__codelineno-0-370"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+</span><span id="__span-0-371"><a id="__codelineno-0-371" name="__codelineno-0-371"></a>        <span class="n">modifiers</span><span class="o">.</span><span class="n">MoveActivityTourToHomeLocation</span><span class="p">(</span><span class="n">activities</span><span class="p">),</span> <span class="n">probability</span><span class="p">,</span> <span class="n">attribute_filter</span>
+</span><span id="__span-0-372"><a id="__codelineno-0-372" name="__codelineno-0-372"></a>    <span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+          </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="src.pam.policy.policies.PersonPolicy" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">PersonPolicy</span><span class="p">(</span><span class="n">modifier</span><span class="p">:</span> <span class="n">modifiers</span><span class="o">.</span><span class="n">Modifier</span><span class="p">,</span> <span class="n">probability</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">SamplingProbability</span><span class="p">],</span> <span class="n">attribute_filter</span><span class="p">:</span> <span class="n">filters</span><span class="o">.</span><span class="n">Filter</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#src.pam.policy.policies.PersonPolicy" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="src.pam.policy.policies.PolicyLevel" href="#src.pam.policy.policies.PolicyLevel">PolicyLevel</a></code></p>
+
+  
+      <p>Policy that is to be applied on a person level.</p>
+<h4 id="src.pam.policy.policies.PersonPolicy--parameters">Parameters<a class="headerlink" href="#src.pam.policy.policies.PersonPolicy--parameters" title="Permanent link">#</a></h4>
+<p>:param modifier
+A subclass of the 'Modifier' base class - the class which
+governs the change to be performed to the activities
+in a person's plan.</p>
+<p>:param probability
+A number or a subclass of the 'SamplingProbability' base class.
+The person policy accepts all but 'HouseholdProbability' level
+of Sampling Probabilities.
+If probability given as float: 0&lt;probability&lt;=1 then the probability
+level is assumed to be of the same level as the policy, i.e. Person.</p>
+<p>:param attribute_filter, default 'None'
+Optional argument which helps filter/select person for policy application
+based on object attributes.</p>
+
+
+          <details class="quote">
+            <summary>Source code in <code>src/pam/policy/policies.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-125">125</a></span>
+<span class="normal"><a href="#__codelineno-0-126">126</a></span>
+<span class="normal"><a href="#__codelineno-0-127">127</a></span>
+<span class="normal"><a href="#__codelineno-0-128">128</a></span>
+<span class="normal"><a href="#__codelineno-0-129">129</a></span>
+<span class="normal"><a href="#__codelineno-0-130">130</a></span>
+<span class="normal"><a href="#__codelineno-0-131">131</a></span>
+<span class="normal"><a href="#__codelineno-0-132">132</a></span>
+<span class="normal"><a href="#__codelineno-0-133">133</a></span>
+<span class="normal"><a href="#__codelineno-0-134">134</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-125"><a id="__codelineno-0-125" name="__codelineno-0-125"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="__span-0-126"><a id="__codelineno-0-126" name="__codelineno-0-126"></a>    <span class="bp">self</span><span class="p">,</span>
+</span><span id="__span-0-127"><a id="__codelineno-0-127" name="__codelineno-0-127"></a>    <span class="n">modifier</span><span class="p">:</span> <span class="n">modifiers</span><span class="o">.</span><span class="n">Modifier</span><span class="p">,</span>
+</span><span id="__span-0-128"><a id="__codelineno-0-128" name="__codelineno-0-128"></a>    <span class="n">probability</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">SamplingProbability</span><span class="p">],</span>
+</span><span id="__span-0-129"><a id="__codelineno-0-129" name="__codelineno-0-129"></a>    <span class="n">attribute_filter</span><span class="p">:</span> <span class="n">filters</span><span class="o">.</span><span class="n">Filter</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-0-130"><a id="__codelineno-0-130" name="__codelineno-0-130"></a><span class="p">):</span>
+</span><span id="__span-0-131"><a id="__codelineno-0-131" name="__codelineno-0-131"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">modifier</span><span class="p">,</span> <span class="n">attribute_filter</span><span class="p">)</span>
+</span><span id="__span-0-132"><a id="__codelineno-0-132" name="__codelineno-0-132"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">probability</span> <span class="o">=</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">verify_probability</span><span class="p">(</span>
+</span><span id="__span-0-133"><a id="__codelineno-0-133" name="__codelineno-0-133"></a>        <span class="n">probability</span><span class="p">,</span> <span class="p">(</span><span class="n">probability_samplers</span><span class="o">.</span><span class="n">HouseholdProbability</span><span class="p">)</span>
+</span><span id="__span-0-134"><a id="__codelineno-0-134" name="__codelineno-0-134"></a>    <span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+          </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="src.pam.policy.policies.PersonPolicy.probability" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">probability</span> <span class="o">=</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">verify_probability</span><span class="p">(</span><span class="n">probability</span><span class="p">,</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">HouseholdProbability</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+<a href="#src.pam.policy.policies.PersonPolicy.probability" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.pam.policy.policies.PersonPolicy.apply_to" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">apply_to</span><span class="p">(</span><span class="n">household</span><span class="p">,</span> <span class="n">person</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">activities</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#src.pam.policy.policies.PersonPolicy.apply_to" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+
+      <details class="quote">
+        <summary>Source code in <code>src/pam/policy/policies.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-136">136</a></span>
+<span class="normal"><a href="#__codelineno-0-137">137</a></span>
+<span class="normal"><a href="#__codelineno-0-138">138</a></span>
+<span class="normal"><a href="#__codelineno-0-139">139</a></span>
+<span class="normal"><a href="#__codelineno-0-140">140</a></span>
+<span class="normal"><a href="#__codelineno-0-141">141</a></span>
+<span class="normal"><a href="#__codelineno-0-142">142</a></span>
+<span class="normal"><a href="#__codelineno-0-143">143</a></span>
+<span class="normal"><a href="#__codelineno-0-144">144</a></span>
+<span class="normal"><a href="#__codelineno-0-145">145</a></span>
+<span class="normal"><a href="#__codelineno-0-146">146</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-136"><a id="__codelineno-0-136" name="__codelineno-0-136"></a><span class="k">def</span> <span class="nf">apply_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">household</span><span class="p">,</span> <span class="n">person</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">activities</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="__span-0-137"><a id="__codelineno-0-137" name="__codelineno-0-137"></a>    <span class="k">for</span> <span class="n">pid</span><span class="p">,</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">household</span><span class="o">.</span><span class="n">people</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="__span-0-138"><a id="__codelineno-0-138" name="__codelineno-0-138"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">attribute_filter</span><span class="o">.</span><span class="n">satisfies_conditions</span><span class="p">(</span><span class="n">person</span><span class="p">):</span>
+</span><span id="__span-0-139"><a id="__codelineno-0-139" name="__codelineno-0-139"></a>            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">probability</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+</span><span id="__span-0-140"><a id="__codelineno-0-140" name="__codelineno-0-140"></a>                <span class="n">p</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span id="__span-0-141"><a id="__codelineno-0-141" name="__codelineno-0-141"></a>                <span class="k">for</span> <span class="n">prob</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">probability</span><span class="p">:</span>
+</span><span id="__span-0-142"><a id="__codelineno-0-142" name="__codelineno-0-142"></a>                    <span class="n">p</span> <span class="o">*=</span> <span class="n">prob</span><span class="o">.</span><span class="n">p</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+</span><span id="__span-0-143"><a id="__codelineno-0-143" name="__codelineno-0-143"></a>                <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">p</span><span class="p">:</span>
+</span><span id="__span-0-144"><a id="__codelineno-0-144" name="__codelineno-0-144"></a>                    <span class="bp">self</span><span class="o">.</span><span class="n">modifier</span><span class="o">.</span><span class="n">apply_to</span><span class="p">(</span><span class="n">household</span><span class="p">,</span> <span class="n">person</span><span class="p">)</span>
+</span><span id="__span-0-145"><a id="__codelineno-0-145" name="__codelineno-0-145"></a>            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">probability</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">person</span><span class="p">):</span>
+</span><span id="__span-0-146"><a id="__codelineno-0-146" name="__codelineno-0-146"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">modifier</span><span class="o">.</span><span class="n">apply_to</span><span class="p">(</span><span class="n">household</span><span class="p">,</span> <span class="n">person</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="src.pam.policy.policies.PersonStayAtHome" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">PersonStayAtHome</span><span class="p">(</span><span class="n">probability</span><span class="p">)</span></code>
+
+<a href="#src.pam.policy.policies.PersonStayAtHome" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="src.pam.policy.policies.Policy" href="#src.pam.policy.policies.Policy">Policy</a></code></p>
+
+  
+      <p>Person level Policy which removes all non-home activities
+for a person.</p>
+<h4 id="src.pam.policy.policies.PersonStayAtHome--parameters">Parameters<a class="headerlink" href="#src.pam.policy.policies.PersonStayAtHome--parameters" title="Permanent link">#</a></h4>
+<p>:param probability
+A number or a subclass of the 'SamplingProbability' base class.
+The person policy accepts all but 'HouseholdProbability' level
+of Sampling Probabilities.
+If probability given as float: 0&lt;probability&lt;=1 then the probability
+level is assumed to be of the same level as the policy, i.e. Person.</p>
+
+
+          <details class="quote">
+            <summary>Source code in <code>src/pam/policy/policies.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-238">238</a></span>
+<span class="normal"><a href="#__codelineno-0-239">239</a></span>
+<span class="normal"><a href="#__codelineno-0-240">240</a></span>
+<span class="normal"><a href="#__codelineno-0-241">241</a></span>
+<span class="normal"><a href="#__codelineno-0-242">242</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-238"><a id="__codelineno-0-238" name="__codelineno-0-238"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">probability</span><span class="p">):</span>
+</span><span id="__span-0-239"><a id="__codelineno-0-239" name="__codelineno-0-239"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+</span><span id="__span-0-240"><a id="__codelineno-0-240" name="__codelineno-0-240"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">probability</span> <span class="o">=</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">verify_probability</span><span class="p">(</span>
+</span><span id="__span-0-241"><a id="__codelineno-0-241" name="__codelineno-0-241"></a>        <span class="n">probability</span><span class="p">,</span> <span class="p">(</span><span class="n">probability_samplers</span><span class="o">.</span><span class="n">HouseholdProbability</span><span class="p">)</span>
+</span><span id="__span-0-242"><a id="__codelineno-0-242" name="__codelineno-0-242"></a>    <span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+          </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="src.pam.policy.policies.PersonStayAtHome.probability" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">probability</span> <span class="o">=</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">verify_probability</span><span class="p">(</span><span class="n">probability</span><span class="p">,</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">HouseholdProbability</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+<a href="#src.pam.policy.policies.PersonStayAtHome.probability" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.pam.policy.policies.PersonStayAtHome.apply_to" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">apply_to</span><span class="p">(</span><span class="n">household</span><span class="p">,</span> <span class="n">person</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">activity</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#src.pam.policy.policies.PersonStayAtHome.apply_to" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+
+      <details class="quote">
+        <summary>Source code in <code>src/pam/policy/policies.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-244">244</a></span>
+<span class="normal"><a href="#__codelineno-0-245">245</a></span>
+<span class="normal"><a href="#__codelineno-0-246">246</a></span>
+<span class="normal"><a href="#__codelineno-0-247">247</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-244"><a id="__codelineno-0-244" name="__codelineno-0-244"></a><span class="k">def</span> <span class="nf">apply_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">household</span><span class="p">,</span> <span class="n">person</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">activity</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="__span-0-245"><a id="__codelineno-0-245" name="__codelineno-0-245"></a>    <span class="k">for</span> <span class="n">pid</span><span class="p">,</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">household</span><span class="o">.</span><span class="n">people</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="__span-0-246"><a id="__codelineno-0-246" name="__codelineno-0-246"></a>        <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">probability</span><span class="o">.</span><span class="n">p</span><span class="p">(</span><span class="n">person</span><span class="p">):</span>
+</span><span id="__span-0-247"><a id="__codelineno-0-247" name="__codelineno-0-247"></a>            <span class="n">person</span><span class="o">.</span><span class="n">stay_at_home</span><span class="p">()</span>
+</span></code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="src.pam.policy.policies.Policy" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">Policy</span><span class="p">()</span></code>
+
+<a href="#src.pam.policy.policies.Policy" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Base class for policies.</p>
+
+
+          <details class="quote">
+            <summary>Source code in <code>src/pam/policy/policies.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a>    <span class="k">pass</span>
+</span></code></pre></div></td></tr></table></div>
+          </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.pam.policy.policies.Policy.apply_to" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">apply_to</span><span class="p">(</span><span class="n">household</span><span class="p">,</span> <span class="n">person</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">activity</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#src.pam.policy.policies.Policy.apply_to" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+
+      <details class="quote">
+        <summary>Source code in <code>src/pam/policy/policies.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="k">def</span> <span class="nf">apply_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">household</span><span class="p">,</span> <span class="n">person</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">activity</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a>    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is a base class&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">Policy</span><span class="p">)))</span>
+</span></code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.pam.policy.policies.Policy.print" class="doc doc-heading">
+<code class="highlight language-python"><span class="nb">print</span><span class="p">()</span></code>
+
+<a href="#src.pam.policy.policies.Policy.print" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+
+      <details class="quote">
+        <summary>Source code in <code>src/pam/policy/policies.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-33">33</a></span>
+<span class="normal"><a href="#__codelineno-0-34">34</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="k">def</span> <span class="nf">print</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a>    <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="fm">__str__</span><span class="p">())</span>
+</span></code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="src.pam.policy.policies.PolicyLevel" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">PolicyLevel</span><span class="p">(</span><span class="n">modifier</span><span class="p">:</span> <span class="n">modifiers</span><span class="o">.</span><span class="n">Modifier</span><span class="p">,</span> <span class="n">attribute_filter</span><span class="p">:</span> <span class="n">filters</span><span class="o">.</span><span class="n">Filter</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#src.pam.policy.policies.PolicyLevel" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="src.pam.policy.policies.Policy" href="#src.pam.policy.policies.Policy">Policy</a></code></p>
+
+  
+      <p>Base class to formalise the hierarchy of levels at which a policy should applied at.</p>
+
+
+          <details class="quote">
+            <summary>Source code in <code>src/pam/policy/policies.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-40">40</a></span>
+<span class="normal"><a href="#__codelineno-0-41">41</a></span>
+<span class="normal"><a href="#__codelineno-0-42">42</a></span>
+<span class="normal"><a href="#__codelineno-0-43">43</a></span>
+<span class="normal"><a href="#__codelineno-0-44">44</a></span>
+<span class="normal"><a href="#__codelineno-0-45">45</a></span>
+<span class="normal"><a href="#__codelineno-0-46">46</a></span>
+<span class="normal"><a href="#__codelineno-0-47">47</a></span>
+<span class="normal"><a href="#__codelineno-0-48">48</a></span>
+<span class="normal"><a href="#__codelineno-0-49">49</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">modifier</span><span class="p">:</span> <span class="n">modifiers</span><span class="o">.</span><span class="n">Modifier</span><span class="p">,</span> <span class="n">attribute_filter</span><span class="p">:</span> <span class="n">filters</span><span class="o">.</span><span class="n">Filter</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42"></a>    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43"></a>        <span class="n">modifier</span><span class="p">,</span> <span class="n">modifiers</span><span class="o">.</span><span class="n">Modifier</span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44"></a>    <span class="p">),</span> <span class="s2">&quot;modifier needs to be subclass of </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">modifiers</span><span class="o">.</span><span class="n">Modifier</span><span class="p">()))</span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">modifier</span> <span class="o">=</span> <span class="n">modifier</span>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46"></a>    <span class="k">if</span> <span class="n">attribute_filter</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">attribute_filter</span> <span class="o">=</span> <span class="n">filters</span><span class="o">.</span><span class="n">PersonAttributeFilter</span><span class="p">({})</span>
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">attribute_filter</span> <span class="o">=</span> <span class="n">attribute_filter</span>
+</span></code></pre></div></td></tr></table></div>
+          </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="src.pam.policy.policies.PolicyLevel.attribute_filter" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">attribute_filter</span> <span class="o">=</span> <span class="n">filters</span><span class="o">.</span><span class="n">PersonAttributeFilter</span><span class="p">({})</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+<a href="#src.pam.policy.policies.PolicyLevel.attribute_filter" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="src.pam.policy.policies.PolicyLevel.modifier" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">modifier</span> <span class="o">=</span> <span class="n">modifier</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+<a href="#src.pam.policy.policies.PolicyLevel.modifier" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.pam.policy.policies.PolicyLevel.apply_to" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">apply_to</span><span class="p">(</span><span class="n">household</span><span class="p">,</span> <span class="n">person</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">activity</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#src.pam.policy.policies.PolicyLevel.apply_to" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+
+      <details class="quote">
+        <summary>Source code in <code>src/pam/policy/policies.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-51">51</a></span>
+<span class="normal"><a href="#__codelineno-0-52">52</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="k">def</span> <span class="nf">apply_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">household</span><span class="p">,</span> <span class="n">person</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">activity</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52"></a>    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is a base class&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">PolicyLevel</span><span class="p">)))</span>
+</span></code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="src.pam.policy.policies.ReduceSharedHouseholdActivities" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">ReduceSharedHouseholdActivities</span><span class="p">(</span><span class="n">activities</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">probability</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">SamplingProbability</span><span class="p">],</span> <span class="n">attribute_filter</span><span class="p">:</span> <span class="n">filters</span><span class="o">.</span><span class="n">Filter</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#src.pam.policy.policies.ReduceSharedHouseholdActivities" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="src.pam.policy.policies.HouseholdPolicy" href="#src.pam.policy.policies.HouseholdPolicy">HouseholdPolicy</a></code></p>
+
+  
+      <p>Pre-packaged household-level policy which reduces the number of activities
+shared within a household (Activity.act (type of activity), start/end
+times and locations match). Randomly assigns a person whose activities
+will be retained and deletes the shared activities from other persons
+in household.</p>
+<h4 id="src.pam.policy.policies.ReduceSharedHouseholdActivities--parameters">Parameters<a class="headerlink" href="#src.pam.policy.policies.ReduceSharedHouseholdActivities--parameters" title="Permanent link">#</a></h4>
+<p>:param activities
+List of activities that should be considered for sharing. Does not
+require an exact match. E.g. if passed ['shop_food', 'shop_other']
+if a household has an only 'shop_food' shared activity, that will
+be reduced.</p>
+<p>:param probability
+A number or a subclass of the 'SamplingProbability' base class.
+The activity policy accepts all levels of Sampling Probabilities.
+If probability given as float: 0&lt;probability&lt;=1 then the probability
+level is assumed to be of the same level as the policy, i.e. Person.</p>
+<p>:param attribute_filter, default 'None'
+Optional argument which helps filter/select household for policy application
+based on object attributes.</p>
+
+
+          <details class="quote">
+            <summary>Source code in <code>src/pam/policy/policies.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-401">401</a></span>
+<span class="normal"><a href="#__codelineno-0-402">402</a></span>
+<span class="normal"><a href="#__codelineno-0-403">403</a></span>
+<span class="normal"><a href="#__codelineno-0-404">404</a></span>
+<span class="normal"><a href="#__codelineno-0-405">405</a></span>
+<span class="normal"><a href="#__codelineno-0-406">406</a></span>
+<span class="normal"><a href="#__codelineno-0-407">407</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-401"><a id="__codelineno-0-401" name="__codelineno-0-401"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="__span-0-402"><a id="__codelineno-0-402" name="__codelineno-0-402"></a>    <span class="bp">self</span><span class="p">,</span>
+</span><span id="__span-0-403"><a id="__codelineno-0-403" name="__codelineno-0-403"></a>    <span class="n">activities</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span>
+</span><span id="__span-0-404"><a id="__codelineno-0-404" name="__codelineno-0-404"></a>    <span class="n">probability</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">SamplingProbability</span><span class="p">],</span>
+</span><span id="__span-0-405"><a id="__codelineno-0-405" name="__codelineno-0-405"></a>    <span class="n">attribute_filter</span><span class="p">:</span> <span class="n">filters</span><span class="o">.</span><span class="n">Filter</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-0-406"><a id="__codelineno-0-406" name="__codelineno-0-406"></a><span class="p">):</span>
+</span><span id="__span-0-407"><a id="__codelineno-0-407" name="__codelineno-0-407"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">modifiers</span><span class="o">.</span><span class="n">ReduceSharedActivity</span><span class="p">(</span><span class="n">activities</span><span class="p">),</span> <span class="n">probability</span><span class="p">,</span> <span class="n">attribute_filter</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+          </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="src.pam.policy.policies.RemoveHouseholdActivities" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">RemoveHouseholdActivities</span><span class="p">(</span><span class="n">activities</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">probability</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">SamplingProbability</span><span class="p">],</span> <span class="n">attribute_filter</span><span class="p">:</span> <span class="n">filters</span><span class="o">.</span><span class="n">Filter</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#src.pam.policy.policies.RemoveHouseholdActivities" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="src.pam.policy.policies.HouseholdPolicy" href="#src.pam.policy.policies.HouseholdPolicy">HouseholdPolicy</a></code></p>
+
+  
+      <p>Pre-packaged household-level policy which removes specified
+activities from all person's plans within selected households.</p>
+<h4 id="src.pam.policy.policies.RemoveHouseholdActivities--parameters">Parameters<a class="headerlink" href="#src.pam.policy.policies.RemoveHouseholdActivities--parameters" title="Permanent link">#</a></h4>
+<p>:param activities
+List of activities to be removed.</p>
+<p>:param probability
+A number or a subclass of the 'SamplingProbability' base class.
+The household policy accepts all levels of Sampling Probabilities.
+If probability given as float: 0&lt;probability&lt;=1 then the probability
+level is assumed to be of the same level as the policy, i.e. Household.</p>
+<p>:param attribute_filter, default 'None'
+Optional argument which helps filter/select household for policy application
+based on object attributes.</p>
+
+
+          <details class="quote">
+            <summary>Source code in <code>src/pam/policy/policies.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-270">270</a></span>
+<span class="normal"><a href="#__codelineno-0-271">271</a></span>
+<span class="normal"><a href="#__codelineno-0-272">272</a></span>
+<span class="normal"><a href="#__codelineno-0-273">273</a></span>
+<span class="normal"><a href="#__codelineno-0-274">274</a></span>
+<span class="normal"><a href="#__codelineno-0-275">275</a></span>
+<span class="normal"><a href="#__codelineno-0-276">276</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-270"><a id="__codelineno-0-270" name="__codelineno-0-270"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="__span-0-271"><a id="__codelineno-0-271" name="__codelineno-0-271"></a>    <span class="bp">self</span><span class="p">,</span>
+</span><span id="__span-0-272"><a id="__codelineno-0-272" name="__codelineno-0-272"></a>    <span class="n">activities</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span>
+</span><span id="__span-0-273"><a id="__codelineno-0-273" name="__codelineno-0-273"></a>    <span class="n">probability</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">SamplingProbability</span><span class="p">],</span>
+</span><span id="__span-0-274"><a id="__codelineno-0-274" name="__codelineno-0-274"></a>    <span class="n">attribute_filter</span><span class="p">:</span> <span class="n">filters</span><span class="o">.</span><span class="n">Filter</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-0-275"><a id="__codelineno-0-275" name="__codelineno-0-275"></a><span class="p">):</span>
+</span><span id="__span-0-276"><a id="__codelineno-0-276" name="__codelineno-0-276"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">modifiers</span><span class="o">.</span><span class="n">RemoveActivity</span><span class="p">(</span><span class="n">activities</span><span class="p">),</span> <span class="n">probability</span><span class="p">,</span> <span class="n">attribute_filter</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+          </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="src.pam.policy.policies.RemoveIndividualActivities" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">RemoveIndividualActivities</span><span class="p">(</span><span class="n">activities</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">probability</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">SamplingProbability</span><span class="p">],</span> <span class="n">attribute_filter</span><span class="p">:</span> <span class="n">filters</span><span class="o">.</span><span class="n">Filter</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#src.pam.policy.policies.RemoveIndividualActivities" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="src.pam.policy.policies.ActivityPolicy" href="#src.pam.policy.policies.ActivityPolicy">ActivityPolicy</a></code></p>
+
+  
+      <p>Pre-packaged activity-level policy which removes specified
+activities from all person's plans within selected households.</p>
+<h4 id="src.pam.policy.policies.RemoveIndividualActivities--parameters">Parameters<a class="headerlink" href="#src.pam.policy.policies.RemoveIndividualActivities--parameters" title="Permanent link">#</a></h4>
+<p>:param activities
+List of activities to be removed.</p>
+<p>:param probability
+A number or a subclass of the 'SamplingProbability' base class.
+The activity policy accepts all but 'HouseholdProbability' and
+'PersonProbability' levels of Sampling Probabilities.
+If probability given as float: 0&lt;probability&lt;=1 then the probability
+level is assumed to be of the same level as the policy, i.e. Activity.</p>
+<p>:param attribute_filter, default 'None'
+Optional argument which helps filter/select household for policy application
+based on object attributes.</p>
+
+
+          <details class="quote">
+            <summary>Source code in <code>src/pam/policy/policies.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-330">330</a></span>
+<span class="normal"><a href="#__codelineno-0-331">331</a></span>
+<span class="normal"><a href="#__codelineno-0-332">332</a></span>
+<span class="normal"><a href="#__codelineno-0-333">333</a></span>
+<span class="normal"><a href="#__codelineno-0-334">334</a></span>
+<span class="normal"><a href="#__codelineno-0-335">335</a></span>
+<span class="normal"><a href="#__codelineno-0-336">336</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-330"><a id="__codelineno-0-330" name="__codelineno-0-330"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="__span-0-331"><a id="__codelineno-0-331" name="__codelineno-0-331"></a>    <span class="bp">self</span><span class="p">,</span>
+</span><span id="__span-0-332"><a id="__codelineno-0-332" name="__codelineno-0-332"></a>    <span class="n">activities</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span>
+</span><span id="__span-0-333"><a id="__codelineno-0-333" name="__codelineno-0-333"></a>    <span class="n">probability</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">SamplingProbability</span><span class="p">],</span>
+</span><span id="__span-0-334"><a id="__codelineno-0-334" name="__codelineno-0-334"></a>    <span class="n">attribute_filter</span><span class="p">:</span> <span class="n">filters</span><span class="o">.</span><span class="n">Filter</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-0-335"><a id="__codelineno-0-335" name="__codelineno-0-335"></a><span class="p">):</span>
+</span><span id="__span-0-336"><a id="__codelineno-0-336" name="__codelineno-0-336"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">modifiers</span><span class="o">.</span><span class="n">RemoveActivity</span><span class="p">(</span><span class="n">activities</span><span class="p">),</span> <span class="n">probability</span><span class="p">,</span> <span class="n">attribute_filter</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+          </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="src.pam.policy.policies.RemovePersonActivities" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">RemovePersonActivities</span><span class="p">(</span><span class="n">activities</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">probability</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">SamplingProbability</span><span class="p">],</span> <span class="n">attribute_filter</span><span class="p">:</span> <span class="n">filters</span><span class="o">.</span><span class="n">Filter</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#src.pam.policy.policies.RemovePersonActivities" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="src.pam.policy.policies.PersonPolicy" href="#src.pam.policy.policies.PersonPolicy">PersonPolicy</a></code></p>
+
+  
+      <p>Pre-packaged person-level policy which removes specified
+activities from all person's plans within selected households.</p>
+<h4 id="src.pam.policy.policies.RemovePersonActivities--parameters">Parameters<a class="headerlink" href="#src.pam.policy.policies.RemovePersonActivities--parameters" title="Permanent link">#</a></h4>
+<p>:param activities
+List of activities to be removed.</p>
+<p>:param probability
+A number or a subclass of the 'SamplingProbability' base class.
+The person policy accepts all but 'HouseholdProbability' level
+of Sampling Probabilities.
+If probability given as float: 0&lt;probability&lt;=1 then the probability
+level is assumed to be of the same level as the policy, i.e. Person.</p>
+<p>:param attribute_filter, default 'None'
+Optional argument which helps filter/select household for policy application
+based on object attributes.</p>
+
+
+          <details class="quote">
+            <summary>Source code in <code>src/pam/policy/policies.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-300">300</a></span>
+<span class="normal"><a href="#__codelineno-0-301">301</a></span>
+<span class="normal"><a href="#__codelineno-0-302">302</a></span>
+<span class="normal"><a href="#__codelineno-0-303">303</a></span>
+<span class="normal"><a href="#__codelineno-0-304">304</a></span>
+<span class="normal"><a href="#__codelineno-0-305">305</a></span>
+<span class="normal"><a href="#__codelineno-0-306">306</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-300"><a id="__codelineno-0-300" name="__codelineno-0-300"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="__span-0-301"><a id="__codelineno-0-301" name="__codelineno-0-301"></a>    <span class="bp">self</span><span class="p">,</span>
+</span><span id="__span-0-302"><a id="__codelineno-0-302" name="__codelineno-0-302"></a>    <span class="n">activities</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span>
+</span><span id="__span-0-303"><a id="__codelineno-0-303" name="__codelineno-0-303"></a>    <span class="n">probability</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="n">probability_samplers</span><span class="o">.</span><span class="n">SamplingProbability</span><span class="p">],</span>
+</span><span id="__span-0-304"><a id="__codelineno-0-304" name="__codelineno-0-304"></a>    <span class="n">attribute_filter</span><span class="p">:</span> <span class="n">filters</span><span class="o">.</span><span class="n">Filter</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-0-305"><a id="__codelineno-0-305" name="__codelineno-0-305"></a><span class="p">):</span>
+</span><span id="__span-0-306"><a id="__codelineno-0-306" name="__codelineno-0-306"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">modifiers</span><span class="o">.</span><span class="n">RemoveActivity</span><span class="p">(</span><span class="n">activities</span><span class="p">),</span> <span class="n">probability</span><span class="p">,</span> <span class="n">attribute_filter</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+          </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="src.pam.policy.policies.apply_policies" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">apply_policies</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="n">policies</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Policy</span><span class="p">],</span> <span class="n">Policy</span><span class="p">],</span> <span class="n">in_place</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Policy</span><span class="p">],</span> <span class="n">Policy</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span></code>
+
+<a href="#src.pam.policy.policies.apply_policies" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Method which applies policies to population.</p>
+<h4 id="src.pam.policy.policies.apply_policies--parameters">Parameters<a class="headerlink" href="#src.pam.policy.policies.apply_policies--parameters" title="Permanent link">#</a></h4>
+<p>:param population:
+pam.core.Population object</p>
+<p>:param policies:
+A single instance of a sublass of pam.policy.policies.Policy subclasses
+or a list of them. Policies to be applied to the population.</p>
+<p>:param in_place: {'True', 'False'}, default 'False'
+Whether to apply policies to current Population object
+or return a copy.</p>
+<ul>
+<li>True: applies policies to current Population object</li>
+<li>False: applies policies to a copy of the passed Population object
+:return: pam.core.Population if in_place=='False'</li>
+</ul>
+
+      <details class="quote">
+        <summary>Source code in <code>src/pam/policy/policies.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-410">410</a></span>
+<span class="normal"><a href="#__codelineno-0-411">411</a></span>
+<span class="normal"><a href="#__codelineno-0-412">412</a></span>
+<span class="normal"><a href="#__codelineno-0-413">413</a></span>
+<span class="normal"><a href="#__codelineno-0-414">414</a></span>
+<span class="normal"><a href="#__codelineno-0-415">415</a></span>
+<span class="normal"><a href="#__codelineno-0-416">416</a></span>
+<span class="normal"><a href="#__codelineno-0-417">417</a></span>
+<span class="normal"><a href="#__codelineno-0-418">418</a></span>
+<span class="normal"><a href="#__codelineno-0-419">419</a></span>
+<span class="normal"><a href="#__codelineno-0-420">420</a></span>
+<span class="normal"><a href="#__codelineno-0-421">421</a></span>
+<span class="normal"><a href="#__codelineno-0-422">422</a></span>
+<span class="normal"><a href="#__codelineno-0-423">423</a></span>
+<span class="normal"><a href="#__codelineno-0-424">424</a></span>
+<span class="normal"><a href="#__codelineno-0-425">425</a></span>
+<span class="normal"><a href="#__codelineno-0-426">426</a></span>
+<span class="normal"><a href="#__codelineno-0-427">427</a></span>
+<span class="normal"><a href="#__codelineno-0-428">428</a></span>
+<span class="normal"><a href="#__codelineno-0-429">429</a></span>
+<span class="normal"><a href="#__codelineno-0-430">430</a></span>
+<span class="normal"><a href="#__codelineno-0-431">431</a></span>
+<span class="normal"><a href="#__codelineno-0-432">432</a></span>
+<span class="normal"><a href="#__codelineno-0-433">433</a></span>
+<span class="normal"><a href="#__codelineno-0-434">434</a></span>
+<span class="normal"><a href="#__codelineno-0-435">435</a></span>
+<span class="normal"><a href="#__codelineno-0-436">436</a></span>
+<span class="normal"><a href="#__codelineno-0-437">437</a></span>
+<span class="normal"><a href="#__codelineno-0-438">438</a></span>
+<span class="normal"><a href="#__codelineno-0-439">439</a></span>
+<span class="normal"><a href="#__codelineno-0-440">440</a></span>
+<span class="normal"><a href="#__codelineno-0-441">441</a></span>
+<span class="normal"><a href="#__codelineno-0-442">442</a></span>
+<span class="normal"><a href="#__codelineno-0-443">443</a></span>
+<span class="normal"><a href="#__codelineno-0-444">444</a></span>
+<span class="normal"><a href="#__codelineno-0-445">445</a></span>
+<span class="normal"><a href="#__codelineno-0-446">446</a></span>
+<span class="normal"><a href="#__codelineno-0-447">447</a></span>
+<span class="normal"><a href="#__codelineno-0-448">448</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-410"><a id="__codelineno-0-410" name="__codelineno-0-410"></a><span class="k">def</span> <span class="nf">apply_policies</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="n">policies</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Policy</span><span class="p">],</span> <span class="n">Policy</span><span class="p">],</span> <span class="n">in_place</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+</span><span id="__span-0-411"><a id="__codelineno-0-411" name="__codelineno-0-411"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Method which applies policies to population.</span>
+</span><span id="__span-0-412"><a id="__codelineno-0-412" name="__codelineno-0-412"></a>
+</span><span id="__span-0-413"><a id="__codelineno-0-413" name="__codelineno-0-413"></a><span class="sd">    Parameters</span>
+</span><span id="__span-0-414"><a id="__codelineno-0-414" name="__codelineno-0-414"></a><span class="sd">    ----------</span>
+</span><span id="__span-0-415"><a id="__codelineno-0-415" name="__codelineno-0-415"></a><span class="sd">    :param population:</span>
+</span><span id="__span-0-416"><a id="__codelineno-0-416" name="__codelineno-0-416"></a><span class="sd">    pam.core.Population object</span>
+</span><span id="__span-0-417"><a id="__codelineno-0-417" name="__codelineno-0-417"></a>
+</span><span id="__span-0-418"><a id="__codelineno-0-418" name="__codelineno-0-418"></a><span class="sd">    :param policies:</span>
+</span><span id="__span-0-419"><a id="__codelineno-0-419" name="__codelineno-0-419"></a><span class="sd">    A single instance of a sublass of pam.policy.policies.Policy subclasses</span>
+</span><span id="__span-0-420"><a id="__codelineno-0-420" name="__codelineno-0-420"></a><span class="sd">    or a list of them. Policies to be applied to the population.</span>
+</span><span id="__span-0-421"><a id="__codelineno-0-421" name="__codelineno-0-421"></a>
+</span><span id="__span-0-422"><a id="__codelineno-0-422" name="__codelineno-0-422"></a><span class="sd">    :param in_place: {&#39;True&#39;, &#39;False&#39;}, default &#39;False&#39;</span>
+</span><span id="__span-0-423"><a id="__codelineno-0-423" name="__codelineno-0-423"></a><span class="sd">    Whether to apply policies to current Population object</span>
+</span><span id="__span-0-424"><a id="__codelineno-0-424" name="__codelineno-0-424"></a><span class="sd">    or return a copy.</span>
+</span><span id="__span-0-425"><a id="__codelineno-0-425" name="__codelineno-0-425"></a>
+</span><span id="__span-0-426"><a id="__codelineno-0-426" name="__codelineno-0-426"></a><span class="sd">    * True: applies policies to current Population object</span>
+</span><span id="__span-0-427"><a id="__codelineno-0-427" name="__codelineno-0-427"></a><span class="sd">    * False: applies policies to a copy of the passed Population object</span>
+</span><span id="__span-0-428"><a id="__codelineno-0-428" name="__codelineno-0-428"></a><span class="sd">    :return: pam.core.Population if in_place==&#39;False&#39;</span>
+</span><span id="__span-0-429"><a id="__codelineno-0-429" name="__codelineno-0-429"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-430"><a id="__codelineno-0-430" name="__codelineno-0-430"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">in_place</span><span class="p">:</span>
+</span><span id="__span-0-431"><a id="__codelineno-0-431" name="__codelineno-0-431"></a>        <span class="n">pop</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">population</span><span class="p">)</span>
+</span><span id="__span-0-432"><a id="__codelineno-0-432" name="__codelineno-0-432"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-0-433"><a id="__codelineno-0-433" name="__codelineno-0-433"></a>        <span class="n">pop</span> <span class="o">=</span> <span class="n">population</span>
+</span><span id="__span-0-434"><a id="__codelineno-0-434" name="__codelineno-0-434"></a>
+</span><span id="__span-0-435"><a id="__codelineno-0-435" name="__codelineno-0-435"></a>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">policies</span><span class="p">,</span> <span class="n">Policy</span><span class="p">):</span>
+</span><span id="__span-0-436"><a id="__codelineno-0-436" name="__codelineno-0-436"></a>        <span class="n">policies</span> <span class="o">=</span> <span class="p">[</span><span class="n">policies</span><span class="p">]</span>
+</span><span id="__span-0-437"><a id="__codelineno-0-437" name="__codelineno-0-437"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">policies</span><span class="p">)):</span>
+</span><span id="__span-0-438"><a id="__codelineno-0-438" name="__codelineno-0-438"></a>        <span class="n">policy</span> <span class="o">=</span> <span class="n">policies</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span><span id="__span-0-439"><a id="__codelineno-0-439" name="__codelineno-0-439"></a>        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+</span><span id="__span-0-440"><a id="__codelineno-0-440" name="__codelineno-0-440"></a>            <span class="n">policy</span><span class="p">,</span> <span class="n">Policy</span>
+</span><span id="__span-0-441"><a id="__codelineno-0-441" name="__codelineno-0-441"></a>        <span class="p">),</span> <span class="s2">&quot;Policies need to be of type </span><span class="si">{}</span><span class="s2">, not </span><span class="si">{}</span><span class="s2">. Failed for policy </span><span class="si">{}</span><span class="s2"> at list index </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+</span><span id="__span-0-442"><a id="__codelineno-0-442" name="__codelineno-0-442"></a>            <span class="nb">type</span><span class="p">(</span><span class="n">Policy</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">policy</span><span class="p">),</span> <span class="n">policy</span><span class="p">,</span> <span class="n">i</span>
+</span><span id="__span-0-443"><a id="__codelineno-0-443" name="__codelineno-0-443"></a>        <span class="p">)</span>
+</span><span id="__span-0-444"><a id="__codelineno-0-444" name="__codelineno-0-444"></a>    <span class="k">for</span> <span class="n">hid</span><span class="p">,</span> <span class="n">household</span> <span class="ow">in</span> <span class="n">pop</span><span class="o">.</span><span class="n">households</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="__span-0-445"><a id="__codelineno-0-445" name="__codelineno-0-445"></a>        <span class="k">for</span> <span class="n">policy</span> <span class="ow">in</span> <span class="n">policies</span><span class="p">:</span>
+</span><span id="__span-0-446"><a id="__codelineno-0-446" name="__codelineno-0-446"></a>            <span class="n">policy</span><span class="o">.</span><span class="n">apply_to</span><span class="p">(</span><span class="n">household</span><span class="p">)</span>
+</span><span id="__span-0-447"><a id="__codelineno-0-447" name="__codelineno-0-447"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">in_place</span><span class="p">:</span>
+</span><span id="__span-0-448"><a id="__codelineno-0-448" name="__codelineno-0-448"></a>        <span class="k">return</span> <span class="n">pop</span>
+</span></code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>
