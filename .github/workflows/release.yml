@@ -23,6 +23,7 @@ jobs:
     - uses: mamba-org/setup-micromamba@v1
       with:
         micromamba-version: latest
+        environment-name: pam-condabuild
         create-args: >-
             python=3.11
             conda-build
@@ -36,7 +37,7 @@ jobs:
         echo conda build --output .
 
     - name: Test installing built conda package
-      run: mamba install --use-local pam
+      run: micromamba install --use-local pam
 
     - name: Upload to anaconda
       env:
@@ -53,6 +54,7 @@ jobs:
     - uses: mamba-org/setup-micromamba@v1
       with:
         micromamba-version: latest
+        environment-name: pam-docs
         environment-file: requirements/base.txt
         create-args: >-
             python=3.11
