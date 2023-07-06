@@ -28,7 +28,6 @@ jobs:
             conda-build
             anaconda-client
         post-cleanup: all
-        cache-environment: true
 
     - name: Build conda package
       run: |
