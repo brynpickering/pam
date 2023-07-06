@@ -29,6 +29,9 @@ jobs:
             conda-build
             anaconda-client
         post-cleanup: all
+    
+    - name: add CML conda channel
+      run: conda config --add channels city-modelling-lab
 
     - name: Build conda package
       run: |
@@ -57,6 +60,7 @@ jobs:
         environment-name: pam-docs
         environment-file: requirements/base.txt
         create-args: >-
+            -c city-modelling-lab
             python=3.11
             requirements/docs.txt
         post-cleanup: all
