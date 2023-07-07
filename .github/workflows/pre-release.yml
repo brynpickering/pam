@@ -33,6 +33,7 @@ jobs:
       run: |
         mkdir "${{ env.conda_build_dir }}"
         conda mambabuild --output-folder "${{ env.conda_build_dir }}" .
+        conda mambabuild purge
         conda mambabuild --output .
     
     - name: add local conda channel
