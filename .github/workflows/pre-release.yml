@@ -3,7 +3,7 @@ name: Build Package
 on:
   push:
     tags:
-      - '*'
+      - 'v*'
 
 defaults:
   run:
@@ -30,7 +30,6 @@ jobs:
     - name: Build conda package
       run: |
         conda mambabuild .
-        conda mambabuild purge
         echo "conda_build_dir=$(conda build --output .)" >> "$GITHUB_ENV"
 
     - name: Test installing built conda package

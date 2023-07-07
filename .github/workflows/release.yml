@@ -2,14 +2,14 @@ name: Publish
 
 on:
   release:
-    types: [published]
+    types: [released]
 
 defaults:
   run:
     shell: bash -l {0}
 
 permissions:
-    contents: write
+  contents: write
       
 jobs:
   conda-publish:
@@ -26,15 +26,16 @@ jobs:
         post-cleanup: all
     
     - name: Download built conda package ready for upload on release
-      uses: actions/download-artifact@v3
+      uses: dawidd6/action-download-artifact@v2
       with:
         name: conda-build-${{ github.ref_name }}
+        workflow: pre-release.yml
         path: ${{ runner.temp }}/conda_builds
 
     - name: Upload to anaconda
       env:
         ANACONDA_API_TOKEN: ${{ secrets.ANACONDA_TOKEN }}
-      run: anaconda upload ${{ runner.temp }}/conda_builds/noarch/pam-${{ github.ref_name }}-*-tar.bz2 --version ${{ github.ref_name }}
+      run: anaconda upload ${{ runner.temp }}/conda_builds/pam-${{ github.ref_name }}-*-tar.bz2
 
   docs-publish:
     runs-on: ubuntu-latest
