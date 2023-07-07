@@ -23,7 +23,7 @@ jobs:
         environment-name: pam-condabuild
         create-args: >-
             python=3.11
-            conda-build
+            boa
         post-cleanup: all
     
     - name: add CML conda channel
@@ -32,8 +32,8 @@ jobs:
     - name: Build conda package
       run: |
         mkdir ${{ runner.temp }}/conda_builds
-        conda build --output-folder ${{ runner.temp }}/conda_builds .
-        echo conda build --output .
+        conda mambabuild --output-folder ${{ runner.temp }}/conda_builds .
+        conda mambabuild --output .
     
     - name: Upload built conda package ready for upload on release
       uses: actions/upload-artifact@v3
@@ -43,4 +43,4 @@ jobs:
         retention-days: 7
 
     - name: Test installing built conda package
-      run: micromamba -c local pam
+      run: micromamba install -c local pam
