@@ -8,9 +8,6 @@ on:
 defaults:
   run:
     shell: bash -l {0}
-
-env: 
-  RELEASE_TAG_VERSION: ${{ github.ref_name }}
       
 jobs:
   conda-build:
@@ -35,12 +32,12 @@ jobs:
         conda mambabuild --output-folder ${{ runner.temp }}/conda_builds .
         conda mambabuild --output .
     
+    - name: Test installing built conda package
+      run: micromamba install -c ${{ runner.temp }}/conda_builds pam
+
     - name: Upload built conda package ready for upload on release
       uses: actions/upload-artifact@v3
       with:
-        name: conda-build-$RELEASE_TAG_VERSION
+        name: conda-build-${{ github.ref_name }}
         path: ${{ runner.temp }}/conda_builds
         retention-days: 7
-
-    - name: Test installing built conda package
-      run: micromamba install -c local pam
