@@ -26,15 +26,12 @@ jobs:
     
     - name: add CML conda channel
       run: conda config --add channels city-modelling-lab
-
-    - name: Create build directory
-      run: 
         
     - name: Build conda package
       run: |
         conda mambabuild .
         conda mambabuild purge
-        echo "conda_build_dir=$(conda build --output .)" >> $GITHUB_ENV"
+        echo "conda_build_dir=$(conda build --output .)" >> "$GITHUB_ENV"
 
     - name: Test installing built conda package
       run: mamba install --use-local pam
