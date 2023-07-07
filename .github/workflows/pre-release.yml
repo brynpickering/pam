@@ -21,30 +21,28 @@ jobs:
         create-args: >-
             python=3.11
             boa
+            conda-verify
         post-cleanup: all
     
     - name: add CML conda channel
       run: conda config --add channels city-modelling-lab
 
     - name: Create build directory
-      run: echo "conda_build_dir=${{ runner.temp }}/conda_builds" >> "$GITHUB_ENV"
+      run: 
         
     - name: Build conda package
       run: |
-        mkdir "${{ env.conda_build_dir }}"
-        conda mambabuild --output-folder "${{ env.conda_build_dir }}" .
+        conda mambabuild .
         conda mambabuild purge
-        conda mambabuild --output .
-    
-    - name: add local conda channel
-      run: conda config --add channels "${{ env.conda_build_dir }}"
+        echo "conda_build_dir=$(conda build --output .)" >> $GITHUB_OUTPUT"
+      id: build_package
 
     - name: Test installing built conda package
-      run: mamba install pam
+      run: mamba install --use-local pam
 
     - name: Upload built conda package ready for upload on release
       uses: actions/upload-artifact@v3
       with:
         name: conda-build-${{ github.ref_name }}
-        path: "${{ env.conda_build_dir }}"
+        path: "${{ steps.build_package.output.conda_build_dir }}"
         retention-days: 7

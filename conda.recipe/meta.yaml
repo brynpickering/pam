@@ -41,12 +41,13 @@ requirements:
 test:
   source_files:
     - tests
+    - pyproject.toml
   requires:
     {% for dep in requirements_dev.string.split("\n") %}
     - {{ dep.lower().replace(" ", "") }}
     {% endfor %}
   commands:
-    - pytest
+    - pytest tests/
 
 
 about:

@@ -29,11 +29,12 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: conda-build-${{ github.ref_name }}
+        path: ${{ runner.temp }}/conda_builds
 
     - name: Upload to anaconda
       env:
         ANACONDA_API_TOKEN: ${{ secrets.ANACONDA_TOKEN }}
-      run: anaconda upload ${{ runner.temp }}/conda_builds/noarch/pam*-tar.bz2 --version ${{ github.ref_name }}
+      run: anaconda upload ${{ runner.temp }}/conda_builds/noarch/pam-${{ github.ref_name }}-*-tar.bz2 --version ${{ github.ref_name }}
 
   docs-publish:
     runs-on: ubuntu-latest
