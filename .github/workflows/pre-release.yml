@@ -26,18 +26,24 @@ jobs:
     - name: add CML conda channel
       run: conda config --add channels city-modelling-lab
 
+    - name: Create build directory
+      run: echo "conda_build_dir=${{ runner.temp }}/conda_builds" >> "$GITHUB_ENV"
+        
     - name: Build conda package
       run: |
-        mkdir ${{ runner.temp }}/conda_builds
-        conda mambabuild --output-folder ${{ runner.temp }}/conda_builds .
+        mkdir "${{ env.conda_build_dir }}"
+        conda mambabuild --output-folder "${{ env.conda_build_dir }}" .
         conda mambabuild --output .
     
+    - name: add local conda channel
+      run: conda config --add channels "${{ env.conda_build_dir }}"
+
     - name: Test installing built conda package
-      run: micromamba install -c ${{ runner.temp }}/conda_builds pam
+      run: mamba install pam
 
     - name: Upload built conda package ready for upload on release
       uses: actions/upload-artifact@v3
       with:
         name: conda-build-${{ github.ref_name }}
-        path: ${{ runner.temp }}/conda_builds
+        path: "${{ env.conda_build_dir }}"
         retention-days: 7
