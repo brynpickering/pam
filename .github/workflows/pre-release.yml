@@ -34,8 +34,7 @@ jobs:
       run: |
         conda mambabuild .
         conda mambabuild purge
-        echo "conda_build_dir=$(conda build --output .)" >> $GITHUB_OUTPUT"
-      id: build_package
+        echo "conda_build_dir=$(conda build --output .)" >> $GITHUB_ENV"
 
     - name: Test installing built conda package
       run: mamba install --use-local pam
@@ -44,5 +43,5 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: conda-build-${{ github.ref_name }}
-        path: "${{ steps.build_package.output.conda_build_dir }}"
+        path: "${{ env.conda_build_dir }}"
         retention-days: 7
