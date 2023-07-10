@@ -1,6 +1,6 @@
 jupyter < 2
 mike < 2
-mkdocs < 3
+mkdocs < 2
 mkdocs-click < 0.7
 mkdocs-jupyter < 0.25
 mkdocstrings-python < 2
