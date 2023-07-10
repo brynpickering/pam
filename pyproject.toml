@@ -63,7 +63,8 @@ max-complexity = 10
 docstring-quotes = "double"
 
 [tool.setuptools.packages.find]
-include = ["pam"]
+include = ["pam", "mkdocs_plugins/*.py"]
+exclude = ["mkdocs_plugins/test*.py"]
 
 [tool.setuptools.package-data]
 pam = ["fixtures/**/*"]
