@@ -69,7 +69,6 @@ jobs:
             python=3.11
         post-cleanup: all
         cache-environment: true
-        create-args: python=3.11
 
     - name: install PAM
       run: |
