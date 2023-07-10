@@ -14,7 +14,7 @@ markers = ["high_mem", "limit_memory"]
 
 [tool.coverage.run]
 branch = true
-source = ["src/pam"]
+source = ["pam"]
 
 [tool.coverage.report]
 fail_under = 89
@@ -59,8 +59,7 @@ max-complexity = 10
 docstring-quotes = "double"
 
 [tool.setuptools.packages.find]
-where = ["src"]
-exclude = ["mkdocs_plugins"]
+include = ["pam"]
 
 [tool.setuptools.package-data]
 pam = ["fixtures/**/*"]
