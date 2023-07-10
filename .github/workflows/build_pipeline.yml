@@ -90,7 +90,7 @@ jobs:
         
     - name: Test that docs build
       if: github.ref != 'refs/heads/main'
-      run: mike deploy develop
+      run: mike deploy --push develop
 
     - name: deploy docs to gh-pages branch
       if: github.ref == 'refs/heads/main'
