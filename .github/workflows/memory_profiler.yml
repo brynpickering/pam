@@ -2,7 +2,7 @@ name: Memory profiler
 
 on:
   issue_comment:                                     
-    types: [created, edited, deleted]
+    types: [created, edited]
   
 defaults:
   run:
@@ -10,7 +10,7 @@ defaults:
 
 jobs:
   memory-profiler:
-    if: ${{ github.event.issue.pull_request }} && contains(github.event.comment.body, '/memory_profiler')
+    if: github.event.issue.pull_request && contains(github.event.comment.body, '/memory_profiler')
     runs-on: [ubuntu-latest]
     steps:    
       - uses: actions/checkout@v2
