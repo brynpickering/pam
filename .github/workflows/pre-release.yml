@@ -19,9 +19,9 @@ jobs:
         micromamba-version: latest
         environment-name: pam-condabuild
         create-args: >-
-            python=3.11
-            boa
-            conda-verify
+          python=3.11
+          boa
+          conda-verify
         post-cleanup: all
     
     - name: add CML conda channel

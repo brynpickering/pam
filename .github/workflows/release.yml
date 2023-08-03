@@ -72,5 +72,6 @@ jobs:
         
     - name: deploy docs to gh-pages branch
       run: |
-        mike deploy --push --update-aliases ${{ github.ref_name }} latest
-        mike set-default --push latest
+        mike deploy --push ${{ github.ref_name }}
+        mike deploy --push --update-aliases ${{ github.ref_name }} stable
+        mike set-default --push stable
