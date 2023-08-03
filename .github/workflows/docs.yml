@@ -24,7 +24,7 @@ jobs:
     - uses: mamba-org/setup-micromamba@v1
       with:
         micromamba-version: latest
-        environment-name: pam-ubuntu-latest-3.11
+        environment-name: pam-ubuntu-latest-311
         environment-file: requirements/base.txt
         create-args: >-
             -c city-modelling-lab
@@ -33,6 +33,11 @@ jobs:
         post-cleanup: all
         cache-environment: true
         
+    - name: install PAM
+      run: |
+        pip install --no-dependencies .
+        python -m ipykernel install --user --name pam
+
     - name: Setup doc deploy
       run: |
         git config --global user.name Docs deploy
