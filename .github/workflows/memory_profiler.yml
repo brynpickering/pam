@@ -1,7 +1,13 @@
 name: Memory profiler
+
 on:
   issue_comment:                                     
     types: [created, edited, deleted]
+  
+defaults:
+  run:
+    shell: bash -l {0}
+
 jobs:
   memory-profiler:
     if: ${{ github.event.issue.pull_request }} && contains(github.event.comment.body, '/memory_profiler')
@@ -23,8 +29,7 @@ jobs:
           cache-environment: true
 
       - name: install PAM
-        run: |
-          pip install --no-dependencies .
+        run: pip install --no-dependencies .
 
       - name: run memory and time profiling test
         run: pytest -p memray -m "high_mem" --no-cov
