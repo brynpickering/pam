@@ -17,7 +17,7 @@
         <link rel="next" href="../activity_plans/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.eebd395e.min.css">
       
       
 
@@ -1923,7 +1923,7 @@ look at the core pam data structure for populations:</p>
 </span></code></pre></div>
 <h2 id="read-methods">Read methods<a class="headerlink" href="#read-methods" title="Permanent link">#</a></h2>
 <p>The first step in any application is to load your data into the core pam format (pam.core.Population). We
-are trying to support comon tabular formats ('travel diaries') using <code>pam.read.load_travel_diary</code>. A
+are trying to support common tabular formats ('travel diaries') using <code>pam.read.load_travel_diary</code>. A
 travel diary can be composed of three tables:</p>
 <ul>
 <li><code>trips</code> (required) -  a trip diary for all people in the population, with rows representing trips</li>
@@ -2165,7 +2165,7 @@ named <code>pid</code> (person ID) and <code>hid</code> (household ID) are used 
 </table>
 <p>If you are using persons_attributes (<code>persons_attributes</code>) this table must contain a <code>pid</code> field (person ID). If you are using persons_attributes (<code>households_attributes</code>) this table must contain a <code>hid</code> field (household ID). In both cases, the frequency field <code>freq</code> may be used. All other attributes can be included with column names to suit the attribute. Note that <code>hzone</code> (home zone) can optionally be provided in the attribute tables.</p>
 <p><strong>A note about 'freq':</strong></p>
-<p>Frequencies (aka 'weights') for trips, persons or households can optionally be added to the respective input tables using columns called <code>freq</code>. We generally assume a frequency to represent expected occurances in a full population. For example if we use a person frequency (<code>person.freq</code>) the the sum of all these frequencies (<code>population.size</code>), will equal the expected population size.</p>
+<p>Frequencies (aka 'weights') for trips, persons or households can optionally be added to the respective input tables using columns called <code>freq</code>. We generally assume a frequency to represent expected occurrences in a full population. For example if we use a person frequency (<code>person.freq</code>) the the sum of all these frequencies (<code>population.size</code>), will equal the expected population size.</p>
 <p>Because it is quite common to provide a person or household <code>freq</code> in the trips table, there are two special options (<code>trip_freq_as_person_freq = True</code> and <code>trip_freq_as_hh_freq = True</code>) that can be used to pass the <code>freq</code> field from the trips table to either the people or households table instead.</p>
 <p>Generally PAM will assume when you want some weighted output, that it should use household frequencies. If these have not been set then PAM will assume that the household frequency is the average
 frequency of persons within the household. If person frequencies are not set the PAM will assume that the person frequency is the average frequency of legs within the persons plan. If you wish to adjust frequencies of a population then you should use the <code>set_freq()</code> method, eg:</p>
@@ -2176,7 +2176,7 @@ frequency of persons within the household. If person frequencies are not set the
 </span></code></pre></div>
 <h3 id="readwriteother-formats">Read/Write/Other formats<a class="headerlink" href="#readwriteother-formats" title="Permanent link">#</a></h3>
 <p>PAM can read/write to tabular formats and MATSim xml (<code>pam.read.read_matsim</code> and <code>pam.write.write_matsim</code>). PAM can also write to segmented OD matrices using <code>pam.write.write_od_matrices</code>.</p>
-<p>Benchmark or summary data and cross-tabulations can be extracted with the <code>pam.write.write_benchmarks</code> method, passing as arguments the data field(s) to summarise, the dimension(s) to group by, and the aggregation function(s). For example <code>pam.write_benchmarks(population, dimensions = ['duration_category'], data_fields= ['freq'], aggfunc = [sum]</code> returns the frequency breakdown of trips' duration. The <code>write</code> module also provides a number of wrappers for frequently-used bechmarks under the <code>write_*****_benchmark</code> name.</p>
+<p>Benchmark or summary data and cross-tabulations can be extracted with the <code>pam.write.write_benchmarks</code> method, passing as arguments the data field(s) to summarise, the dimension(s) to group by, and the aggregation function(s). For example <code>pam.write_benchmarks(population, dimensions = ['duration_category'], data_fields= ['freq'], aggfunc = [sum]</code> returns the frequency breakdown of trips' duration. The <code>write</code> module also provides a number of wrappers for frequently-used benchmarks under the <code>write_*****_benchmark</code> name.</p>
 <p>Please get in touch if you would like additional support or feel free to add your own.</p>
 
 

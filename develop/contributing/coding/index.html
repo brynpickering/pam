@@ -17,7 +17,7 @@
         <link rel="next" href="../non_coding/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
       
       
 
@@ -2045,8 +2045,24 @@
 <p>We need help to <strong>go faster</strong> as we would like to deal with populations in the tens of millions.
 This means we would like help with profiling and implementing parallel compute, in particular.</p>
 <h2 id="setting-up-a-development-environment">Setting up a development environment<a class="headerlink" href="#setting-up-a-development-environment" title="Permanent link">#</a></h2>
-<p>If you have followed the recommended installation instructions, all libraries required for development and quality assurance will already be installed.
-If installing directly with pip, you can install these libraries using the <code>dev</code> option, i.e., <code>pip install -e ./pam[dev]</code>
+<p>To create a development environment for PAM, with all libraries required for development and quality assurance installed, it is easiest to install PAM using the <a href="https://mamba.readthedocs.io/en/latest/index.html">mamba</a> package manager, as follows:</p>
+<ol>
+<li>Install mamba with the <a href="https://github.com/conda-forge/miniforge#mambaforge">Mambaforge</a> executable for your operating system.</li>
+<li>Open the command line (or the "miniforge prompt" in Windows).</li>
+<li>Download (a.k.a., clone) the PAM repository: <code>git clone git@github.com:arup-group/pam.git</code></li>
+<li>Change into the <code>pam</code> directory: <code>cd pam</code></li>
+<li>Create the PAM mamba environment: <code>mamba create -n pam -c conda-forge -c city-modelling-lab --file requirements/base.txt --file requirements/dev.txt</code></li>
+<li>Activate the PAM mamba environment: <code>mamba activate pam</code></li>
+<li>Install the PAM package into the environment, in editable mode and ignoring dependencies (we have dealt with those when creating the mamba environment): <code>pip install --no-deps -e .</code></li>
+</ol>
+<p>All together:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:arup-group/pam.git
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>pam
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>mamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>pam<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>-c<span class="w"> </span>city-modelling-lab<span class="w"> </span>--file<span class="w"> </span>requirements/base.txt<span class="w"> </span>--file<span class="w"> </span>requirements/dev.txt
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>mamba<span class="w"> </span>activate<span class="w"> </span>pam
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>pip<span class="w"> </span>install<span class="w"> </span>--no-deps<span class="w"> </span>-e<span class="w"> </span>.
+</span></code></pre></div>
+<p>If installing directly with pip, you can install these libraries using the <code>dev</code> option, i.e., <code>pip install -e '.[dev]'</code>
 Either way, you should add your environment as a jupyter kernel, so the example notebooks can run in the tests: <code>ipython kernel install --user --name=pam</code></p>
 <p>If you plan to make changes to the code then please make regular use of the following tools to verify the codebase while you work:</p>
 <ul>
@@ -2057,7 +2073,8 @@ You can also run these checks yourself at any time to ensure staged changes are 
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you have <a class="autorefs autorefs-internal" href="../../installation/#choosing-a-different-environment-name">chosen a different environment name</a> to the default <code>pam</code>, you will need to add this as a pytest argument: <code>pytest --nbmake-kernel=[my-env-name]</code></p>
+<p>If you already have an environment called <code>pam</code> on your system (e.g., for a stable installation of the package), you will need to <a class="autorefs autorefs-internal" href="../../installation/#choosing-a-different-environment-name">chose a different environment name</a>.
+You will then need to add this as a pytest argument when running the tests: <code>pytest --nbmake-kernel=[my-env-name]</code>.</p>
 </div>
 <h3 id="rapid-fire-testing">Rapid-fire testing<a class="headerlink" href="#rapid-fire-testing" title="Permanent link">#</a></h3>
 <p>The following options allow you to strip down the test suite to the bare essentials:</p>
@@ -2068,7 +2085,7 @@ The integration tests can be slow, so if you want to avoid them during developme
 <li>By default, the tests run with up to two parallel threads, to increase this to e.g. 4 threads: <code>pytest -n4</code>.</li>
 </ol>
 <p>All together:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pytest<span class="w"> </span>tests/<span class="w"> </span>--no-cov<span class="w"> </span>-n4
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pytest<span class="w"> </span>tests/<span class="w"> </span>--no-cov<span class="w"> </span>-n4
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2084,9 +2101,9 @@ If you are running on a UNIX device (i.e., <strong>not</strong> on Windows), you
 You will then find the HTML report at <code>[my_path]/memray-flamegraph-[my_prefix]-tests-test_100_memory_profiling.py-test_activity_loader.html</code>.</li>
 </ol>
 <p>All together:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mamba<span class="w"> </span>install<span class="w"> </span>memray<span class="w"> </span>pytest-memray
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>pytest<span class="w"> </span>-p<span class="w"> </span>memray<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;high_mem&quot;</span><span class="w"> </span>--no-cov<span class="w"> </span>--memray-bin-path<span class="o">=[</span>my_path<span class="o">]</span><span class="w"> </span>--memray-bin-prefix<span class="o">=[</span>my_prefix<span class="o">]</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>memray<span class="w"> </span>flamegraph<span class="w"> </span><span class="o">[</span>my_path<span class="o">]</span>/<span class="o">[</span>my_prefix<span class="o">]</span>-tests-test_100_memory_profiling.py-test_activity_loader.bin
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mamba<span class="w"> </span>install<span class="w"> </span>memray<span class="w"> </span>pytest-memray
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>pytest<span class="w"> </span>-p<span class="w"> </span>memray<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;high_mem&quot;</span><span class="w"> </span>--no-cov<span class="w"> </span>--memray-bin-path<span class="o">=[</span>my_path<span class="o">]</span><span class="w"> </span>--memray-bin-prefix<span class="o">=[</span>my_prefix<span class="o">]</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>memray<span class="w"> </span>flamegraph<span class="w"> </span><span class="o">[</span>my_path<span class="o">]</span>/<span class="o">[</span>my_prefix<span class="o">]</span>-tests-test_100_memory_profiling.py-test_activity_loader.bin
 </span></code></pre></div>
 <p>For more information on using memray, refer to their <a href="https://bloomberg.github.io/memray/index.html">documentation</a>.</p>
 <h2 id="submitting-changes">Submitting changes<a class="headerlink" href="#submitting-changes" title="Permanent link">#</a></h2>
@@ -2133,19 +2150,19 @@ When adding docstrings, we request you use the <a href="https://google.github.io
 <li class="task-list-item"><input type="checkbox"/> Re-run tutorial Jupyter notebooks (<code>pytest examples/ --overwrite</code>).</li>
 <li class="task-list-item"><input type="checkbox"/> Make sure documentation builds without errors (<code>mike deploy [version]</code>, where <code>[version]</code> is the current minor release of the form <code>X.Y</code>).</li>
 <li class="task-list-item"><input type="checkbox"/> Make sure the <a class="autorefs autorefs-internal" href="../../CHANGELOG/#changelog">changelog</a> is up-to-date, especially that new features and backward incompatible changes are clearly marked.</li>
-<li class="task-list-item"><input type="checkbox"/> Ensure all requirements are up to date and that the files in the <code>requirements</code> directory are in sync with the <code>environment.yml</code> file.</li>
 </ul>
 <h3 id="create-release">Create release<a class="headerlink" href="#create-release" title="Permanent link">#</a></h3>
 <ul class="task-list">
-<li class="task-list-item"><input type="checkbox"/> Bump the version number in <code>setup.py</code></li>
+<li class="task-list-item"><input type="checkbox"/> Bump the version number in <code>pyproject.toml</code></li>
 <li class="task-list-item"><input type="checkbox"/> Update the <a class="autorefs autorefs-internal" href="../../CHANGELOG/#changelog">changelog</a> with final version number of the form <code>vX.Y.Z</code>, release date, and github <code>compare</code> link (at the bottom of the page).</li>
-<li class="task-list-item"><input type="checkbox"/> Commit with message <code>Release vX.Y.Z</code>, then add a <code>vX.Y.Z</code> tag, push both to GitHub</li>
-<li class="task-list-item"><input type="checkbox"/> Create a release through the GitHub web interface, using the same tag, titling it <code>Release vX.Y.Z</code> and include all the changelog elements that are <em>not</em> flagged as <strong>internal</strong>.</li>
+<li class="task-list-item"><input type="checkbox"/> Commit with message <code>Release vX.Y.Z</code>, then add a <code>vX.Y.Z</code> tag. </li>
+<li class="task-list-item"><input type="checkbox"/> Create a release pull request to verify that the conda package builds successfully.</li>
+<li class="task-list-item"><input type="checkbox"/> Once the PR is approved and merged, create a release through the GitHub web interface, using the same tag, titling it <code>Release vX.Y.Z</code> and include all the changelog elements that are <em>not</em> flagged as <strong>internal</strong>.</li>
 </ul>
 <h3 id="post-release">Post-release<a class="headerlink" href="#post-release" title="Permanent link">#</a></h3>
 <ul class="task-list">
-<li class="task-list-item"><input type="checkbox"/> Update the changelog, adding a new <code>[Unreleased]</code> heading, and update <code>setup.py</code> to the next version appended with <code>-dev</code>, in preparation for the next main commit.</li>
-<li class="task-list-item"><input type="checkbox"/> If bumping the major or minor version (<code>X</code>/<code>Y</code> in <code>X.Y.Z</code>), update the documentation version in the <code>build_pipeline</code> GitHub action (e.g., <code>mike deploy 0.2</code> -&gt; <code>mike deploy 0.3</code>) and push an update to the pointer for the <code>latest</code> documentation from your own device: <code>mike deploy --push --update-aliases X.Y latest</code>.</li>
+<li class="task-list-item"><input type="checkbox"/> Update the changelog, adding a new <code>[Unreleased]</code> heading.</li>
+<li class="task-list-item"><input type="checkbox"/> Update <code>pyproject.toml</code> to the next version appended with <code>.dev0</code>, in preparation for the next main commit.</li>
 </ul>
 
 
