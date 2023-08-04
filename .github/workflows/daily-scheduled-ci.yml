@@ -28,7 +28,6 @@ jobs:
             -c city-modelling-lab
             -f requirements/dev.txt
         post-cleanup: all
-        cache-environment: true
     - name: Install PAM
       run: |
         pip install --no-deps -e .
