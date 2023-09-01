@@ -245,15 +245,15 @@ def write_plan(person_xml: et.SubElement, plan: Plan, selected: Optional[bool] =
 
 
 def add_attribute(attributes, k, v):
-    if type(v) == bool:
+    if isinstance(v, bool):
         attribute = et.SubElement(
             attributes, "attribute", {"class": "java.lang.Boolean", "name": str(k)}
         )
-    elif type(v) == int:
+    elif isinstance(v, int):
         attribute = et.SubElement(
             attributes, "attribute", {"class": "java.lang.Integer", "name": str(k)}
         )
-    elif type(v) == float:
+    elif isinstance(v, float):
         attribute = et.SubElement(
             attributes, "attribute", {"class": "java.lang.Double", "name": str(k)}
         )
