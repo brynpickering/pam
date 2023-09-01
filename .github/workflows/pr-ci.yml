@@ -26,6 +26,7 @@ jobs:
           - os: ubuntu-latest
             py3version: "11"
             upload_to_codecov: true 
+      fail-fast: false
     uses: arup-group/actions-city-modelling-lab/.github/workflows/python-install-lint-test.yml@main
     with:
       os: ${{ matrix.os }}
