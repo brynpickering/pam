@@ -25,7 +25,7 @@ jobs:
       notebook_kernel: pam
 
   slack-notify-ci-failure:
-    needs: [docs, docs-update-latest]
+    needs: [docs-test, docs-update-latest]
     if: always() && contains(needs.*.result, 'failure')
     uses: arup-group/actions-city-modelling-lab/.github/workflows/slack-notify.yml@main
     secrets: inherit
