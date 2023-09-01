@@ -6,12 +6,12 @@ on:
       
 jobs:
   conda-upload:
-    uses: arup-group/actions-city-modelling-lab/workflows/conda-upload.yml@main
+    uses: arup-group/actions-city-modelling-lab/.github/workflows/conda-upload.yml@main
     secrets: inherit
     with:
       package_name: pam
   docs-stable:
-    uses: arup-group/actions-city-modelling-lab/workflows/docs-deploy.yml@main
+    uses: arup-group/actions-city-modelling-lab/.github/workflows/docs-deploy.yml@main
     with:
       deploy_type: update_stable
       notebook_kernel: pam

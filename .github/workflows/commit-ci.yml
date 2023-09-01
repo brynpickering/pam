@@ -18,31 +18,31 @@ defaults:
 
 jobs:
   test:
-    uses: arup-group/actions-city-modelling-lab/workflows/python-install-lint-test.yml@main
+    uses: arup-group/actions-city-modelling-lab/.github/workflows/python-install-lint-test.yml@main
     with:
       os: ubuntu-latest
       py3version: "11"
       notebook_kernel: pam
       lint: true
   docs:
-    uses: arup-group/actions-city-modelling-lab/workflows/docs-deploy.yml@main
+    uses: arup-group/actions-city-modelling-lab/.github/workflows/docs-deploy.yml@main
     with:
       deploy_type: test
       notebook_kernel: pam
   docs-update-latest:
     if: github.ref != 'refs/heads/main'
-    uses: arup-group/actions-city-modelling-lab/workflows/docs-deploy.yml@main
+    uses: arup-group/actions-city-modelling-lab/.github/workflows/docs-deploy.yml@main
     with:
       deploy_type: update_latest
       notebook_kernel: pam
   aws-upload:
     needs: test
     if: needs.test.outputs.result == 'success'
-    uses: arup-group/actions-city-modelling-lab/workflows/aws-upload.yml@main
+    uses: arup-group/actions-city-modelling-lab/.github/workflows/aws-upload.yml@main
     secrets: inherit 
   slack-notify-ci:
     needs: [test, docs]
-    uses: arup-group/actions-city-modelling-lab/workflows/slack-notify.yml@main
+    uses: arup-group/actions-city-modelling-lab/.github/workflows/slack-notify.yml@main
     secrets: inherit
     with:
       result: needs.test.result && needs.docs.result
@@ -50,7 +50,7 @@ jobs:
       message: Commit CI action
   slack-notify-aws:
     needs: aws-upload
-    uses: arup-group/actions-city-modelling-lab/workflows/slack-notify.yml@main
+    uses: arup-group/actions-city-modelling-lab/.github/workflows/slack-notify.yml@main
     secrets: inherit
     with:
       result: needs.aws-upload.result

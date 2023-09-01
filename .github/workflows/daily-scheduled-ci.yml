@@ -17,7 +17,7 @@ jobs:
 
   test:
     needs: get-date
-    uses: arup-group/actions-city-modelling-lab/workflows/python-install-lint-test.yml@main
+    uses: arup-group/actions-city-modelling-lab/.github/workflows/python-install-lint-test.yml@main
     with:
       os: ubuntu-latest
       py3version: "11"
@@ -25,7 +25,7 @@ jobs:
       mamba_env_name: ${{ needs.get-date.outputs.DATE }}
   slack-notify-ci:
     needs: test
-    uses: arup-group/actions-city-modelling-lab/workflows/slack-notify.yml@main
+    uses: arup-group/actions-city-modelling-lab/.github/workflows/slack-notify.yml@main
     secrets: inherit
     with:
       result: needs.test.result

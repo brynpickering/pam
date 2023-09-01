@@ -26,7 +26,7 @@ jobs:
           - os: ubuntu-latest
             py3version: "11"
             upload_to_codecov: true 
-    uses: arup-group/actions-city-modelling-lab/workflows/python-install-lint-test.yml@main
+    uses: arup-group/actions-city-modelling-lab/.github/workflows/python-install-lint-test.yml@main
     with:
       os: ${{ matrix.os }}
       py3version: ${{ matrix.py3version }}
@@ -35,6 +35,6 @@ jobs:
       upload_to_codecov: ${{ matrix.upload_to_codecov }}
 
   memory-profile:
-    uses: arup-group/actions-city-modelling-lab/workflows/python-memory-profile.yml@main
+    uses: arup-group/actions-city-modelling-lab/.github/workflows/python-memory-profile.yml@main
     with:
       py3version: "11" 
