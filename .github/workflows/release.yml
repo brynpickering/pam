@@ -10,6 +10,7 @@ jobs:
     secrets: inherit
     with:
       package_name: pam
+      
   docs-stable:
     permissions:
       contents: write

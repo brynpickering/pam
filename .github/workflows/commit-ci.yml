@@ -20,34 +20,22 @@ jobs:
       py3version: "11"
       notebook_kernel: pam
       lint: true
-  docs:
-    permissions:
-      contents: write
-    uses: arup-group/actions-city-modelling-lab/.github/workflows/docs-deploy.yml@main
-    with:
-      deploy_type: test
-      notebook_kernel: pam
-  docs-update-latest:
-    permissions:
-      contents: write
-    if: github.ref != 'refs/heads/main'
-    uses: arup-group/actions-city-modelling-lab/.github/workflows/docs-deploy.yml@main
-    with:
-      deploy_type: update_latest
-      notebook_kernel: pam
+
   aws-upload:
     needs: test
     if: needs.test.result == 'success'
     uses: arup-group/actions-city-modelling-lab/.github/workflows/aws-upload.yml@main
     secrets: inherit 
+
   slack-notify-ci:
-    needs: [test, docs]
+    needs: test
     uses: arup-group/actions-city-modelling-lab/.github/workflows/slack-notify.yml@main
     secrets: inherit
     with:
-      result: needs.test.result && needs.docs.result
+      result: needs.test.result
       channel: pam-feed
       message: Commit CI action
+      
   slack-notify-aws:
     needs: aws-upload
     uses: arup-group/actions-city-modelling-lab/.github/workflows/slack-notify.yml@main
