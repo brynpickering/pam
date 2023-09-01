@@ -37,7 +37,7 @@ jobs:
       notebook_kernel: pam
   aws-upload:
     needs: test
-    if: needs.test.outputs.result == 'success'
+    if: needs.test.result == 'success'
     uses: arup-group/actions-city-modelling-lab/.github/workflows/aws-upload.yml@main
     secrets: inherit 
   slack-notify-ci:
