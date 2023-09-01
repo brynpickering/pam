@@ -22,10 +22,6 @@ jobs:
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest]
         py3version: ["9", "10", "11"]
-        include:  # only for this combination of os and python version will linting and codecov uploading steps be triggered
-          - os: ubuntu-latest
-            py3version: "11"
-            upload_to_codecov: true 
       fail-fast: false
     uses: arup-group/actions-city-modelling-lab/.github/workflows/python-install-lint-test.yml@main
     with:
@@ -33,8 +29,16 @@ jobs:
       py3version: ${{ matrix.py3version }}
       notebook_kernel: pam
       lint: false
-      upload_to_codecov: ${{ matrix.upload_to_codecov }}
-
+      upload_to_codecov: false
+      
+  test-coverage:
+    uses: arup-group/actions-city-modelling-lab/.github/workflows/python-install-lint-test.yml@main
+    with:
+      os: ubuntu-latest
+      py3version: "11"
+      notebook_kernel: pam
+      upload_to_codecov: true
+    
   memory-profile:
     uses: arup-group/actions-city-modelling-lab/.github/workflows/python-memory-profile.yml@main
     with:
