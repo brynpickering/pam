@@ -21,11 +21,15 @@ jobs:
       notebook_kernel: pam
       lint: true
   docs:
+    permissions:
+      contents: write
     uses: arup-group/actions-city-modelling-lab/.github/workflows/docs-deploy.yml@main
     with:
       deploy_type: test
       notebook_kernel: pam
   docs-update-latest:
+    permissions:
+      contents: write
     if: github.ref != 'refs/heads/main'
     uses: arup-group/actions-city-modelling-lab/.github/workflows/docs-deploy.yml@main
     with:
