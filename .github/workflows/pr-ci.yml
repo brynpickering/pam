@@ -17,7 +17,7 @@ on:
       - mkdocs.yml  
 
 jobs:
-  test:
+  test-all-os-and-versions:
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest]
