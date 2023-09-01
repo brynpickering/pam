@@ -17,11 +17,11 @@ on:
       - mkdocs.yml  
 
 jobs:
-  test-all-os-and-versions:
+  test:
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest]
-        py3version: ["9", "10", "11"]
+        py3version: ["9", "11"]
       fail-fast: false
     uses: arup-group/actions-city-modelling-lab/.github/workflows/python-install-lint-test.yml@main
     with:
@@ -29,14 +29,17 @@ jobs:
       py3version: ${{ matrix.py3version }}
       notebook_kernel: pam
       lint: false
+      pytest_args: '--no-cov'  # ignore coverage
       upload_to_codecov: false
-      
+
   test-coverage:
     uses: arup-group/actions-city-modelling-lab/.github/workflows/python-install-lint-test.yml@main
     with:
       os: ubuntu-latest
       py3version: "11"
       notebook_kernel: pam
+      lint: false
+      pytest_args: 'tests/ mkdocs_plugins/'  # ignore example notebooks
       upload_to_codecov: true
     
   memory-profile:

@@ -18,8 +18,9 @@ jobs:
       os: ubuntu-latest
       py3version: "11"
       notebook_kernel: pam
+      pytest_args: '--no-cov'  # ignore coverage
       mamba_env_name: ${{ needs.get-date.outputs.DATE }}
-      
+
   slack-notify-ci:
     needs: test
     uses: arup-group/actions-city-modelling-lab/.github/workflows/slack-notify.yml@main
