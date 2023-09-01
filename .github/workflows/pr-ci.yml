@@ -1,0 +1,40 @@
+name: Pull Request CI
+
+on: 
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - ready_for_review
+      - review_requested
+    paths-ignore:
+      - README.md
+      - CHANGELOG.md
+      - LICENSE
+      - CONTRIBUTING.md
+      - docs/**
+      - mkdocs.yml  
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+        py3version: ["9", "10", "11"]
+        include:  # only for this combination of os and python version will linting and codecov uploading steps be triggered
+          - os: ubuntu-latest
+            py3version: "11"
+            upload_to_codecov: true 
+    uses: arup-group/actions-city-modelling-lab/workflows/python-install-lint-test.yml@main
+    with:
+      os: ${{ matrix.os }}
+      py3version: ${{ matrix.py3version }}
+      notebook_kernel: "pam"
+      lint: false
+      upload_to_codecov: ${{ matrix.upload_to_codecov }}
+
+  memory-profile:
+    uses: arup-group/actions-city-modelling-lab/workflows/python-memory-profile.yml@main
+    with:
+      py3version: "11" 
