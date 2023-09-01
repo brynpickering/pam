@@ -12,10 +12,6 @@ on:
       - docs/**
       - mkdocs.yml  
 
-defaults:
-  run:
-    shell: bash -l {0}
-
 jobs:
   test:
     uses: arup-group/actions-city-modelling-lab/.github/workflows/python-install-lint-test.yml@main
