@@ -57,7 +57,6 @@ jobs:
         shell: bash -el {0}
 
   memory-profile:
-    uses: arup-group/actions-city-modelling-lab/.github/workflows/python-memory-profile.yml@main
+    uses: arup-group/actions-city-modelling-lab/.github/workflows/python-memory-profile.yml@fix-memray-job
     with:
       py3version: "11" 
-      additional_mamba_args: --log-level trace
