@@ -45,18 +45,7 @@ jobs:
       channel: pam-feed
       message: AWS upload action
 
-  test-memray-install:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: mamba-org/setup-micromamba@v1
-      - run: /home/runner/micromamba-bin/micromamba create -y -r /home/runner/micromamba -f requirements/base.txt -n ubuntu-latest-311-memray -c city-modelling-lab  -f requirements/dev.txt memray=1.9.1 pytest-memray=1.5.0 python=3.11 --log-level warning --rc-file /home/runner/micromamba-bin/.condarc
-      - run: |
-          micromamba activate ubuntu-latest-311-memray
-          micromamba list
-        shell: bash -el {0}
-
   memory-profile:
     uses: arup-group/actions-city-modelling-lab/.github/workflows/python-memory-profile.yml@fix-memray-job
     with:
-      py3version: "10" 
+      py3version: "11" 
