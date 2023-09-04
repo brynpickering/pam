@@ -44,3 +44,13 @@ jobs:
       result: needs.aws-upload.result
       channel: pam-feed
       message: AWS upload action
+
+  test-memray-install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: mamba-org/setup-micromamba@v1
+      - run: /home/runner/micromamba-bin/micromamba create -y -r /home/runner/micromamba -f requirements/base.txt -n ubuntu-latest-311-memray -c city-modelling-lab  -f requirements/dev.txt memray=1.9.1 pytest-memray=1.5.0 python=3.11 --log-level warning --rc-file /home/runner/micromamba-bin/.condarc
+      - run: |
+          micromamba activate ubuntu-latest-311-memray
+          micromamba list
+        shell: bash -el {0}
