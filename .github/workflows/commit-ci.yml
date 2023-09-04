@@ -55,3 +55,9 @@ jobs:
           micromamba activate ubuntu-latest-311-memray
           micromamba list
         shell: bash -el {0}
+
+  memory-profile:
+    uses: arup-group/actions-city-modelling-lab/.github/workflows/python-memory-profile.yml@main
+    with:
+      py3version: "11" 
+      additional_mamba_args: --log-level trace
