@@ -48,4 +48,4 @@ jobs:
   memory-profile:
     uses: arup-group/actions-city-modelling-lab/.github/workflows/python-memory-profile.yml@fix-memray-job
     with:
-      py3version: "10"
+      py3version: "11"
