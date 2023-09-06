@@ -46,6 +46,7 @@ jobs:
       message: AWS upload action
 
   memory-profile:
-    uses: arup-group/actions-city-modelling-lab/.github/workflows/python-memory-profile.yml@fix-memray-job
+    uses: arup-group/actions-city-modelling-lab/.github/workflows/python-memory-profile.yml@upload-memray-flamegraph
     with:
       py3version: "11"
+      include_flamegraph: true
