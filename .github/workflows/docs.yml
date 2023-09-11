@@ -12,12 +12,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
         id: branch-exists
         with:
-          ref: foo
+          path: $RUNNER_TEMP/gh-pages
+          ref: gh-pages
         continue-on-error: true
       - if: steps.branch-exists.outcome == 'failure'
-        run: echo 'Doing something because branch doesn't exist'
+        run: echo 'Doing something because branch does not exist'
 
 
   docs-test:
