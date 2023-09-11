@@ -8,25 +8,9 @@ on:
     - tests/**
 
 jobs:
-  docs-branch:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        id: branch-exists
-        with:
-          path: $RUNNER_TEMP/gh-pages
-          ref: gh-pages
-        continue-on-error: true
-      - uses: actions/checkout@v3
-      - if: steps.branch-exists.outcome == 'success'
-        run: git branch --list
-      - if: steps.branch-exists.outcome == 'failure'
-        run: echo 'Doing something because branch does not exist'
-
-
   docs-test:
     if: github.ref != 'refs/heads/main'
-    uses: arup-group/actions-city-modelling-lab/.github/workflows/docs-deploy.yml@main
+    uses: arup-group/actions-city-modelling-lab/.github/workflows/docs-deploy.yml@update-docs-deploy
     with:
       deploy_type: test
       notebook_kernel: pam
