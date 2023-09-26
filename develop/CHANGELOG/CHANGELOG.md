@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Fixed
+- Fix readme CI badge ([#248])
 - Fix for cropping as per issue [#241](https://github.com/arup-group/pam/issues/241) ([#240]).
 - optimise.grid.grid_search fixed ([#239]).
 - `TourPlanner` prevents sampling of duplicate destinations, and prevents origin being sampled as a destination ([#231]).
@@ -30,6 +31,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Anaconda package of PAM, available on the `city-modelling-lab` channel ([#211]).
 - Python versions 3.9 to 3.11 support ([#192], [#210]).
 - Documentation, now available at https://arup-group.github.io/pam ([#197]).
+- Time-space prism method for selecting the location of non-mandatory activities ([#252](https://github.com/arup-group/pam/pull/252)).
+- Simple IPF approach for generating synthetic populations ([#253]).
 - **internal** [Codecov](https://codecov.io) and [pre-commit](https://pre-commit.ci/) CI bots ([#202]).
 - **internal** Github action job to build PAM and run tests on a Windows machine ([#192]).
 - **internal** Contribution guidelines and issue/pull request templates ([#207]).
@@ -48,11 +51,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Example data files not accessed by any example notebook ([#196]).
 - **internal** Unused scripts that were outside the source code directory ([#199]).
 
+
 ## [v0.2.4] - 2023-06-08
 This version is a pre-release
 
 ### Added
 - Option to skip existing facility locations during facility sampling, by adding the `location_override` argument to the `population.sample_locs` method ([#190]).
+- More control over the look of activity plan plots, with keyword arguments for e.g. `Person.plot()` extended to allow figure width and per-activity label fontsizes to be updated.
 
 ## [v0.2.3] - 2023-06-07
 This version is a pre-release
@@ -85,8 +90,8 @@ This is the first version of PAM which follows semantic versioning and can be co
 [v0.2.1]: https://github.com/arup-group/pam/compare/v0.2.0...v0.2.1
 [v0.2.0]: https://github.com/arup-group/pam/compare/initial_version...v0.2.0
 
+[#248]: https://github.com/arup-group/pam/pull/248
 [#240]: https://github.com/arup-group/pam/pull/240
-[#239]: https://github.com/arup-group/pam/pull/239
 [#231]: https://github.com/arup-group/pam/pull/231
 [#243]: https://github.com/arup-group/pam/pull/243
 [#222]: https://github.com/arup-group/pam/pull/222
