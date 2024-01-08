@@ -28,7 +28,7 @@ jobs:
       aws-secrets-exist: ${{ steps.secret-checker.outputs.SECRETS_EXIST }}
     steps:
       - id: secret-checker
-        name: 'Check secret access for fast fail'
+        name: Check secret access for fast fail
         run: |
           echo "SECRETS_EXIST=$AWS_SECRETS_EXIST" >> $GITHUB_OUTPUT
           echo "SECRETS_EXIST=$AWS_SECRETS_EXIST" >> $GITHUB_STEP_SUMMARY
